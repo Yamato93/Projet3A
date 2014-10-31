@@ -50,7 +50,7 @@
 		{
 			$host = 'localhost';
 			$user = 'khauv';
-			$pass = '';
+			$pass = 'test';
 			$base = '';
 			$port = 80;
 		}
