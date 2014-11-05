@@ -8,7 +8,7 @@
 	// $CONTENT -> CONTENU
 	function sessionize($level, $content)
 	{
-		$_SESSION['notif'][] = array('level' => $level, 'content'=> $content);
+		$_SESSION['notif'] = array('level' => $level, 'content'=> $content);
 	}
 	function display($msg)
 	{
