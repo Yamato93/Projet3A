@@ -21,8 +21,5 @@
 		
 	}
 	
-		// $_SESSION['notif'] = array('level' => 'danger', 'content' => 'Incorrect. Verrifier vos identifiants');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Bienvenue');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Commentaire supprimé');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Déconnecté');
+	
 ?>
