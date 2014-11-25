@@ -1,1 +1,4 @@
 app/config/connect.bdd.php
+*.scssc
+
+backoffice/index.php
