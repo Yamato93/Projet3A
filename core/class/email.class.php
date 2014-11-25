@@ -1,12 +1,12 @@
 <?php
 
-/**
-* Mail
-*
-* Envoi de mail
-*
-*
-**/
+ /**
+ * Mail
+ *
+ * Envoi de mail
+ *
+ * 
+ */
 	class Mail
 	{
 		private $nom_expe;		//nom de l'expe
