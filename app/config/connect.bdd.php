@@ -38,13 +38,13 @@
 	function cnx_site_local( $type_cnx = NULL ){
 		$server_name = explode ( "/" , $_SERVER['REQUEST_URI']);
 		$server_name = $server_name[1];
-		if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+		if (($_SERVER["HTTP_HOST"] == "localhost:8888") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 		{
 			$host = 'localhost';
 			$user = 'root';
 			$pass = 'root';
 			$base = 'khauv';
-			$port = 80;
+			$port = 8889;
 		}
 		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "khauv") )
 		{

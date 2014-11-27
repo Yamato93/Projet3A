@@ -13,58 +13,7 @@
 	<link href="public/css/style.css" rel="stylesheet"/>
 	<script type="text/javascript" src="public/js/script.js"></script>
 	<script type="text/javascript" src="public/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript">
-		function traiterFlux(flux){
-			//contenu = "<ul>";
-			$.each(flux, function(key, value){
-				
-				if( value == 1 )
-				{
-					//contenu += "<li>Key : "+key+" - Value : "+value+"</li>";	
-					//$("#formLogin").remove();
-					$("#formLogin").replaceWith("<a href='index.php?module=connection&action=deco'>Se deconnecter</a>");
-					$("#affichage").remove();
-				}
-				
-			});
-			//contenu += "</ul>";
-			
-			//$("#affichage").html(contenu);
-		}
-		
-		$(document).ready( function() {
-			$("#formLogin").on('submit', function(e)
-			{
-				// on désactive le comportement par défaut (submit)
-				e.preventDefault();
-				$.ajax({
-					// URL du traitement sur le serveur
-					url	 :'../app/controller/connection/verif_user_login.php',
-					// Type de requête
-					type :'post',
-					// Parametres envoyés
-					data :  
-						/* Login : $('#Login').val(), 
-						   Password : $('#password').val()
-						*/
-						$(this).serialize(),
-					//On précise le type de flux
-					dataType: 'json',
-					// Traitement en cas de succès : on reçoit le flus dans data
-					success: function(data) {
-						console.log(data);
-						traiterFlux(data);
-					},
-					error: function(jqXHR, textStatus, errorThrown)
-					{
-						console.log(textStatus);
-						console.log(errorThrown);
-						console.log("Erreur execution requete AJAX !");
-					}
-				});
-			});
-		});
-	</script>
+	<script type="text/javascript" src="public/ajax/sample.ajax.js"></script>
 	</head>
 
 <body>
