@@ -6,7 +6,7 @@
  	/*********************
 	Name for the session
 	*********************/
-	define('SESSION_NAME', "Discoverit_session");
+	define('SESSION_NAME', "Discoverit_bo_session");
 	
 	/***********************
 	Max post per page
@@ -33,6 +33,18 @@
 	*********************/
 	define('COOKIE_LOG', "Login");
 	define('COOKIE_PASS', "Password");
+	/********************************
+	var in session for being connect
+	********************************/
+	if((!defined('BACKOFFICE')|| !BACKOFFICE))
+	{
+		define('CONNECT', "admin_connect");
+	}
+	else
+	{
+		define('CONNECT', "user_connect");
+	}
+	
 /**
  ** Config localhost
  **/

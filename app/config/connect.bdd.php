@@ -46,6 +46,14 @@
 			$base = 'khauv';
 			$port = 8889;
 		}
+		if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+		{
+			$host = 'localhost';
+			$user = 'root';
+			$pass = 'root';
+			$base = 'khauv';
+			$port = 80;
+		}
 		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "khauv") )
 		{
 			$host = 'localhost';
