@@ -19,6 +19,11 @@
 	define('PREFIX_BASE', "");
 	
 	/*********************
+	BDD name
+	*********************/
+	define('BASE', "khauv");
+	
+	/*********************
 	Name for the site
 	*********************/
 	define('SITE_NAME', "MonExpo.com");
