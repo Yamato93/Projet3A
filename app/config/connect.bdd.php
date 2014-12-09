@@ -54,15 +54,15 @@
 			$base = 'khauv';
 			$port = 80;
 		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "khauv") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "khauv") )
 		{
 			$host = 'localhost';
 			$user = 'khauv';
-			$pass = 'test';
-			$base = '';
+			$pass = '161212';
+			$base = 'khauv';
 			$port = 80;
 		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "dupont") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "dupont") )
 		{
 			$host = 'localhost';
 			$user = 'khauv';
@@ -70,7 +70,7 @@
 			$base = '';
 			$port = 80;
 		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "alexandr") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "alexandr") )
 		{
 			$host = 'localhost';
 			$user = 'alexandr';
