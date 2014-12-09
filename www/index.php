@@ -1,7 +1,7 @@
 <?php
 
 	header('Content-type: text/html; charset=UTF-8'); 
-
+	define('BACKOFFICE', false);
 	//include ("model/model.php");
 	include_once("../app/config/param.inc.php");
 	include_once("../app/config/connect.bdd.php");

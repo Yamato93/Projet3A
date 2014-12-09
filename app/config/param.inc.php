@@ -41,13 +41,13 @@
 	/********************************
 	var in session for being connect
 	********************************/
-	if((!defined('BACKOFFICE')|| !BACKOFFICE))
+	if((!defined('BACKOFFICE') || !BACKOFFICE))
 	{
-		define('CONNECT', "admin_connect");
+		define('CONNECT', "user_connect");
 	}
 	else
 	{
-		define('CONNECT', "user_connect");
+		define('CONNECT', "admin_connect");
 	}
 	
 /**

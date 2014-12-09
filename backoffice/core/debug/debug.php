@@ -1,7 +1,7 @@
 <?php
 	
-	include_once("../../app/config/param.inc.php");
-	include_once("../../core/function/function_start_session.php");
+	include_once("../../../app/config/param.inc.php");
+	include_once("../../../core/function/function_start_session.php");
 	my_session_start(SESSION_NAME);
 	if(isset($debug))
 	{

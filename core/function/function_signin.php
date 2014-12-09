@@ -8,11 +8,11 @@
 	{
 		try
 		{
-			if($userstatus == $_SESSION['admin_connect'])
+			if($userstatus == "admin_connect")
 			{
 				$suffix = "Back_";
 			}
-			if($userstatus == $_SESSION['user_connect'])
+			if($userstatus == "user_connect")
 			{
 				$suffix = "Front_";
 			}
@@ -20,21 +20,23 @@
 		"Le nom de la function : ".__FUNCTION__,
 		"Le nom du document : ".__FILE__,
 		"Le numero de la ligne : ".__LINE__);
+	
 			$query = ("SELECT 
 							*
 					   FROM 
-					        '".$dbname.$tablename."'
+					        ".$dbname.".".$tablename."
 					  WHERE 
-							'".$logcol."' = :login
+							".$logcol." = :login
 						AND 
-							'".$pwdcol."' = :pwd");		
+							".$pwdcol." = :pwd");		
 			
 			$curseur = $connect -> prepare($query);
 			
 			$curseur -> bindValue(":login", $login, PDO::PARAM_STR);
-			$curseur -> bindValue(":pwd", $passwords, PDO::PARAM_STR);
+			$curseur -> bindValue(":pwd", md5($passwords), PDO::PARAM_STR);
 			
 			$curseur -> execute();
+			
 			$data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
 			$curseur ->closeCursor();
 			
