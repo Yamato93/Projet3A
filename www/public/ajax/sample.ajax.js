@@ -14,11 +14,9 @@
 				$("#formLogin").replaceWith("<a href='index.php?module=connection&action=deco'>Se deconnecter</a>");
 				$("#affichage").remove();
 			}
+
 			
 		});
-		//contenu += "</ul>";
-		
-		//$("#affichage").html(contenu);
 	}
 	
 	$(document).ready( function() {
@@ -28,7 +26,7 @@
 			e.preventDefault();
 			$.ajax({
 				// URL du traitement sur le serveur
-				url	 :'index.ajax.php?module=sample&action=sample',
+				url	 :'index.php?module=sample&action=sample',
 				// Type de requête
 				type :'post',
 				// Parametres envoyés
