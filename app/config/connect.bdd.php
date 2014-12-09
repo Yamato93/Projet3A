@@ -65,9 +65,9 @@
 		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "dupont") )
 		{
 			$host = 'localhost';
-			$user = 'khauv';
-			$pass = '';
-			$base = '';
+			$user = 'dupont';
+			$pass = '143953';
+			$base = 'dupont';
 			$port = 80;
 		}
 		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "alexandr") )
