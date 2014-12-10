@@ -11,10 +11,10 @@
     <title></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../www/public/css_bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../../www/public/css_bootstrap/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../www/public/css_bootstrap/dashboard.css" rel="stylesheet">
+    <link href="../../www/public/css_bootstrap/dashboard.css" rel="stylesheet">
     
    
   </head>
@@ -39,6 +39,13 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="index.php?module=admin&action=deco">Se déconnecter</a></li>
+          	<li><a href="">Lien 1</a></li>
+          	<li><a href="">Liste d'admin</a></li>
+          	<li><a href="">Lien 3</a></li>
+          	<li><a href="">Lien 4</a></li>
+          	<li><a href="">Lien 5</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="index.php?module=login&action=logout">Se déconnecter</a></li>
           </ul>
         </div>

@@ -1,5 +1,7 @@
+<?php include_once("../app/include/header.inc.php"); ?>
+
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	<h1 class="page-header">Dashboard</h1>
+	<h1 class="page-header">Liste des admins</h1>
 		<div class="row placeholders">
 		</div>
 		
@@ -8,31 +10,38 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Nom</th>
-						<th>Mail</th>
-						<th>Comment</th>
+						<th>Nom d'utilisateur</th>
+						<th>Mot de passe</th>
+						<th>Level d'administration</th>
 						<th>Supression</th>
 					</tr>
 				</thead>
 				<tbody>
 		
 					<?php
-					foreach($comments as $key=>$value)
+					foreach($listadmin as $key=>$value)
 					{
 					
-					?>
-					<tr>
-					<td><?php echo $value->id; ?></td>
-					<td><?php echo $value->nom; ?></td>
-					<td><?php echo $value->mail; ?></td>
-					<td><?php echo utf8_encode($value->comment); ?></td>
-					<td><a id="suppr" href="index.php?module=admin&action=supp&id=<?php echo $value->id; ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
-					</tr>
-					<?php
+						?>
+						<tr>
+						<td><?php echo $value->ADM_ID; ?></td>
+						<td><?php echo $value->ADM_NAME; ?></td>
+						<td><?php echo $value->ADM_PASSWORD; ?></td>
+						<td><?php echo $value->ADM_LVL ?></td>
+						<?php
+						if($value->ADM_LVL < 5)
+						{
+							?>
+								<td><a id="suppr" href="index.php?module=admin&action=supp&id=<?php echo $value->id; ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+						</tr>
+							<?php
+						}
+					
 					}
 					?>
 				</tbody>
 		</table>
 	</div>
 </div>
-     
+
+<?php include_once("../app/include/footer.inc.php"); ?>   

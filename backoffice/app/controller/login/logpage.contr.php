@@ -12,13 +12,11 @@
 		/* $dbname, $tablename, $logcol, $pwscol are for SQL request */
 		if(sign_in($connect, BASE, "DT_ADMIN", "ADM_NAME", "ADM_PASSWORD", $login, $passwords, CONNECT))
 		{
-			echo "Connection succed !!!";
-			die();
+			header("location:index.php?module=index&action=index");
 		}
 		else
 		{
-			echo "Connection failed !!!";
-			die();
+			header("location:index.php?module=login&action=logpage");
 		}
 	}
 	else
