@@ -32,22 +32,20 @@ function delete($connect, $dbname, $tablename, $colname, $id)
 				
 				$query2 = "DELETE FROM ".$dbname.".".$tablename." WHERE ".$colname." = ".$id;
 				
-				$curseur = $connect -> prepare($query);
+				$curseur = $connect -> prepare($query2);
 				// $post contient le $_POST
-				$curseur -> bindParam(':suppr', $ID);
+				$curseur -> bindParam(':suppr', $id);
 			    $curseur -> execute();
 				$curseur -> closeCursor();	
 							
 				$debug_tableau = array($info ,$query2);
-				$_SESSION["requetes"] = $query;	
-				return true
+				$_SESSION["requetes"] = $query2;	
+				return true;
 			}
 			else
 			{
 				return false;
 			}		
-			
-			
 			
     }
     catch ( Exception $e ) 

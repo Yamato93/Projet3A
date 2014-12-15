@@ -39,15 +39,15 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
+         <ul class="nav nav-sidebar">
+            <li><a href="index.php?module=index&action=index">Liste d'admin</a></li>
+          </ul>
           <ul class="nav nav-sidebar">
           	<li><a href="">Lien 1</a></li>
           	<li><a href="">Liste des utilisateurs</a></li>
           	<li><a href="index.php?module=books&action=books">Liste des carnets de voyage</a></li>
           	<li><a href="index.php?module=parcours&action=parcours">Liste des parcours</a></li>
           	
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="index.php?module=index&action=index">Liste d'admin</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="index.php?module=login&action=logout">Se déconnecter</a></li>

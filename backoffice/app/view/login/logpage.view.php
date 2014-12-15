@@ -11,10 +11,10 @@
     <title>Access to the backoffice of Discoverit</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="public/css_bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../../www/public/css_bootstrap/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="public/css_bootstrap/signin.css" rel="stylesheet">
+    <link href="../../www/public/css_bootstrap/signin.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,5 +45,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    
   </body>
 </html>

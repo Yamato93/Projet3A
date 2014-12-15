@@ -3,9 +3,9 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<h1 class="page-header">Liste des admins</h1>
 	<div class="row placeholders">
+	
 	</div>
 	<div role="tabpanel">
-
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
@@ -39,38 +39,39 @@
 								<td><?php echo $value->ADM_PASSWORD; ?></td>
 								<td><?php echo $value->ADM_LVL ?></td>
 								<?php
-								if($value->ADM_LVL < 5)
+								if(($value->ADM_LVL == $_SESSION['User']->ADM_LVL) or ($_SESSION['User']->ADM_LVL > 3))
 								{
 									?>
 										<td>
-											<a id="suppr" href="index.php?module=admin&action=supp&id=<?php echo $value->id; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
-											<a id="suppr" href="index.php?module=admin&action=supp&id=<?php echo $value->id; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+											<a id="delete" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span></a> /
+											<a id="edit" href="index.php?module=index&action=deladmin&del=<?php echo $value->ADM_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
 										</td>
 								</tr>
 									<?php
 								}
-							
+							//href="index.php?module=index&action=editadmin&del=<?php echo $value->ADM_ID;
 							}
 							?>
+
 						</tbody>
 					</table>
 				</div>
 			</div>
 		    <div role="tabpanel" class="tab-pane" id="profile">
 		    	<div class="col-md-4">
-				    <form role="form" name="add_admin_form" action="" method="post">
+				    <form role="form" name="add_admin_form" action="index.php?module=index&action=index" method="post">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nom d'utilisateur</label>
-							<input type="text" class="form-control" placeholder="Enter name">
+							<label for="Name">Nom d'utilisateur</label>
+							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
 						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-						</div>
+						<?php
+						if($_SESSION['User']->ADM_LVL > 3)
+								{
+									?>
 						<div class="form-group">
 							<label>Niveau d'administration</label><br/>
 							<label class="checkbox-inline">
@@ -89,12 +90,36 @@
 							  	<input type="checkbox" name="lvl" value="5"> 5
 							</label>
 						</div>
+						<?php
+							}
+						?>
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 		    	</div>
 		    </div>
 		</div>
 	</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <?php include_once("../app/include/footer.inc.php"); ?>   
