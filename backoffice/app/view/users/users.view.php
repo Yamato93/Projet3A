@@ -9,7 +9,7 @@
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Add Admin</a></li>
+			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Add book</a></li>
 		</ul>
 	
 		<!-- Tab panes -->
@@ -20,9 +20,13 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Admin user name</th>
-							
-								<th>Admin lvl</th>
+								<th>Type</th>
+								<th>Mail</th>
+								<th>Last Name</th>
+								<th>First Name</th>
+								<th>Birthday</th>
+								<th>Description</th>
+								<th>Date of Creation</th>
 								<th>Edit / Delete</th>
 							</tr>
 						</thead>
@@ -34,17 +38,21 @@
 							
 								?>
 								<tr>
-								<td><?php echo $value->ADM_ID; ?></td>
-								<td><?php echo $value->ADM_NAME; ?></td>
-						
-								<td><?php echo $value->ADM_LVL ?></td>
+								<td><?php echo $value->USE_ID; ?></td>
+								<td><?php echo $value->USE_TYPE; ?></td>
+								<td><?php echo $value->USE_MAIL; ?></td>
+								<td><?php echo $value->USE_LASTNAME; ?></td>
+								<td><?php echo $value->USE_FIRSTNAME; ?></td>
+								<td><?php echo $value->USE_BIRTHDAY; ?></td>
+								<td><?php echo $value->USE_DESCR; ?></td>
+								<td><?php echo $value->USE_DATE_CREA ?></td>
 								<?php
-								if(($value->ADM_LVL == $_SESSION['User']->ADM_LVL) or ($_SESSION['User']->ADM_LVL > 3))
+								if($_SESSION['User']->ADM_LVL > 3)
 								{
 									?>
 										<td>
-											<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->ADM_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
-											<a id="delete" href="index.php?module=index&action=deladmin&del=<?php echo $value->ADM_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+											<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->BOOKS_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
+											<a id="delete" href="index.php?module=index&action=deladmin&del=<?php echo $value->BOOKS_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
 										</td>
 								</tr>
 									<?php
@@ -60,39 +68,24 @@
 		    <div role="tabpanel" class="tab-pane" id="profile">
 		    	<div class="col-md-4">
 				    <form role="form" name="add_admin_form" action="index.php?module=index&action=index" method="post">
-						<div class="form-group">
-							<label for="Name">Nom d'utilisateur</label>
+				    	<div class="form-group">
+							<label for="Name">User ID</label>
 							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+							<label for="Name">Book Title</label>
+							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
 						</div>
-						<?php
-						if($_SESSION['User']->ADM_LVL > 3)
-								{
-									?>
 						<div class="form-group">
-							<label>Niveau d'administration</label><br/>
-							<label class="checkbox-inline">
-							  	<input type="checkbox" name="lvl" value="1"> 1
-							</label>
-							<label class="checkbox-inline">
-							  	<input type="checkbox" name="lvl" value="2"> 2
-							</label>
-							<label class="checkbox-inline">
-							  	<input type="checkbox" name="lvl" value="3"> 3
-							</label>
-							<label class="checkbox-inline">
-							  	<input type="checkbox" name="lvl" value="4"> 4
-							</label>
-							<label class="checkbox-inline">
-							  	<input type="checkbox" name="lvl" value="5"> 5
-							</label>
+						    <label for="exampleInputEmail1">Book Description</label>
+						    <textarea class="form-control" rows="3"></textarea>
 						</div>
-						<?php
-							}
-						?>
+						<div class="form-group">
+						    <label for="exampleInputFile">File input</label>
+						    <input type="file" id="exampleInputFile">
+						    <p class="help-block">Example block-level help text here.</p>
+						</div>
+	
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 		    	</div>
@@ -106,12 +99,12 @@ foreach($list as $key=>$value)
 {
 ?>
 <!-- Modal -->
-<div class="modal fade" id="myModal<?php echo $value->ADM_ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal<?php echo $value->BOOKS_ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">Edit admin n°<?php echo $value->ADM_ID; ?></h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Books n°<?php echo $value->BOOKS_ID; ?></h4>
 			</div>
 			<div class="modal-body">
 				<form role="form" name="edit_admin_form" action="index.php?module=index&action=index" method="post">

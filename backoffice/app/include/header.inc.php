@@ -40,16 +40,15 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
          <ul class="nav nav-sidebar">
-            <li><a href="index.php?module=index&action=index">Liste d'admin</a></li>
+            <li><a href="index.php?module=index&action=index">Admin List</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-          	<li><a href="">Lien 1</a></li>
-          	<li><a href="">Liste des utilisateurs</a></li>
-          	<li><a href="index.php?module=books&action=books">Liste des carnets de voyage</a></li>
-          	<li><a href="index.php?module=parcours&action=parcours">Liste des parcours</a></li>
-          	
+          	<li><a href="index.php?module=users&action=users">User List</a></li>
+          	<li><a href="index.php?module=books&action=books">Travel Book</a></li>
+          	<li><a href="index.php?module=parcours&action=parcours">Travel Parcours</a></li>
+          	<li><a href="">Advertissing List</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="index.php?module=login&action=logout">Se déconnecter</a></li>
+            <li><a href="index.php?module=login&action=logout">Log off</a></li>
           </ul>
         </div>

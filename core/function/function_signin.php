@@ -46,7 +46,7 @@
 			if(count($data_user) >= 1)
 			{
 				$_SESSION["User"] = current($data_user);
-				$userstatus = true;
+				$_SESSION[$userstatus] = true;
 				if (isset($_POST['relog']))
 				{
 					if(!setcookie($suffix."Login", $login,time()+3600*24*31))

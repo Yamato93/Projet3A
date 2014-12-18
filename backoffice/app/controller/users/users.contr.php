@@ -6,9 +6,9 @@ include_once("../../core/function/function_select_everything.php");
 include_once("../app/model/index/addadmin.model.php");
 
 
-$list = select_everything($connect, BASE, "DT_ROUTE", "ROUTE_ID", "ASC", $limit = null, $offset = null);
+$list = select_everything($connect, BASE, "DT_USERS", "USE_ID", "ASC", $limit = null, $offset = null);
 
-include_once("../app/view/parcours/parcours.view.php");
+include_once("../app/view/users/users.view.php");
 }
 else
 {
