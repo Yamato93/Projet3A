@@ -1,7 +1,7 @@
 <?php include_once("../app/include/header.inc.php"); ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	<h1 class="page-header">Admin user</h1>
+	<h1 class="page-header">User List</h1>
 	<div class="row placeholders">
 	
 	</div>
@@ -9,7 +9,14 @@
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Add book</a></li>
+			<?php
+			if($_SESSION['User']->ADM_LVL > 4)
+			{
+			?>
+			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Add users</a></li>
+			<?php
+			}
+			?>
 		</ul>
 	
 		<!-- Tab panes -->
@@ -47,12 +54,12 @@
 								<td><?php echo $value->USE_DESCR; ?></td>
 								<td><?php echo $value->USE_DATE_CREA ?></td>
 								<?php
-								if($_SESSION['User']->ADM_LVL > 3)
+								if($_SESSION['User']->ADM_LVL > 4)
 								{
 									?>
 										<td>
-											<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->BOOKS_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
-											<a id="delete" href="index.php?module=index&action=deladmin&del=<?php echo $value->BOOKS_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+											<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
+											<a id="delete" href="index.php?module=index&action=deladmin&del=<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
 										</td>
 								</tr>
 									<?php
@@ -99,7 +106,7 @@ foreach($list as $key=>$value)
 {
 ?>
 <!-- Modal -->
-<div class="modal fade" id="myModal<?php echo $value->BOOKS_ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal<?php echo $value->USE_ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content">
 			<div class="modal-header">

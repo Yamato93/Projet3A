@@ -104,6 +104,7 @@
 <?php
 foreach($list as $key=>$value)
 {
+$_SESSION['listadmin'] = $list;
 ?>
 <!-- Modal -->
 <div class="modal fade" id="myModal<?php echo $value->ADM_ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -113,8 +114,9 @@ foreach($list as $key=>$value)
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h4 class="modal-title" id="myModalLabel">Edit admin n°<?php echo $value->ADM_ID; ?></h4>
 			</div>
+			<form role="form" name="edit_admin_form" action="index.php?module=index&action=editadmin&id=<?php echo $value->ADM_ID; ?>" method="post">
 			<div class="modal-body">
-				<form role="form" name="edit_admin_form" action="index.php?module=index&action=index" method="post">
+				
 					<div class="form-group">
 						<label for="Name">Nom d'utilisateur</label>
 						<input type="text" class="form-control" id="name" name="name" value="<?php echo $value->ADM_NAME; ?>">
@@ -122,7 +124,7 @@ foreach($list as $key=>$value)
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="pwd" name="pwd" placeholder="New Password" value="value="<?php echo $value->ADM_PASSWORD; ?>"">
+						<input type="password" class="form-control" id="pwd" name="pwd" placeholder="New Password" value="<?php echo $value->ADM_PASSWORD; ?>">
 					</div>
 					<?php
 					if($_SESSION['User']->ADM_LVL > 3)
@@ -144,12 +146,12 @@ foreach($list as $key=>$value)
 					<?php
 						}
 					?>
-				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				<button type="submit" class="btn btn-primary">Save changes</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
