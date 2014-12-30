@@ -18,11 +18,37 @@
 	*********************/
 	define('PREFIX_BASE', "");
 	
-	/*********************
+	$server_name = explode ( "/" , $_SERVER['REQUEST_URI']);
+	$server_name = $server_name[1];
+	if (($_SERVER["HTTP_HOST"] == "localhost:8888") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+	{
+		/*********************
 	BDD name
 	*********************/
 	define('BASE', "khauv");
-	
+	}
+	else if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+	{
+		/*********************
+	BDD name
+	*********************/
+	define('BASE', "khauv");
+	}
+	else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "khauv") )
+	{
+		/*********************
+	BDD name
+	*********************/
+	define('BASE', "khauv");
+	}
+	else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "dupont") )
+	{
+	/*********************
+	BDD name
+	*********************/
+	define('BASE', "dupont");
+	}
+
 	/*********************
 	Name for the site
 	*********************/
