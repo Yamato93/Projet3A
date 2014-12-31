@@ -6,5 +6,3 @@
  *
  * 
  */
-echo('controler books');
-?>

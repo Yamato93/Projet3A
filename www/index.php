@@ -48,5 +48,5 @@
 	{
 		include_once("../app/controller/others/404.view.php");
 	}
-	include_once("../core/function/function_barre_debug.php");
+	include_once("../core/function/function_debug_status.php");
 ?>

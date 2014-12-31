@@ -1,0 +1,203 @@
+@import "base";
+
+.site-header {
+    background-color: #ffffff;
+    text-align: right;
+    
+    .site-logo {
+        float: left;
+        width: 100px;
+        padding: 1em 0 0 1em;
+        @media #{$small}{
+            width: 80px;
+            padding: 0.7em 0 0 0.5em;
+        }
+    }
+    
+    &:after {
+        @include clearfix();
+    }
+
+    .header-nav {
+        margin: 0;
+        padding: 0;
+        float: right;
+        a{
+            color:$darkbluegreen;
+            padding: 1em 1.5em;
+            float: left;
+            height: 16px;
+            border-left: solid 1px #ccc;
+            @include trans(all, 500ms);
+            @media screen and (max-width: 580px){
+                font-size: 0.8em;
+                padding: 1em 1.2em;
+            }
+
+            &:hover{
+                color:#ffffff;
+                background-color: $darkbluegreen;
+            }
+
+            &:nth-child(2){
+                background-color: $bluegreen;
+                color: #ffffff;
+                &:hover{
+                    background-color: $darkbluegreen;
+                }
+            }
+
+            &:nth-child(3){
+                @include trans(background-color, 500ms);
+                background: url(../img/icons/fb.svg) no-repeat center center;
+                background-size: cover;
+                &:hover{
+                    background:$facebook url(../img/icons/fb-hover.svg) no-repeat center center;
+                }
+                @media #{$small}{
+                    display: none;
+                }
+            }
+            &:nth-child(4){
+                @include trans(background-color, 500ms);
+                background: url(../img/icons/twitter.svg) no-repeat center center;
+                background-size: cover;
+                &:hover{
+                    background:$twitter url(../img/icons/twitter-hover.svg) no-repeat center center;
+                }
+                @media #{$small}{
+                    display: none;
+                }
+            }
+            &:last-child{
+                @include trans(background-color, 500ms);
+                background: url(../img/icons/google.svg) no-repeat center center;
+                background-size: cover;
+                &:hover{
+                    background:$google url(../img/icons/google-hover.svg) no-repeat center center;
+                }
+                @media #{$small}{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.site-footer {
+    border-top: solid 1px $default-color;
+    ul{
+        padding: 0;
+        margin: 0;
+        float: right;
+        li{
+            float: left;
+            border-left: solid 1px #ccc;
+            list-style-type: none;
+            a{
+                text-align: center;
+                padding: 1.5em;
+                display: block;
+                color: $darkbluegreen;
+                @include trans(all,500ms);
+                &:hover{
+                    background-color:$darkbluegreen;
+                    color: #ffffff;
+                }
+            }
+            &:nth-child(3){
+                a{
+                    padding: 2em;
+                    @include trans(background-color, 500ms);
+                    background: url(../img/icons/fb.svg) no-repeat center center;
+                    &:hover{
+                        background:$facebook url(../img/icons/fb-hover.svg) no-repeat center center;
+                    }
+                }
+            }
+            &:nth-child(4){
+                a{
+                    padding: 2em;
+                    @include trans(background-color, 500ms);
+                    background: url(../img/icons/twitter.svg) no-repeat center center;
+                    &:hover{
+                        background:$twitter url(../img/icons/twitter-hover.svg) no-repeat center center;
+                    }
+                }
+            }
+            &:last-child{
+                a{
+                    padding: 2em;
+                    @include trans(background-color, 500ms);
+                    background: url(../img/icons/google.svg) no-repeat center center;
+                    &:hover{
+                        background:$google url(../img/icons/google-hover.svg) no-repeat center center;
+                    }
+                }
+            }
+        }
+        @media #{$small}{
+            float: none;
+            li{
+                width: (100%/5);
+                box-sizing:border-box;
+                a{
+                    padding: 1.5em 0;
+                }
+
+                &:first-child{
+                    border-left: none;
+                }
+            }
+        }
+        &:after {
+            @include clearfix();
+        }
+    }
+
+    &:after {
+        @include clearfix();
+    }
+}
+
+.form-div{
+    position: relative;
+    overflow: hidden;
+
+    label{
+        position: absolute;
+        left: 1.5em;
+        top: -1em;
+        opacity: 0;
+        @include trans(all, 500ms);
+        font-size: 1em;
+        &.active{
+            top:0.5em;
+            opacity: 1;
+        }
+    }
+
+    span{
+        &.error{
+            position: absolute;
+            top: 0.5em;
+            right:1em;
+            color: red;
+        }
+    }
+
+    input, textarea{
+        font-size: 0.8em;
+        padding: 2em;
+        resize:none;
+        width: 100%;
+        box-sizing:border-box;
+        outline:none;
+        border:none;
+
+        &:focus +label{
+            top:0.5em;
+            opacity: 1;
+        }
+    }
+}

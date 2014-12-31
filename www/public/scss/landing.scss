@@ -1,0 +1,24 @@
+@import "commons";
+
+#content-maintenance{
+    background:#000000 url(../img/bg_maint.jpg) no-repeat center;
+    background-size:cover;
+    position:relative;
+    height: 100%;
+    .error{
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform:translateY(-50%);
+        -webkit-transform:translateY(-50%);
+        h1,h2,a{
+            margin: 0;
+            padding: 2em 2em;
+            text-decoration: none;
+            color:#ffffff;
+        }
+        a{
+            @include button(#ffffff, $golden);
+        }
+    }
+}
