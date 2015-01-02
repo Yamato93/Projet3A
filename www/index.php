@@ -10,10 +10,7 @@
 	//die();
 	$debug = array();
 	$_SESSION["requetes"] = array();
-	
-	
-	
-	
+
 	$connect = cnx_site_local( 'pdo' );
 	// DOSSIER
 	if(isset($_GET["module"]))

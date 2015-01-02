@@ -71,7 +71,6 @@
                 </ul>
                 <div class="grid">
                     <div class="column-half">
-                    	<img src="<?php echo $_SESSION['Books']['cover_img']['tmp_name'];?>" alt="Home page"/>
                         <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
                     </div>
                     <div class="column-half">
