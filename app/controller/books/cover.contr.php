@@ -30,6 +30,7 @@ if(isset($_POST))
 				$_SESSION['Books']['cover_img'] = $_POST['cover_title'];
 				$_SESSION['Books']['cover_title'] = $_POST['cover_title'];
 				$_SESSION['Books']['cover_descr'] = $_POST['cover_descr'];
+				$_SESSION['Books']['cover_upload'] = '/public/tempo/'.$url.".".$ext_upload; 
 				header("location:index.php?module=books&action=memorie");
 				exit;
 	 		}	
