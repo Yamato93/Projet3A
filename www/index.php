@@ -6,7 +6,8 @@
 	include_once("../app/config/connect.bdd.php");
 	include_once("../core/function/function_start_session.php");
 	my_session_start(SESSION_NAME);
-	
+	//print_r(BASE_DIR);
+	//die();
 	$debug = array();
 	$_SESSION["requetes"] = array();
 	

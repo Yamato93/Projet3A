@@ -69,20 +69,20 @@
                         <span>3</span> Recount your story
                     </li>
                 </ul>
-                <form action="index.php?module=books&action=memorie" class="grid create-cover">
+                <form action="index.php?module=books&action=cover" class="grid create-cover" method="post" enctype="multipart/form-data">
                     <div class="column-half">
                         <img src="public/img/preview.jpg" id="cover-preview" alt="Preview image form empty">
                         <span class="input-file">
-                            <input type="file" id="cover"/>
+                            <input type="file" name="cover_img" id="cover"/>
                         </span>
                     </diV>
                     <div class="column-half">
                         <div class="form-div">
-                            <input type="text" placeholder="Title"/>
+                            <input type="text" name="cover_title" placeholder="Title"/>
                             <label>Title</label>
                         </div>
                         <div class="form-div">
-                            <textarea type="text" placeholder="Description"></textarea>
+                            <textarea type="text" name="cover_descr" placeholder="Description"></textarea>
                             <label>Description</label>
                         </div>
                     </diV>

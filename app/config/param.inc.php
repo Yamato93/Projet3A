@@ -58,6 +58,7 @@
 	SITE URL <?php echo BASE_DIR ?>
 	*********************/
 	define('BASE_DIR',"http://".$_SERVER["HTTP_HOST"].dirname($_SERVER['SCRIPT_NAME']));
+	define('BASE_DIR_TMP', dirname($_SERVER['SCRIPT_FILENAME']));
 	define('BUG_BASE_DIR', "http://".$_SERVER["HTTP_HOST"].dirname(dirname($_SERVER['SCRIPT_NAME'])));
 	/*********************
 	Name for the site

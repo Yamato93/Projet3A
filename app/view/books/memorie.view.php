@@ -71,10 +71,11 @@
                 </ul>
                 <div class="grid">
                     <div class="column-half">
-                        <h2 class="cover-title">The waterfalls of croatia</h2>
+                    	<img src="<?php echo $_SESSION['Books']['cover_img']['tmp_name'];?>" alt="Home page"/>
+                        <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
                     </div>
                     <div class="column-half">
-                        <p>The water fals of croatia The water fals of croatia The water fals of croatiaThe water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia The water fals of croatia</p>
+                        <p><?php echo $_SESSION['Books']['cover_descr'];?></p>
                     </div>
                 </div>
                 <div class="tab-container">
