@@ -336,24 +336,33 @@ img {
             width: 15em;
             height: 15em;
             position: relative; }
-            .cover-container .grid .journal-container .list-item ul li a {
-              padding: 0;
+            .cover-container .grid .journal-container .list-item ul li input[type="file"] {
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              cursor: pointer;
               position: absolute;
               top: 0;
               left: 0;
-              width: inherit;
-              height: inherit;
-              opacity: 0;
+              z-index: 10; }
+            .cover-container .grid .journal-container .list-item ul li::after {
+              content: " + ";
+              color: #c8af76;
+              background-color: rgba(144, 177, 187, 0.7);
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
               transition: all 500ms ease-in-out;
               -webkit-transition: all 500ms ease-in-out;
               -moz-transition: all 500ms ease-in-out;
+              z-index: 9;
               text-align: center;
               font-size: 10em;
-              line-height: 1.5; }
-              .cover-container .grid .journal-container .list-item ul li a:hover {
-                color: #c8af76;
-                background-color: rgba(144, 177, 187, 0.7); }
-            .cover-container .grid .journal-container .list-item ul li:hover a {
+              line-height: 1.5;
+              opacity: 0; }
+            .cover-container .grid .journal-container .list-item ul li:hover::after {
               opacity: 1; }
           .cover-container .grid .journal-container .list-item ul::after {
             display: block;

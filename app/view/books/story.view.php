@@ -77,36 +77,36 @@
                     <div class="list-item">
                         <ul>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                             <li>
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
+                                <input type="file" class="addFile"/>
                             </li>
                         </ul>
                     </div>
@@ -137,6 +137,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/story-script.js"></script>
         <!-- END SCRIPTS -->
     </body>
 </html>
