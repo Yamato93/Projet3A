@@ -70,7 +70,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
-        <script src="js/script-cover.js"></script>
+        <script src="public/js/script-cover.js"></script>
         <!-- END SCRIPTS -->
     </body>
 </html>
