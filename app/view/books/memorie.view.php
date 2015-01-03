@@ -70,7 +70,7 @@
                     </li>
                 </ul>
                 <div class="grid">
-                    <div class="column-half" style="background-image:url(<?php echo $_SESSION['Books']['cover_img']['tmp_name'];?>)">
+                    <div class="column-half" style="background-image:url(<?php echo BASE_DIR.$_SESSION['Books']['cover_upload'];?>); background-size: cover;">
                         <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
                     </div>
                     <div class="column-half">

@@ -1,6 +1,6 @@
 <div class="site-header">
     <div class="site-logo">
-        <a href="/">
+        <a href="index.php">
             <img src="public/img/logo.svg" alt="Discover It" />
         </a>
     </div>
