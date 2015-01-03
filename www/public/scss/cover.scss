@@ -39,6 +39,7 @@
                 }
                 @media #{$small}{
                     font-size: 0.6em;
+                    padding: 1em 0;
                 }
             }
             &.active{
@@ -58,51 +59,106 @@
     }
 
     .journal-container{
+        padding: 0.5em;
         h1{
             color:$darkbluegreen;
+            @media #{$small}{
+                font-size:1.5em;
+            }
         }
         .breadcrumb{
+            list-style:none;
             padding: 0;
-            margin:2em 0;
+            margin: 1em 0;
+            counter-reset: part;
+
             li{
-                list-style-type: none;
-                float: left;
                 width: (100%/3);
+                float: left;
+                cursor: default;
                 text-align: center;
-                padding: 1em;
-                background-color: #ffffff;
                 box-sizing:border-box;
-                color: $bluegreen;
-                font-style: italic;
+                position: relative;
+                padding: 1em 1em;
+                background-color: #cccccc;
+                color:#ffffff;
 
                 span{
-                    border: solid 1px $bluegreen;
-                    border-radius: 50%;
-                    padding: 0.5em;
-                }
-
-                &:hover{
-                    background-color:$golden;
-                    color: #ffffff;
-                    span{
-                        border-color:#ffffff;
+                    &::before{
+                        width:1em;
+                        counter-increment: part;
+                        content: counter(part)" | ";
                     }
                 }
 
+                &::after, &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    border: 0 solid #cccccc;
+                    border-width: 1.5em 1em;
+                    width: 0;
+                    height: 0;
+                }
+
                 &.active{
-                    background-color:$golden;
-                    color: #ffffff;
-                    span{
-                        border-color:#ffffff;
+                    background-color: $golden;
+                }
+
+                &:first-child{
+                    &::before{
+                        border:none;
+                    }
+
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: $golden;
                     }
                 }
 
                 &:nth-child(2){
-                    border-left: solid 0.5em lighten($bluegreen, 40%);
-                    border-right: solid 0.5em lighten($bluegreen, 40%);
+                    &::before{
+                        left: -25px;
+                        border-left-color: transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: #cccccc;
+                    }
+                }
+                &:last-child{
+                    margin: 0;
+                    &::after{
+                        border:none;
+                    }
+
+                    &::before{
+                        left: -25px;
+                        border-left-color: transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                }
+                &:hover{
+                    background-color: $golden;
+                    &::after{
+                        border-left-color:$golden;
+                    }
+                    &::before{
+                        border-color:$golden;
+                        border-left-color:transparent;
+                    }
+                }
+                @media #{$small}{
+                    font-size: 0.6em;
                 }
             }
-
             &::after{
                 @include clearfix();
             }
@@ -115,9 +171,8 @@
             }
 
             span.input-file{
-                padding: 0.5em;
                 position: absolute;
-                right: 1em;
+                left: 1em;
                 top: 1em;
                 width: 50px;
                 height: 50px;
@@ -129,11 +184,6 @@
                     height: 100%;
                     opacity: 0;
                     cursor: pointer;
-                }
-
-                @media #{$medium}{
-                    top:5em;
-                    right: 5em;
                 }
             }
 
@@ -154,6 +204,7 @@
             text-align: center;
             padding-bottom:5em; 
             input[type="submit"]{
+                outline: none;
                 margin-top: 2em;
                 font-size: 1em;
                 @include button(#ffffff, $golden);

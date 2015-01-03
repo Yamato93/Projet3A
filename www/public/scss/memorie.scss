@@ -20,14 +20,26 @@
                 color:#ffffff;
                 padding: 1em;
                 span{
-                    width: 2em;
-                    height: 2em;
+                    width: 1.4em;
+                    height: 1.4em;
                     display: inline-block;
                     vertical-align: middle;
                     margin: 0 0.5em;
                     img{
                         height: 100%;
                     }
+
+                    @media screen and (max-width: 870px){
+                        margin:0 auto 0.2em auto;
+                        display:block;
+                    }
+                }
+                @media #{$medium}{
+                    font-size: 0.8em;
+                }
+                @media #{$small}{
+                    font-size: 0.6em;
+                    padding: 1em 0;
                 }
             }
             &.active{
@@ -52,55 +64,105 @@
             color:$darkbluegreen;
         }
         .breadcrumb{
+            list-style:none;
             padding: 0;
-            margin:2em 0;
+            margin: 1em 0;
+            counter-reset: part;
+
             li{
-                list-style-type: none;
-                float: left;
                 width: (100%/3);
+                float: left;
+                cursor: default;
                 text-align: center;
-                padding: 1em;
-                background-color: #ffffff;
                 box-sizing:border-box;
-                color: $bluegreen;
-                font-style: italic;
+                position: relative;
+                padding: 1em 1em;
+                background-color: #cccccc;
+                color:#ffffff;
 
                 span{
-                    border: solid 1px $bluegreen;
-                    border-radius: 50%;
-                    padding: 0.5em;
-                }
-
-                &:hover{
-                    background-color:$golden;
-                    color: #ffffff;
-                    span{
-                        border-color:#ffffff;
+                    &::before{
+                        width:1em;
+                        counter-increment: part;
+                        content: counter(part)" | ";
                     }
                 }
 
+                &::after, &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    border: 0 solid #cccccc;
+                    border-width: 1.5em 1em;
+                    width: 0;
+                    height: 0;
+                }
+
                 &.active{
-                    background-color:$golden;
-                    color: #ffffff;
-                    span{
-                        border-color:#ffffff;
+                    background-color: $golden;
+                }
+
+                &:first-child{
+                    &::before{
+                        border:none;
+                    }
+
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: $golden;
                     }
                 }
 
                 &:nth-child(2){
-                    border-left: solid 0.5em lighten($bluegreen, 40%);
-                    border-right: solid 0.5em lighten($bluegreen, 40%);
+                    &::before{
+                        left: -25px;
+                        border-color:$golden;
+                        border-left-color:transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: #cccccc;
+                    }
+                }
+                &:last-child{
+                    margin: 0;
+                    &::after{
+                        border:none;
+                    }
+
+                    &::before{
+                        left: -25px;
+                        border-left-color: transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                }
+                &:hover{
+                    background-color: $golden;
+                    &::after{
+                        border-left-color:$golden;
+                    }
+                    &::before{
+                        border-color:$golden;
+                        border-left-color:transparent;
+                    }
+                }
+                @media #{$small}{
+                    font-size: 0.6em;
                 }
             }
-
             &::after{
                 @include clearfix();
             }
         }
-
         .grid{
             .column-half{
-                height: 15em;
                 position: relative;
                 border: solid 0.5em lighten($bluegreen, 40%);
 
@@ -110,6 +172,7 @@
                     bottom: 5%;
                     left: 50%;
                     transform:translateX(-50%);
+                    -webkit-transform:translateX(-50%);
                     background-color: #ffffff;
                     padding: 0.5em;
                     text-align: center;
@@ -121,15 +184,24 @@
                         p{
                         margin: 0;
                         line-height: 1.2;
-                        height: 15em;
                     }
                 }
 
                 &:first-child{
                     background:#ffffff url(../img/preview.jpg) no-repeat center center;
+                    background-size: cover;
+                    height: 15em;
                 }
                 &:last-child{
                     padding: 0.8em;
+                }
+                @media #{$medium}{
+                    float: none;
+                    width: 100%;
+
+                    .cover-title{
+                        width: 80%;
+                    }
                 }
             }
         }
@@ -209,7 +281,14 @@
                 &.active{
                     display: block;
                 }
+                &:last-child{
+                    height: 30em;
+                }
             }
         }
     }
+}
+
+#map img{
+    max-width: none;
 }
