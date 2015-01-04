@@ -290,7 +290,8 @@ img {
       content: "";
       clear: both; }
   .cover-container .journal-container {
-    padding: 2em 0; }
+    padding: 2em 0;
+    text-align: center; }
     .cover-container .journal-container h1 {
       color: #3f5158; }
     .cover-container .journal-container .breadcrumb {
@@ -395,7 +396,7 @@ img {
           .cover-container .journal-container .grid .column-half .cover-title {
             width: 80%; } }
     .cover-container .journal-container .tab-container {
-      margin-top: 2em; }
+      margin: 2em 0; }
       .cover-container .journal-container .tab-container ul {
         margin: 0;
         padding: 0; }
@@ -457,6 +458,32 @@ img {
           display: block; }
         .cover-container .journal-container .tab-container > div:last-child {
           height: 30em; }
+    .cover-container .journal-container .save-journal {
+      position: relative;
+      padding: 0.8em 1em;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-color: #c8af76;
+      border: none;
+      cursor: pointer;
+      border: solid 1px #c8af76;
+      border-radius: 3px;
+      transition: all 500ms ease-in-out;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      font-size: 1em;
+      padding: 1em 5em;
+      box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5); }
+      .cover-container .journal-container .save-journal:hover {
+        background-color: #b99a52; }
+      .cover-container .journal-container .save-journal:active {
+        top: 5px;
+        box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
+        -webkit-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
+        -moz-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent; }
 
 #map img {
   max-width: none; }

@@ -128,6 +128,7 @@
                     <div id="map" class="tab-content">
                     </div>
                 </div>
+                <button class="save-journal">Save</button>
             </div>
         </div>
         <!-- END CONTENT -->
