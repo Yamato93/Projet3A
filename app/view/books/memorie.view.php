@@ -70,7 +70,7 @@
                     </li>
                 </ul>
                 <div class="grid">
-                    <div class="column-half" style="background-image:url(<?php echo BASE_DIR.$_SESSION['Books']['cover_upload'];?>); background-size: cover;">
+                    <div class="column-half" style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>); background-size: cover;">
                         <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
                     </div>
                     <div class="column-half">
@@ -90,26 +90,29 @@
                         <ul>
                         	<?php
                         		$y = 1;
-                        		$x = 1;
+                        		$x = 0;
                         		while(isset($_SESSION['Books']['Step'.$y]))
                         		{
-                        			while(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+                        			while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
 									{
-										if(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]) and !empty($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+										
+										$x++;
+										if(!empty($_SESSION['Books']['Step'.$y]['step_img'.$x]))
 										{
-											$url = BASE_DIR.$_SESSION['Books']['Step'.$y]['step_img'.$x];
+											
+											$url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
+
 										}
 										else
 										{
 											$url = 'public/img/preview.jpg';
 										}
-										$x++;
 									}
 					
 	                        ?>
 	                        	<li>
                                 	<img src="<?php echo $url; ?>" alt="Preview image form empty">
-									<a href="index.php?module=books&action=story&info=<?php echo $y; ?>"></a>
+									<a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
 								</li>
 	                        <?php
 	                        		$y++;

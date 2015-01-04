@@ -6,7 +6,6 @@ if(isset($_SESSION['Books']['cover_title']) and isset($_SESSION['Books']['cover_
 }
 if(isset($_POST))
 {
-	$tempo_path = BASE_DIR_TMP.'/public/tempo/';
 	//include_once("../model/books/insert_cover.model.php")
 	if(isset($_FILES['cover_img']))
 	{

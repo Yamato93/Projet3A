@@ -56,7 +56,8 @@
                     </a>
                 </li>
             </ul>
-            <form action="index.php?module=books&action=story" class="grid" method="post" enctype="multipart/form-data">
+
+            <form action="index.php?module=books&action=storyedit&editinfo=<?php echo $id; ?>" class="grid" method="post" enctype="multipart/form-data">
                 <div class="column-twothirds journal-container">
                     <h1>Let's the journey begin</h1>
                     <ul class="breadcrumb">
@@ -71,44 +72,31 @@
                         </li>
                     </ul>
                     <div class="form-div">
-                        <textarea name="story" placeholder="Write your story"></textarea>
+                        <textarea name="story" placeholder="Write your story" value="<?php echo $infostory['content'] ?>"><?php echo $infostory['content'] ?></textarea>
                         <label>Your story</label>
                     </div>
                     <div class="list-item">
                         <ul>
-                            <li>
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img1" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img2" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img3" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img4" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img5" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img6" class="addFile"/>
-                            </li>				   
-                            <li>				   
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img7" class="addFile"/>
-                            </li>				   
-                            <li>
-                                <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img8"class="addFile"/>
-                            </li>
-                        </ul>
+                        	<?php 
+                        		for ($i = 1; $i <= 8; $i++) 
+                        		{
+                        			if(!isset($infostory['step_img'.$i]))
+                        			{
+	                        			$url = 'public/img/preview.jpg';
+                        			}
+                        			else
+                        			{
+	                        			$url = $infostory['step_img'.$i];
+                        			}
+							?>
+                        			<li>
+			                        	<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
+			                            <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
+			                        </li>		
+                        	<?php
+                        		}
+                        	?>
+						</ul>
                     </div>
                     <input type="submit" value="Validate my memorie"/>
                 </div>
@@ -118,11 +106,11 @@
                         <img src="<?php echo $_SESSION['Books']['cover_upload'];?>" alt="Preview image"/>
                     </div>
                     <div class="form-div">
-                        <input type="text" name="start-date" placeholder="Date of arrival"/>
+                        <input type="text" name="start-date" placeholder="Date of arrival" value="<?php echo $infostory['start-date'] ?>"/>
                         <label>Date of arrival</label>
                     </div>
                     <div class="form-div">
-                        <input type="text" name="end-date"placeholder="Stop date"/>
+                        <input type="text" name="end-date"placeholder="Stop date" value="<?php echo $infostory['end-date'] ?>"/>
                         <label>Stop date</label>
                     </div>
                     <div class="googleMap"></div>
