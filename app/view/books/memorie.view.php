@@ -88,6 +88,34 @@
                     </ul>
                     <div id="memories" class="tab-content active">
                         <ul>
+                        	<?php
+                        		$y = 1;
+                        		$x = 1;
+                        		while(isset($_SESSION['Books']['Step'.$y]))
+                        		{
+                        			while(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+									{
+										if(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]) and !empty($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+										{
+											$url = BASE_DIR.$_SESSION['Books']['Step'.$y]['step_img'.$x];
+										}
+										else
+										{
+											$url = 'public/img/preview.jpg';
+										}
+										$x++;
+									}
+					
+	                        ?>
+	                        	<li>
+                                	<img src="<?php echo $url; ?>" alt="Preview image form empty">
+									<a href="index.php?module=books&action=story&info=<?php echo $y; ?>"></a>
+								</li>
+	                        <?php
+	                        		$y++;
+	               
+                        		}
+                        	?>
                             <li>
                                 <img src="public/img/preview.jpg" alt="Preview image form empty">
                                 <a href="index.php?module=books&action=story">+</a>

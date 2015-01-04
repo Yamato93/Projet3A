@@ -1,6 +1,6 @@
 <?php
 
-function upload($fichiers)
+function upload($fichiers, $infosession, $infosession2, $infosession3 = null)
 {
 			//********************************
 			//Gestion de la taille des fichier
@@ -65,8 +65,15 @@ function upload($fichiers)
 			ImageJPEG($thumb, "public/images/".$url.".".$ext_upload);
 			//chmod ("fichiers/".$url.".jpg", 0644);
 			imagedestroy($image);
-			$photo_repas = "/public/images/".$url.".".$ext_upload;
-			$_SESSION['BACKOFFICE'][$fichiers]=$photo_repas;
+			$upload = "/public/images/".$url.".".$ext_upload;
+			if($infosession3 != null)
+			{
+				$_SESSION[$infosession][$infosession2][$infosession3] = $upload;
+			}
+			else
+			{
+				$_SESSION[$infosession][$infosession2] = $upload;
+			}
 			
 			//echo $avatar_files;
 			//$user_name = $_SESSION["User"]->USE_USERNAME;
