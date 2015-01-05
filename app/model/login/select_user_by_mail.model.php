@@ -9,10 +9,18 @@ function select_user_by_mail($connect, $mail)
 							
 		$curseur = $connect->prepare($query); 
 		$curseur ->bindValue(':mail', $mail, PDO::PARAM_STR);
-		$retour = $curseur->execute();
+		$curseur->execute();
 		$data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
 		$curseur->closeCursor();
-		return $retour;
+		if(count($data_user) >= 1)
+		{
+			// si il y a un user
+		}
+		else
+		{
+			// si il y a pas d'user
+		}
+	
 	}
 			
 	catch ( Exception $e ) 
