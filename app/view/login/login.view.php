@@ -28,7 +28,7 @@
                     <div class="form-container">
                         <form id="login" method="post" action="" class="tab-content active">
                             <div class="form-div">
-                                <input type="text" name="mail" placeholder="Email"/>
+                                <input type="email" name="mail" placeholder="Email"/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">
@@ -40,7 +40,7 @@
                         </form>
                         <form id="register" method="post" action="" class="tab-content">
                             <div class="form-div">
-                                <input type="text" name="mail" placeholder="Email"/>
+                                <input type="email" name="mail" placeholder="Email"/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">

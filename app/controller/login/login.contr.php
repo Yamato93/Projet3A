@@ -5,17 +5,20 @@ if(isset($_POST['type']))
 	{
 		if (isset($_POST['mail']) && isset($_POST['password'])) {
 			
-				if (!empty($_POST['mail']) && !empty($_POST['password'])) {
-					$mail = $_POST['mail'];
-					$password = md5($_POST['password']);
-					include_once '../app/model/login/select_user_by_mail_password.model.php';
-					if (select_user_by_mail_password($connect, $mail, $password)) {
-						echo "user trouvé";
-					}
+			if (!empty($_POST['mail']) && !empty($_POST['password'])) {
+				$mail = $_POST['mail'];
+				$password = md5($_POST['password']);
+				include_once '../app/model/login/select_user_by_mail_password.model.php';
+				if ($user = select_user_by_mail_password($connect, $mail, $password)) {
+					$_SESSION['USER'] = $user;
 				}
 				else{
-					die('mail and/or password empty');
+					die('mail and/or password no match');
 				}
+			}
+			else{
+				die('mail and/or password empty');
+			}
 		}
 	}
 }
@@ -28,24 +31,30 @@ if(isset($_POST['type']))
 				$mail = $_POST['mail'];
 				$password = $_POST['password'];
 				$passwordconfirm = $_POST['passwordconfirm'];
-		
-				if ($passwordconfirm == $password) {
-					include_once '../app/model/login/insert_new_user.model.php';
-		
-					$password = md5($password);
-					if(insert_new_user($connect, $mail, $password))
-					{
-						//header(string);
-						die('sign in Ok !');
+				include_once '../app/model/login/select_user_by_mail.model.php';
+				//test if mail is already exist
+				if (select_user_by_mail($connect, $mail)) {
+					if ($passwordconfirm == $password) {
+						include_once '../app/model/login/insert_new_user.model.php';
+			
+						$password = md5($password);
+						if(insert_new_user($connect, $mail, $password))
+						{
+							//header(string);
+							die('sign in Ok !');
+						}
+						else
+						{
+							die('erreur lors de l\'enregistrement');
+						}
 					}
-					else
+					else 
 					{
-						die('erreur lors de l\'enregistrement');
+						die('password is different of the confirmation');
 					}
 				}
-				else 
-				{
-					die('password is different of the confirmation');
+				else{
+					die('Mail is already use for a user');
 				}
 			}
 			else{

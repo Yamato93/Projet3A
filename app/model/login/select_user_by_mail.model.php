@@ -14,11 +14,11 @@ function select_user_by_mail($connect, $mail)
 		$curseur->closeCursor();
 		if(count($data_user) >= 1)
 		{
-			// si il y a un user
+			return false;
 		}
 		else
 		{
-			// si il y a pas d'user
+			return true;
 		}
 	
 	}

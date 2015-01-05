@@ -11,9 +11,10 @@ function select_user_by_mail_password($connect, $mail, $password)
 		$curseur = $connect->prepare($query); 
 		$curseur ->bindValue(':mail', $mail, PDO::PARAM_STR);
 		$curseur ->bindValue(':password', $password, PDO::PARAM_STR);
-		$retour = $curseur->execute();
+		$curseur->execute();
+		$data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
 		$curseur->closeCursor();
-		return $retour;
+		return $data_user;
 	}
 			
 	catch ( Exception $e ) 
