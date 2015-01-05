@@ -1,2 +1,3 @@
 app/config/connect.bdd.php
 *.scssc
+www/public/.sass-cache/*

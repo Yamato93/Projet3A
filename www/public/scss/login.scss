@@ -8,7 +8,6 @@
 
     .connexion-content{
         background-color: #ffffff;
-        width: 80%;
         margin: auto;
 
         ul{
@@ -44,6 +43,7 @@
         }
 
         .connexion-form{
+            position: relative;
             > div{
                 width: 50%;
                 box-sizing:border-box;
@@ -66,26 +66,37 @@
                         display: block;
                     }
                 }
+
+                @media #{$medium}{
+                    width: 100%;
+                    float: none;
+                }
             }
 
             .social-container{
-                .social-content{
-                    text-align: center;
-                    padding-top: 100px;
-
-                    a{
-                        display: inline-block; 
-                    }
-                    a:first-child{
-                        @include button(#ffffff,$facebook);
-                        margin-bottom: 20px;
-                    }
-                    a:last-child{
-                        @include button(#ffffff,$google);
-                    }
+                position: absolute;
+                top:50%;
+                right: 0;
+                transform:translateY(-50%);
+                text-align: center;
+                box-sizing:border-box;
+                padding: 1em;
+                a{
+                    display: inline-block; 
                 }
-                &::after{
-                    @include clearfix();
+                a:first-child{
+                    @include button(#ffffff,$facebook);
+                    margin-bottom: 20px;
+                }
+                a:last-child{
+                    @include button(#ffffff,$google);
+                }
+
+                @media #{$medium}{
+                    width: 100%;
+                    float: none;
+                    position: initial;
+                    transform:translateY(0);
                 }
             }
 
@@ -93,5 +104,8 @@
                 @include clearfix();
             }
         }
+    }
+    @media #{$medium}{
+        padding: 6em 2em;
     }
 }

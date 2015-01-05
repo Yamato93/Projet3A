@@ -28,11 +28,11 @@
                     <div class="form-container">
                         <form id="login" method="post" action="" class="tab-content active">
                             <div class="form-div">
-                                <input type="email" name="mail" placeholder="Email"/>
+                                <input type="email" name="mail" placeholder="Email" required/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" name="password" placeholder="Password"/>
+                                <input type="password" name="password" placeholder="Password" required/>
                                 <label>Password</label>
                             </div>
                             <input type="hidden" name="type" value="login">
@@ -40,15 +40,15 @@
                         </form>
                         <form id="register" method="post" action="" class="tab-content">
                             <div class="form-div">
-                                <input type="email" name="mail" placeholder="Email"/>
+                                <input type="email" name="mail" placeholder="Email" required/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" name="password" placeholder="Password"/>
+                                <input type="password" name="password" placeholder="Password" required/>
                                 <label>Password</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" name="passwordconfirm" placeholder="Confirm password"/>
+                                <input type="password" name="passwordconfirm" placeholder="Confirm password" required/>
                                 <label>Confirm the password</label>
                             </div>
                             <input type="hidden" name="type" value="register">
@@ -56,10 +56,8 @@
                         </form>
                     </div>
                     <div class="social-container">
-                        <div class="social-content">
-                            <a href="landing.html">Connexion avec Facebook</a>
-                            <a href="landing.html">Connexion avec Google +</a>
-                        </div>
+                        <a href="landing.html">Connexion avec Facebook</a>
+                        <a href="landing.html">Connexion avec Google +</a>
                     </div>
                 </div>
             </div>
