@@ -1,18 +1,16 @@
 <?php
 
-function insert_new_user($connect, $mail, $password)
+function select_user_by_mail($connect, $mail)
 {
 	try
 	{
-		$query ="INSERT INTO DT_USERS
-				(USE_MAIL, USE_PASSWORD, USE_TYPE)
-			VALUE
-				(:mail, :password, 1)";
+		$query ="SELECT * FROM DT_USERS
+				WHERE USE_MAIL = :mail";
 							
 		$curseur = $connect->prepare($query); 
 		$curseur ->bindValue(':mail', $mail, PDO::PARAM_STR);
-		$curseur ->bindValue(':password', $password, PDO::PARAM_STR);
 		$retour = $curseur->execute();
+		$data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
 		$curseur->closeCursor();
 		return $retour;
 	}
