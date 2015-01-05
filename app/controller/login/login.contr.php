@@ -1,7 +1,5 @@
 <?php
-include_once("../../config/connect.bdd.php");
-	include_once("../../config/param.inc.php");
-if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['password'])) {
+if ($_POST['type']=='login' && isset($_POST['mail']) && isset($_POST['password'])) {
 	if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 		$mail = $_POST['mail'];
 		$password = md5($_POST['password']);
@@ -15,7 +13,7 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['password'])
 	}
 }
 
-if (isset($_POST['register']) && isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['passwordconfirm'])){
+if ($_POST['type']=='register' && isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['passwordconfirm'])){
 	if (!empty($_POST['mail']) && !empty($_POST['password']) && !empty($_POST['passwordconfirm']) ) {
 		$mail = $_POST['mail'];
 		$password = $_POST['password'];

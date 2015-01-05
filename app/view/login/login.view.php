@@ -35,7 +35,7 @@
                                 <input type="password" name="password" placeholder="Password"/>
                                 <label>Password</label>
                             </div>
-                            <input type="hidden" value="login">
+                            <input type="hidden" name="type" value="login">
                             <input type="submit" value="Go"/>
                         </form>
                         <form id="register" method="post" action="" class="tab-content">
@@ -51,7 +51,7 @@
                                 <input type="password" name="passwordconfirm" placeholder="Confirm password"/>
                                 <label>Confirm the password</label>
                             </div>
-                            <input type="hidden" value="register">
+                            <input type="hidden" name="type" value="register">
                             <input type="submit" value="Go"/>
                         </form>
                     </div>
