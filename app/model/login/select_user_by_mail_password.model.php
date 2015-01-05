@@ -1,13 +1,12 @@
 <?php
 
-function insert_new_user($connect, $mail, $password)
+function select_user_by_mail_password($connect, $mail, $password)
 {
 	try
 	{
-		$query ="INSERT INTO DT_USERS
-							(USE_MAIL, USE_PASSWORD)
-						VALUE
-							(:mail, :password)";
+		$query ="SELECT * FROM DT_USERS
+				WHERE USE_MAIL = :mail
+				AND USE_PASSWORD = :password";
 							
 		$curseur = $connect->prepare($query); 
 		$curseur ->bindValue(':mail', $nom, PDO::PARAM_STR);

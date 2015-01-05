@@ -2,11 +2,10 @@
 if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['password'])) {
 	if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 		$mail = $_POST['mail'];
-		$password = $_POST['password'];
-		include_once '../model/select_user_by_mail_password.model.php';
+		$password = md5($_POST['password']);
+		include_once '../model/login/select_user_by_mail_password.model.php';
 		if (select_user_by_mail_password($connect, $mail, $password)) {
-			
-			//header(string);
+			echo "user trouvé";
 		}
 	}
 	else{
@@ -19,13 +18,19 @@ if (isset($_POST['register']) && isset($_POST['mail']) && isset($_POST['password
 		$mail = $_POST['mail'];
 		$password = $_POST['password'];
 		$passwordconfirm = $_POST['passwordconfirm'];
+<<<<<<< Updated upstream
 		if ($passwordconfirm == $password) 
 		{
 			include_once '../model/insert_new_user.model.php';
+=======
+		if ($passwordconfirm == $password) {
+			include_once '../model/login/insert_new_user.model.php';
+>>>>>>> Stashed changes
 			$password = md5($password);
 			if(insert_new_user($connect, $mail, $password))
 			{
 				//header(string);
+				echo "nouvel user enregistré";
 			}
 			else
 			{
