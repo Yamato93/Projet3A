@@ -5,8 +5,23 @@
         </a>
     </div>
     <nav class="header-nav">
-        <a href="index.php?module=login&action=login" onClick="ga('send','event','link','click','Sign log');">Connexion</a>
-        <a href="landing.html" onClick="ga('send','event','link','click','pro button');">Are you a pro ?</a>
+    <?php
+    	if(isset($_SESSION['User']))
+    	{
+    ?>		
+    		 <a style='background-color:white;'>Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
+	    	 <a href="index.php?module=login&action=logout">Log off</a>
+	<?php
+    	}
+    	else
+    	{
+	?>
+			<a href="index.php?module=login&action=login" onClick="ga('send','event','link','click','Sign log');">Connexion</a>
+			<a href="landing.html" onClick="ga('send','event','link','click','pro button');">Are you a pro ?</a>
+	<?php
+    	}
+    ?>
+       
         <a href="https://www.facebook.com/discover.fr" target="_blank"></a>
         <a href="https://twitter.com/DiscoverIt_fr" target="_blank"></a>
         <a href="https://plus.google.com/115867732065766652271" target="_blank"></a>

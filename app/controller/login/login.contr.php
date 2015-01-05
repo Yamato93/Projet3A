@@ -10,7 +10,18 @@ if(isset($_POST['type']))
 				$password = md5($_POST['password']);
 				include_once '../app/model/login/select_user_by_mail_password.model.php';
 				if ($user = select_user_by_mail_password($connect, $mail, $password)) {
-					$_SESSION['USER'] = $user;
+					$_SESSION["User"] = current($user);
+					if(!isset($_SESSION['frombooks']))
+					{
+						header('location:index.php');
+						exit();
+					}
+					else
+					{
+						unset($_SESSION['frombooks']);
+						header('location:index.php?module=books&action=memorie');
+						exit();
+					}
 				}
 				else{
 					die('mail and/or password no match');
