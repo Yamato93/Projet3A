@@ -18,14 +18,10 @@ if (isset($_POST['register']) && isset($_POST['mail']) && isset($_POST['password
 		$mail = $_POST['mail'];
 		$password = $_POST['password'];
 		$passwordconfirm = $_POST['passwordconfirm'];
-<<<<<<< Updated upstream
-		if ($passwordconfirm == $password) 
-		{
-			include_once '../model/insert_new_user.model.php';
-=======
+
 		if ($passwordconfirm == $password) {
 			include_once '../model/login/insert_new_user.model.php';
->>>>>>> Stashed changes
+
 			$password = md5($password);
 			if(insert_new_user($connect, $mail, $password))
 			{
