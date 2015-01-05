@@ -26,30 +26,32 @@
                 </ul>
                 <div class="connexion-form">
                     <div class="form-container">
-                        <form id="login" class="tab-content active">
+                        <form id="login" method="post" action="" class="tab-content active">
                             <div class="form-div">
-                                <input type="text" placeholder="Email"/>
+                                <input type="text" name="mail" placeholder="Email"/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" placeholder="Password"/>
+                                <input type="password" name="password" placeholder="Password"/>
                                 <label>Password</label>
                             </div>
+                            <input type="hidden" value="login">
                             <input type="submit" value="Go"/>
                         </form>
-                        <form id="register" class="tab-content">
+                        <form id="register" method="post" action="" class="tab-content">
                             <div class="form-div">
-                                <input type="text" placeholder="Email"/>
+                                <input type="text" name="mail" placeholder="Email"/>
                                 <label>Email</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" placeholder="Password"/>
+                                <input type="password" name="password" placeholder="Password"/>
                                 <label>Password</label>
                             </div>
                             <div class="form-div">
-                                <input type="password" placeholder="Confirm password"/>
+                                <input type="password" name="passwordconfirm" placeholder="Confirm password"/>
                                 <label>Confirm the password</label>
                             </div>
+                            <input type="hidden" value="register">
                             <input type="submit" value="Go"/>
                         </form>
                     </div>
