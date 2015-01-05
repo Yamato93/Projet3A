@@ -1,4 +1,6 @@
 <?php
+include_once("../../config/connect.bdd.php");
+	include_once("../../config/param.inc.php");
 if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['password'])) {
 	if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 		$mail = $_POST['mail'];
@@ -26,7 +28,7 @@ if (isset($_POST['register']) && isset($_POST['mail']) && isset($_POST['password
 			if(insert_new_user($connect, $mail, $password))
 			{
 				//header(string);
-				echo "nouvel user enregistré";
+				die('sign in Ok !');
 			}
 			else
 			{
@@ -37,6 +39,9 @@ if (isset($_POST['register']) && isset($_POST['mail']) && isset($_POST['password
 		{
 			die('password is different of the confirmation');
 		}
+	}
+	else{
+		die('mail or password are not good ');
 	}
 }
 

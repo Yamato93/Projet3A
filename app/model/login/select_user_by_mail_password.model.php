@@ -9,8 +9,8 @@ function select_user_by_mail_password($connect, $mail, $password)
 				AND USE_PASSWORD = :password";
 							
 		$curseur = $connect->prepare($query); 
-		$curseur ->bindValue(':mail', $nom, PDO::PARAM_STR);
-		$curseur ->bindValue(':password', $mail, PDO::PARAM_STR);
+		$curseur ->bindValue(':mail', $mail, PDO::PARAM_STR);
+		$curseur ->bindValue(':password', $password, PDO::PARAM_STR);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();
 		return $retour;

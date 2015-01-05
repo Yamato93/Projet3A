@@ -5,13 +5,13 @@ function insert_new_user($connect, $mail, $password)
 	try
 	{
 		$query ="INSERT INTO DT_USERS
-							(USE_MAIL, USE_PASSWORD)
-						VALUE
-							(:mail, :password)";
+				(USE_MAIL, USE_PASSWORD)
+			VALUE
+				(:mail, :password)";
 							
 		$curseur = $connect->prepare($query); 
-		$curseur ->bindValue(':mail', $nom, PDO::PARAM_STR);
-		$curseur ->bindValue(':password', $mail, PDO::PARAM_STR);
+		$curseur ->bindValue(':mail', $mail, PDO::PARAM_STR);
+		$curseur ->bindValue(':password', $password, PDO::PARAM_STR);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();
 		return $retour;
