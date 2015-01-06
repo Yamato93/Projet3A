@@ -261,13 +261,24 @@ img {
         color: #ffffff;
         padding: 1em; }
         .cover-container .cover-nav li a span {
-          width: 2em;
-          height: 2em;
+          width: 1.4em;
+          height: 1.4em;
           display: inline-block;
           vertical-align: middle;
           margin: 0 0.5em; }
           .cover-container .cover-nav li a span img {
             height: 100%; }
+          @media screen and (max-width: 870px) {
+            .cover-container .cover-nav li a span {
+              margin: 0 auto 0.2em auto;
+              display: block; } }
+        @media screen and (max-width: 768px) {
+          .cover-container .cover-nav li a {
+            font-size: 0.8em; } }
+        @media screen and (max-width: 480px) {
+          .cover-container .cover-nav li a {
+            font-size: 0.6em;
+            padding: 1em 0; } }
       .cover-container .cover-nav li.active {
         background-color: #57818e;
         border-bottom: solid 3px #43656f; }
@@ -432,6 +443,10 @@ img {
           box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
           -webkit-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
           -moz-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent; }
+      @media screen and (max-width: 768px) {
+        .cover-container .grid .journal-container {
+          width: 100%;
+          padding: 1em; } }
     .cover-container .grid .column-third {
       background-color: #3f5158;
       padding: 2em;
@@ -451,5 +466,9 @@ img {
             height: 100%; }
       .cover-container .grid .column-third .form-div {
         margin: 2em 0; }
+      @media screen and (max-width: 768px) {
+        .cover-container .grid .column-third {
+          position: initial;
+          width: 100%; } }
 
 /*# sourceMappingURL=story.css.map */
