@@ -60,13 +60,13 @@
                 <h1>Let's the journey begin</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <span>1</span> Start by your cover
+                        <span></span> Start by your cover
                     </li>
                     <li class="active">
-                        <span>2</span> Create a memorie
+                        <span></span> Create a memorie
                     </li>
                     <li>
-                        <span>3</span> Recount your story
+                        <span></span> Recount your story
                     </li>
                 </ul>
                 <div class="grid">

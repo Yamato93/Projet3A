@@ -55,51 +55,103 @@
                 color:$darkbluegreen;
             }
             .breadcrumb{
-                padding: 0;
-                margin:2em 0;
-                li{
-                    list-style-type: none;
-                    float: left;
-                    width: (100%/3);
-                    text-align: center;
-                    padding: 1em;
-                    background-color: #ffffff;
-                    box-sizing:border-box;
-                    color: $bluegreen;
-                    font-style: italic;
+            list-style:none;
+            padding: 0;
+            margin: 1em 0;
+            counter-reset: part;
 
-                    span{
-                        border: solid 1px $bluegreen;
-                        border-radius: 50%;
-                        padding: 0.5em;
-                    }
+            li{
+                width: (100%/3);
+                float: left;
+                cursor: default;
+                text-align: center;
+                box-sizing:border-box;
+                position: relative;
+                padding: 1em 1em;
+                background-color: #cccccc;
+                color:#ffffff;
 
-                    &:hover{
-                        background-color:$golden;
-                        color: #ffffff;
-                        span{
-                            border-color:#ffffff;
-                        }
-                    }
-
-                    &.active{
-                        background-color:$golden;
-                        color: #ffffff;
-                        span{
-                            border-color:#ffffff;
-                        }
-                    }
-
-                    &:nth-child(2){
-                        border-left: solid 0.5em lighten($bluegreen, 40%);
-                        border-right: solid 0.5em lighten($bluegreen, 40%);
+                span{
+                    &::before{
+                        width:1em;
+                        counter-increment: part;
+                        content: counter(part)" | ";
                     }
                 }
 
-                &::after{
-                    @include clearfix();
+                &::after, &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    border: 0 solid #cccccc;
+                    border-width: 1.5em 1em;
+                    width: 0;
+                    height: 0;
+                }
+
+                &.active{
+                    background-color: $golden;
+                }
+
+                &:first-child{
+                    &::before{
+                        border:none;
+                    }
+
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: $golden;
+                    }
+                }
+
+                &:nth-child(2){
+                    &::before{
+                        left: -25px;
+                        border-left-color:transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                    &::after{
+                        left: 100%;
+                        border-color: transparent;
+                        border-left-color: #cccccc;
+                    }
+                }
+                &:last-child{
+                    margin: 0;
+                    &::after{
+                        border:none;
+                    }
+
+                    &::before{
+                        left: -25px;
+                        border-color:$golden;
+                        border-left-color: transparent;
+                        @media #{$small}{
+                            left:-10px;
+                        }
+                    }
+                }
+                &:hover{
+                    background-color: $golden;
+                    &::after{
+                        border-left-color:$golden;
+                    }
+                    &::before{
+                        border-color:$golden;
+                        border-left-color:transparent;
+                    }
+                }
+                @media #{$small}{
+                    font-size: 0.6em;
                 }
             }
+            &::after{
+                @include clearfix();
+            }
+        }
 
             .form-div{
                 textarea{
