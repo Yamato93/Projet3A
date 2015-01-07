@@ -1,8 +1,6 @@
 <?php
 //if(!defined('Portefollio')|| !Portefollio) die("URL non valide !");
 
-	ini_set('display_error', 'On');
-	
 	define("CHARSET","utf-8");
 	define("PREFIXE","PF_");
 	$nom_serveur = explode ( "/" , $_SERVER['REQUEST_URI']);
