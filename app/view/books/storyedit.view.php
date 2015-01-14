@@ -14,48 +14,8 @@
 
         <!-- CONTENT -->
         <div class="cover-container">
-            <ul class="cover-nav">
-                <li>
-                    <a href="#">
-                        <span>
-                            <img src="public/img/icons/house.svg" alt="Home page"/>
-                        </span>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>
-                            <img src="public/img/icons/user.svg" alt="Home page"/>
-                        </span>
-                        My account
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="#">
-                        <span>
-                            <img src="public/img/icons/journal.svg" alt="Home page"/>
-                        </span>
-                        Travel journal
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>
-                            <img src="public/img/icons/pin.svg" alt="Home page"/>
-                        </span>
-                        My routes
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>
-                            <img src="public/img/icons/star.svg" alt="Home page"/>
-                        </span>
-                        Best journals
-                    </a>
-                </li>
-            </ul>
+
+            <?php include('../app/includes/nav.inc.php') ?>
 
             <form action="index.php?module=books&action=storyedit&editinfo=<?php echo $id; ?>" class="grid" method="post" enctype="multipart/form-data">
                 <div class="column-twothirds journal-container">

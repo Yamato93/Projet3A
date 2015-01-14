@@ -16,8 +16,8 @@
     	else
     	{
 	?>
-			<a href="index.php?module=login&action=login" onClick="ga('send','event','link','click','Sign log');">Connexion</a>
-			<a href="landing.html" onClick="ga('send','event','link','click','pro button');">Are you a pro ?</a>
+			<a href="index.php?module=login&action=login">Connexion</a>
+			<a href="landing.html">Are you a pro ?</a>
 	<?php
     	}
     ?>
