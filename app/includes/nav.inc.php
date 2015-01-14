@@ -1,6 +1,6 @@
 <ul class="cover-nav">
     <li>
-        <a href="#">
+        <a href="index.php?module=index&action=index">
             <span>
                 <img src="public/img/icons/house.svg" alt="Home page"/>
             </span>
@@ -10,7 +10,7 @@
     <li>
         <a href="#">
             <span>
-                <img src="public/img/icons/user.svg" alt="Home page"/>
+                <img src="public/img/icons/user.svg" alt="User page"/>
             </span>
             My account
         </a>
@@ -18,7 +18,7 @@
     <li class="active">
         <a href="#">
             <span>
-                <img src="public/img/icons/journal.svg" alt="Home page"/>
+                <img src="public/img/icons/journal.svg" alt="Journal page"/>
             </span>
             Travel journal
         </a>
@@ -26,7 +26,7 @@
     <li>
         <a href="#">
             <span>
-                <img src="public/img/icons/pin.svg" alt="Home page"/>
+                <img src="public/img/icons/pin.svg" alt="Routes page"/>
             </span>
             My routes
         </a>
@@ -34,7 +34,7 @@
     <li>
         <a href="#">
             <span>
-                <img src="public/img/icons/star.svg" alt="Home page"/>
+                <img src="public/img/icons/star.svg" alt="Best journals page"/>
             </span>
             Best journals
         </a>

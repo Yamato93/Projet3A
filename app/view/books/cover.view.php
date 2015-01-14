@@ -14,7 +14,9 @@
 
         <!-- CONTENT -->
         <div class="cover-container">
+
             <?php include('../app/includes/nav.inc.php') ?>
+
             <div class="journal-container u-wrapper">
                 <h1>Let's the journey begin</h1>
                 <ul class="breadcrumb">
