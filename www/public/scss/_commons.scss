@@ -263,12 +263,12 @@
     box-sizing:border-box;
 
     &-danger{
-        background-color: lighten(red, 50%;)
+        background-color: lighten(red, 50%);
         color: #000000;
     }
 
     &-success{
-        background-color: lighten(green, 50%;)
+        background-color: lighten(green, 50%);
         color: #000000;
     }
 }
