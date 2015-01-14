@@ -254,6 +254,108 @@
     }
 }
 
+/***** BREADCRUMB *****/
+
+.breadcrumb{
+    list-style:none;
+    padding: 0;
+    margin: 1em 0;
+    counter-reset: part;
+
+    li{
+        white-space: nowrap;
+        width: (100%/3);
+        float: left;
+        cursor: default;
+        text-align: center;
+        box-sizing:border-box;
+        position: relative;
+        padding: 1em 1em;
+        background-color: #cccccc;
+        color:#ffffff;
+
+        span{
+            &::before{
+                width:1em;
+                counter-increment: part;
+                content: counter(part)" | ";
+            }
+        }
+
+        &::after, &::before{
+            overflow: initial !important;
+            content: "";
+            position: absolute;
+            top: 0;
+            border: 0 solid #cccccc;
+            border-width: 1.5em 1em;
+            width: 0;
+            height: 0;
+        }
+
+        &.active{
+            background-color: $golden;
+        }
+
+        &:first-child{
+            &::before{
+                border:none;
+            }
+
+            &::after{
+                left: 100%;
+                border-color: transparent;
+                border-left-color: $golden;
+            }
+        }
+
+        &:nth-child(2){
+            &::before{
+                left: -25px;
+                border-left-color: transparent;
+                @media #{$small}{
+                    left:-10px;
+                }
+            }
+            &::after{
+                left: 100%;
+                border-color: transparent;
+                border-left-color: #cccccc;
+            }
+        }
+        &:last-child{
+            margin: 0;
+            &::after{
+                border:none;
+            }
+
+            &::before{
+                left: -25px;
+                border-left-color: transparent;
+                @media #{$small}{
+                    left:-10px;
+                }
+            }
+        }
+        &:hover{
+            background-color: $golden;
+            &::after{
+                border-left-color:$golden;
+            }
+            &::before{
+                border-color:$golden;
+                border-left-color:transparent;
+            }
+        }
+        @media #{$small}{
+            font-size: 0.6em;
+        }
+    }
+    &::after{
+        @include clearfix();
+    }
+}
+
 /***** DESIGN ALERT MESSAGE NOT DEFINATELY *****/
 
 .alert{

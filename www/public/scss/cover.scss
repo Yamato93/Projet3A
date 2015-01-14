@@ -12,103 +12,6 @@
                 font-size:1.5em;
             }
         }
-        .breadcrumb{
-            list-style:none;
-            padding: 0;
-            margin: 1em 0;
-            counter-reset: part;
-
-            li{
-                width: (100%/3);
-                float: left;
-                cursor: default;
-                text-align: center;
-                box-sizing:border-box;
-                position: relative;
-                padding: 1em 1em;
-                background-color: #cccccc;
-                color:#ffffff;
-
-                span{
-                    &::before{
-                        width:1em;
-                        counter-increment: part;
-                        content: counter(part)" | ";
-                    }
-                }
-
-                &::after, &::before{
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    border: 0 solid #cccccc;
-                    border-width: 1.5em 1em;
-                    width: 0;
-                    height: 0;
-                }
-
-                &.active{
-                    background-color: $golden;
-                }
-
-                &:first-child{
-                    &::before{
-                        border:none;
-                    }
-
-                    &::after{
-                        left: 100%;
-                        border-color: transparent;
-                        border-left-color: $golden;
-                    }
-                }
-
-                &:nth-child(2){
-                    &::before{
-                        left: -25px;
-                        border-left-color: transparent;
-                        @media #{$small}{
-                            left:-10px;
-                        }
-                    }
-                    &::after{
-                        left: 100%;
-                        border-color: transparent;
-                        border-left-color: #cccccc;
-                    }
-                }
-                &:last-child{
-                    margin: 0;
-                    &::after{
-                        border:none;
-                    }
-
-                    &::before{
-                        left: -25px;
-                        border-left-color: transparent;
-                        @media #{$small}{
-                            left:-10px;
-                        }
-                    }
-                }
-                &:hover{
-                    background-color: $golden;
-                    &::after{
-                        border-left-color:$golden;
-                    }
-                    &::before{
-                        border-color:$golden;
-                        border-left-color:transparent;
-                    }
-                }
-                @media #{$small}{
-                    font-size: 0.6em;
-                }
-            }
-            &::after{
-                @include clearfix();
-            }
-        }
         div.column-half{
             padding:0.8em;
             position: relative;
@@ -117,19 +20,24 @@
             }
 
             span.input-file{
-                position: absolute;
-                left: 1em;
-                top: 1em;
-                width: 50px;
-                height: 50px;
-                background:#ffffff url(../img/icons/edit.png) no-repeat center center;
+                width: 100%;
+                box-sizing:border-box;
+                background:$darkbluegreen;
                 cursor: pointer;
+                display: block;
+                position: relative;
+                z-index: 5;
+                color: #ffffff;
+                padding: 1em 0;
 
                 input[type="file"]{
-                    width: 100%;
-                    height: 100%;
+                    position: absolute;
+                    width: inherit;
+                    left: 0;
+                    height: inherit;
                     opacity: 0;
                     cursor: pointer;
+                    z-index: 10;
                 }
             }
 
@@ -142,7 +50,7 @@
                     height: 30em;
                 }
             }
-            &:first-child{
+            &:nth-child(2){
                 background-color: #ffffff;
             }
         }
