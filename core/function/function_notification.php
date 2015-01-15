@@ -10,11 +10,11 @@
 	{
 		$_SESSION['notif'] = array('level' => $level, 'content'=> $content);
 	}
-	function display($msg)
+	function display($_SESSION['notif'])
 	{
 		echo '<div class="row">
-					<div class="alert alert-'.$msg['level'].'">
-						<p> '.$msg['content'].' </p>
+					<div class="alert alert-'.$_SESSION['notif'] ['level'].'">
+						<p> '.$_SESSION['notif'] ['content'].' </p>
 					</div>
 				</div>';
 		unset($_SESSION['notif']);
