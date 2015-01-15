@@ -1,19 +1,21 @@
 <?php
-
-function insert_cover($connect, $dbname, $tablename)
+function insert_cover($connect, $dbname, $tablename, $id, $title, $descr, $cover)
 {
 	try 
 	{
-		$query="INSERT INTO ".$dbname.".".$tablename." (Col1, Col2) 
-		VALUES (:Param1, :Param2)";
+		$query="INSERT INTO ".$dbname.".".$tablename." (USE_ID, BOOKS_TITLE, BOOKS_DESCR, BOOKS_COVER) 
+		VALUES (:Param1, :Param2, :Param3, :Param4)";
 
 		$curseur = $connect -> prepare($query);
 		//var_dump($curseur);
 		// $post contient le $_POST
-		$curseur -> bindValue(':NAME', $name, PDO::PARAM_STR);
-		$curseur -> bindValue(':PASSWORD', md5($password), PDO::PARAM_STR);
+		$curseur -> bindValue(':Param1', $id, PDO::PARAM_STR);
+		$curseur -> bindValue(':Param2', $title, PDO::PARAM_STR);
+		$curseur -> bindValue(':Param3', $descr, PDO::PARAM_STR);
+		$curseur -> bindValue(':Param4', $cover, PDO::PARAM_STR);
 		$retour = $curseur -> execute();
 		$curseur -> closeCursor();
+		$_SESSION['cover_session_id'] = $dbh->lastInsertId();
 		return true;
 
 	}
