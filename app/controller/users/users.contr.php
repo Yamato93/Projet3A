@@ -6,5 +6,6 @@
  *
  * 
  */
-echo('controler users');
-?>
+//echo('controler users');
+
+include_once("../app/view/users/user.view.php");

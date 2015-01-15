@@ -8,7 +8,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="index.php?module=users&action=users">
             <span>
                 <img src="public/img/icons/user.svg" alt="User page"/>
             </span>
