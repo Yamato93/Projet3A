@@ -1,6 +1,6 @@
 <?php
 /* $_SESSION['step_session_id'] and $_SESSION['cover_session_id']*/
-function insert_step($connect, $dbname, $tablename, $books_steps, $books_id, $img)
+function insert_step_img($connect, $dbname, $tablename, $books_steps, $books_id, $img)
 {
 	try 
 	{

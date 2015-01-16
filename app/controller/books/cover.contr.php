@@ -17,7 +17,7 @@ if(isset($_POST))
 				include_once("../core/function/function_upload_img.php");
 				if(!file_exists('public/images'))
 				{
-					mkdir('public/images',0777, true))
+					mkdir('public/images',0777, true);
 				}
 				upload('cover_img','Books','cover_upload');
 				$_SESSION['Books']['cover_title'] = $_POST['cover_title'];
