@@ -26,8 +26,5 @@
         <a href="https://twitter.com/DiscoverIt_fr" target="_blank"></a>
         <a href="https://plus.google.com/115867732065766652271" target="_blank"></a>
     </nav>
-    <?php 
-    include_once '../core/function_notification.php';
-    display();
-    ?>
+    <?php display_notification(); ?>
 </div>

@@ -8,11 +8,11 @@
  */
 //echo('controler users');
 
-if (isset($_GET['action']) && $_GET['action'] == 'login') {
-	# code...
-}
-if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-	
-}
+// if (isset($_GET['action']) && $_GET['action'] == 'login') {
+// 	include_once 'login.contr.php';
+// }
+// if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+// 	include_once 'logout.contr.php';
+// }
 
-include_once("../app/view/users/user.view.php");
+include_once("../app/view/users/login.view.php");

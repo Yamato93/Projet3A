@@ -1,3 +1,3 @@
 <?php
 
-include_once("../app/view/others/404.view.php");
+include_once("../view/others/404.view.php");

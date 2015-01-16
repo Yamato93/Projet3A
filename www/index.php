@@ -2,9 +2,11 @@
 	header('Content-type: text/html; charset=UTF-8'); 
 	define('BACKOFFICE', false);
 	//include ("model/model.php");
+
 	include_once("../app/config/param.inc.php");
 	include_once("../app/config/connect.bdd.php");
 	include_once("../core/function/function_start_session.php");
+	include_once("../core/function/function_notification.php");
 	my_session_start(SESSION_NAME);
 	//print_r(BASE_DIR);
 	//die();

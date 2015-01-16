@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['type']))
 {
 	if($_POST['type'] == 'login')
@@ -8,11 +9,12 @@ if(isset($_POST['type']))
 			if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 				$mail = $_POST['mail'];
 				$password = md5($_POST['password']);
-				include_once '../app/model/login/select_user_by_mail_password.model.php';
+				include_once '../app/model/users/select_user_by_mail_password.model.php';
 				if ($user = select_user_by_mail_password($connect, $mail, $password)) {
 					$_SESSION["User"] = current($user);
+					sessionize('success', 'You are logged in');
 					if(!isset($_SESSION['frombooks']))
-					{
+					{	
 						header('location:index.php');
 						exit();
 					}
@@ -24,11 +26,11 @@ if(isset($_POST['type']))
 					}
 				}
 				else{
-					die('mail and/or password no match');
+					sessionize('danger', 'mail and/or password no match');
 				}
 			}
 			else{
-				die('mail and/or password empty');
+				sessionize('danger', 'mail and/or password empty');
 			}
 		}
 	}
@@ -42,36 +44,42 @@ if(isset($_POST['type']))
 				$mail = $_POST['mail'];
 				$password = $_POST['password'];
 				$passwordconfirm = $_POST['passwordconfirm'];
-				include_once '../app/model/login/select_user_by_mail.model.php';
-				//test if mail is already exist
-				if (select_user_by_mail($connect, $mail)) {
-					if ($passwordconfirm == $password) {
-						include_once '../app/model/login/insert_new_user.model.php';
-			
-						$password = md5($password);
-						if(insert_new_user($connect, $mail, $password))
-						{
-							//header(string);
-							die('sign in Ok !');
+				include_once '../core/function/function_validate_email.php';
+				if (email_validate($mail)) {			
+					include_once '../app/model/users/select_user_by_mail.model.php';
+					//test if mail is already exist
+					if (select_user_by_mail($connect, $mail)) {
+						if ($passwordconfirm == $password) {
+							include_once '../app/model/users/insert_new_user.model.php';
+							
+							$password = md5($password);
+							if(insert_new_user($connect, $mail, $password))
+							{
+								sessionize('success','You are registered');
+							}
+							else
+							{
+								sessionize('danger', 'Registration error');
+							}
 						}
-						else
-						{
-							die('erreur lors de l\'enregistrement');
+						else 
+						{	
+							sessionize('danger', 'password is different of the confirmation');
 						}
 					}
-					else 
-					{
-						die('password is different of the confirmation');
+					else{
+						sessionize('danger', 'Mail is already use for a user');
 					}
 				}
 				else{
-					die('Mail is already use for a user');
+					sessionize('danger', 'Mail is not correct');
 				}
 			}
 			else{
-				die('mail or password are not good ');
+				sessionize('danger', 'mail or password are not good ');
 			}
 		}
 	}
 }
-include_once("../app/view/login/login.view.php");
+
+include_once("../app/view/users/login.view.php");
