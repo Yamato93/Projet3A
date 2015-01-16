@@ -1,5 +1,7 @@
 <?php
-
+if (isset($_SESSION['User']->USE_ID)) {
+	header('location:index.php');
+}
 if(isset($_POST['type']))
 {
 	if($_POST['type'] == 'login')

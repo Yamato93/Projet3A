@@ -36,11 +36,11 @@
 	
 	$url = "../app/controller/".$module."/".$action.".contr.php";
 		
-			
+
 	if(file_exists($url))
 	{		
 		//include("../app/include/header.inc.php");
-		
+
 		include($url);
 		
 		//include("../app/include/footer.inc.php");
