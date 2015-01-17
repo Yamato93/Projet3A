@@ -19,7 +19,11 @@ if (isset($_SESSION['User']->USE_ID)) {
 
 	$id = $_SESSION['User']->USE_ID;
 	include_once("../app/model/users/select_user_by_id.model.php");
+
 	select_user_by_id($connect, $id);
+
+	$data = select_user_by_id($connect, $id);
+
 	include_once("../app/view/users/user.view.php");
 }
 else

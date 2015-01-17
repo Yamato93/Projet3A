@@ -1,5 +1,4 @@
-<?php
-
+<?
 function select_user_by_id($connect, $id)
 {
 	try
@@ -14,7 +13,7 @@ function select_user_by_id($connect, $id)
 		$curseur->closeCursor();
 		if(isset($data_user))
 		{
-			return $data_user;
+			return current($data_user);
 		}
 		else
 		{

@@ -22,20 +22,21 @@
             <div class="user-profil grid">
                 <div class="column-half">
                     <div class="user-picture">
-                        <img src="public/img/leymarie.jpeg" alt="User picture"/>
+                        <img src='<?php $retVal = (isset($data->USE_PICTURE)) ? $data->USE_PICTURE : "public/img/leymarie.jpeg"; echo($retVal); ?>' alt="User picture"/>
                     </div>
                     <ul class="user-infos">
                         <li>
-                            <h1>Patrice Leymarie</h1>
+                            <h1><?php $retVal = (isset($data->USE_FIRSTNAME)) ? $data->USE_FIRSTNAME : "FirstName"; echo($retVal); ?> 
+                            <?php $retVal = (isset($data->USE_LASTNAME)) ? $data->USE_LASTNAME : "LastName"; echo($retVal); ?></h1>
                         </li>
-                        <li>Age : 24</li>
-                        <li>Live in : France</li>
-                        <li>Travelers : Expert</li>
+                        <li>Age : <?php $retVal = (isset($data->USE_BIRTHDAY)) ? $data->USE_BIRTHDAY : "N/A"; echo($retVal); ?></li>
+                        <li>Live in : <?php $retVal = (isset($data->USE_COUNTRY)) ? $data->USE_COUNTRY : "N/A"; echo($retVal); ?></li>
+                        <li>Travelers : <?php $retVal = (isset($data->USE_LVL)) ? $data->USE_LVL : "N/A"; echo($retVal); ?></li>
                     </ul>
                 </diV>
                 <div class="column-half">
                     <h2>About me</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : "N/A"; echo($retVal); ?></p>
                 </diV>
             </div>
             <div class="user-stats">
