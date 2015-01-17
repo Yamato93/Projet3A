@@ -32,127 +32,34 @@
                 </form>
                 <h3 class="diaries-title">Or discover our best trip books</h3>
                 <ul class="grid">
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/vietnam.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                <h3 class="diary-name">
-                                    Discovering Vietnam
-                                </h3>
-                                <p class="diary-description">
-                                    An incredible adventure that I recommend to all.
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/russia.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                <h3 class="diary-name">
-                                    New trip in Russia
-                                </h3>
-                                <p class="diary-description">
-                                    Wide open spaces to be discovered.
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/cascade.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                <h3 class="diary-name">
-                                    Amazonian forest
-                                </h3>
-                                <p class="diary-description">
-                                    An incredible circuit into the wild.
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/lake.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                <h3 class="diary-name">
-                                    Canada book trip
-                                </h3>
-                                <p class="diary-description">
-                                    Beautiful landscapes to discover.
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/bridge.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                
-                                <h3 class="diary-name">
-                                    2 weeks’ China trip
-                                </h3>
-                                <p class="diary-description">
-                                    Walk through China’s landscapes!
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div class="diary">
-                            <div class="diary-preview">
-                                <img src="public/img/diaries/hills.jpg" alt="In the discover of Vietnam" />
-                                <div class="diary-more">
-                                    <span class="diary-button">Discover this diary</span>
-                                </div>
-                            </div>
-                            <div class="diary-meta">
-                                <h3 class="diary-name">
-                                    Take an amazing road trip
-                                </h3>
-                                <p class="diary-description">
-                                    Discover USA’s legendary roads.
-                                </p>
-                                <span>Discover this diary > </span>
-                            </div>
-                            <a href="landing.html">Discover this diary</a>
-                        </div>
-                    </li>
+                	<?php  
+	                	foreach ($index_data as $key => $value)
+	                	{
+					?>
+							<li class="column-third">
+		                        <div class="diary">
+		                            <div class="diary-preview">
+		                                <img src="<?php echo $value->BOOKS_COVER; ?>" alt="<?php echo $value->BOOKS_TITLE; ?>" />
+		                                <div class="diary-more">
+		                                    <span class="diary-button">Discover this diary</span>
+		                                </div>
+		                            </div>
+		                            <div class="diary-meta">
+		                                <h3 class="diary-name">
+		                                    <?php echo $value->BOOKS_TITLE; ?>
+		                                </h3>
+		                                <p class="diary-description">
+		                                    <?php echo $value->BOOKS_DESCR; ?>
+		                                </p>
+		                                <span>Discover this diary > </span>
+		                            </div>
+		                            <a href="landing.html">Discover this diary</a>
+		                        </div>
+		                    </li>
+					<?php
+	                	}
+                	?>
+      
                 </ul>
             </div>
         </div>

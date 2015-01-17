@@ -22,7 +22,7 @@
             <div class="user-profil grid">
                 <div class="column-half">
                     <div class="user-picture">
-                        <img src='<?php $retVal = (isset($data->USE_PICTURE)) ? $data->USE_PICTURE : "public/img/leymarie.jpeg"; echo($retVal); ?>' alt="User picture"/>
+                        <img src='<?php $retVal = (isset($data->USE_PICTURE)) ? $data->USE_PICTURE : "public/img/preview.jpg"; echo($retVal); ?>' alt="User picture"/>
                     </div>
                     <ul class="user-infos">
                         <li>

@@ -41,6 +41,16 @@
 								<td><?php echo $value->BOOKS_COVER; ?></td>
 								<td><?php echo $value->BOOKS_DATE_CREA ?></td>
 								<?php
+								if($_SESSION['User']->ADM_LVL > 4)
+								{
+									?>
+										<td>
+											<!--<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /-->
+											<a id="delete" href="index.php?module=users&action=delbooks&del=<?php echo $value->BOOKS_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+										</td>
+								</tr>
+									<?php
+								}
 							}
 							?>
 

@@ -12,9 +12,11 @@
 			<?php
 			if($_SESSION['User']->ADM_LVL > 4)
 			{
+			/*
 			?>
 			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Add users</a></li>
 			<?php
+			*/
 			}
 			?>
 		</ul>
@@ -34,7 +36,7 @@
 								<th>Birthday</th>
 								<th>Description</th>
 								<th>Date of Creation</th>
-								<th>Edit / Delete</th>
+								<th>Delete</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -58,8 +60,8 @@
 								{
 									?>
 										<td>
-											<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /
-											<a id="delete" href="index.php?module=index&action=deladmin&del=<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+											<!--<a id="edit" data-toggle="modal" data-target="#myModal<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-pencil"></span></a> /-->
+											<a id="delete" href="index.php?module=users&action=delusers&del=<?php echo $value->USE_ID; ?>"><span class="glyphicon glyphicon-remove"></span></a>
 										</td>
 								</tr>
 									<?php
@@ -72,25 +74,24 @@
 					</table>
 				</div>
 			</div>
-		    <div role="tabpanel" class="tab-pane" id="profile">
+			<div role="tabpanel" class="tab-pane" id="profile">
 		    	<div class="col-md-4">
 				    <form role="form" name="add_admin_form" action="index.php?module=index&action=index" method="post">
 				    	<div class="form-group">
-							<label for="Name">User ID</label>
-							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+							<label for="Name">User Email</label>
+							<input type="email" class="form-control" id="Email" name="Email" placeholder="">
+						</div>
+				    	<div class="form-group">
+							<label for="Name">User Password</label>
+							<input type="password" class="form-control" id="Password" name="Password" placeholder="">
+						</div>
+				    	<div class="form-group">
+							<label for="Name">User Lastname</label>
+							<input type="text" class="form-control" id="Lastname" name="Lastname" placeholder="">
 						</div>
 						<div class="form-group">
-							<label for="Name">Book Title</label>
-							<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
-						</div>
-						<div class="form-group">
-						    <label for="exampleInputEmail1">Book Description</label>
-						    <textarea class="form-control" rows="3"></textarea>
-						</div>
-						<div class="form-group">
-						    <label for="exampleInputFile">File input</label>
-						    <input type="file" id="exampleInputFile">
-						    <p class="help-block">Example block-level help text here.</p>
+							<label for="Name">User Firstname</label>
+							<input type="text" class="form-control" id="Firstname" name="Firstname" placeholder="">
 						</div>
 	
 						<button type="submit" class="btn btn-default">Submit</button>
@@ -111,39 +112,20 @@ foreach($list as $key=>$value)
     	<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">Edit Books n°<?php echo $value->BOOKS_ID; ?></h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Users n°<?php echo $value->USE_ID; ?></h4>
 			</div>
 			<div class="modal-body">
 				<form role="form" name="edit_admin_form" action="index.php?module=index&action=index" method="post">
 					<div class="form-group">
-						<label for="Name">Nom d'utilisateur</label>
-						<input type="text" class="form-control" id="name" name="name" value="<?php echo $value->ADM_NAME; ?>">
+						<label for="Name">Lastname</label>
+						<input type="text" class="form-control" id="name" name="name" value="<?php echo $value->USE_LASTNAME; ?>">
 					
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="pwd" name="pwd" placeholder="New Password" value="value="<?php echo $value->ADM_PASSWORD; ?>"">
+						<label for="Name">Firstname</label>
+						<input type="text" class="form-control" id="name" name="name" value="<?php echo $value->USE_LASTNAME; ?>">
+					
 					</div>
-					<?php
-					if($_SESSION['User']->ADM_LVL > 3)
-					{
-					?>
-					<div class="form-group">
-						<label>Niveau d'administration</label><br/>
-						<?php
-							for ($i = 1; $i <= 5; $i++) 
-							{
-						?>
-							<label class="checkbox-inline">
-							  	<input <?php if($value->ADM_LVL == $i){ echo "checked";} ?> type="checkbox" name="lvl" value="<?php echo $i; ?>"> <?php echo $i; ?>
-							</label>
-						<?php
-							}
-						?>
-					</div>
-					<?php
-						}
-					?>
 				</form>
 			</div>
 			<div class="modal-footer">

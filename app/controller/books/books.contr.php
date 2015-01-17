@@ -36,15 +36,15 @@ if(isset($_SESSION['User']) and !empty($_SESSION['User']))
 								 insert_step_img($connect, BASE, "DT_BOOKS_STEPS_PICTURE", $_SESSION['step_session_id'], $books_id, $use_id, $step['step_img'.$j]);
 							}
 										
-						}
-						header('location:index.php?module=users&action=users');
-						exit();
-					   
+						}					   
 				    }
 				}
 			}
-			unset($_SESSION['count-step']);
 		}
+		unset($_SESSION['count-step']);
+		unset($_SESSION['Books']);
+		header('location:index.php?module=users&action=users');
+		exit();
 	}
 }
 else
