@@ -15,7 +15,7 @@ function insert_cover($connect, $dbname, $tablename, $id, $title, $descr, $cover
 		$curseur -> bindValue(':Param4', $cover, PDO::PARAM_STR);
 		$retour = $curseur -> execute();
 		$curseur -> closeCursor();
-		$_SESSION['cover_session_id'] = $dbh->lastInsertId();
+		$_SESSION['cover_session_id'] = $connect->lastInsertId();
 		return true;
 
 	}

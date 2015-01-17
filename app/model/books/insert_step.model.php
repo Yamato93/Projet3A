@@ -6,7 +6,6 @@ function insert_step($connect, $dbname, $tablename, $books_id, $use_id, $descr, 
 	{
 		$query="INSERT INTO ".$dbname.".".$tablename." (BOOKS_ID, USE_ID, BOOKS_STEPS_CONTENT, BOOKS_STEPS_START_DATE, BOOKS_STEPS_END_DATE) 
 		VALUES (:Param1, :Param2, :Param3, :Param4, :Param5)";
-
 		$curseur = $connect -> prepare($query);
 		//var_dump($curseur);
 		// $post contient le $_POST
@@ -17,7 +16,7 @@ function insert_step($connect, $dbname, $tablename, $books_id, $use_id, $descr, 
 		$curseur -> bindValue(':Param5', $end_date, PDO::PARAM_STR);
 		$retour = $curseur -> execute();
 		$curseur -> closeCursor();
-		$_SESSION['step_session_id'] = $dbh->lastInsertId();
+		$_SESSION['step_session_id'] = $connect->lastInsertId();
 		return true;
 
 	}

@@ -12,17 +12,45 @@ if(isset($_SESSION['User']) and !empty($_SESSION['User']))
 	include_once("../app/model/books/insert_cover.model.php");
 	include_once("../app/model/books/insert_step.model.php");
 	include_once("../app/model/books/insert_step_img.model.php");
-	
-	insert_cover($connect, $dbname, $tablename, $id, $title, $descr, $cover)
-	insert_step($connect, $dbname, $tablename, $books_id, $use_id, $descr, $start_date, $end_date)
-	insert_step_img($connect, $dbname, $tablename, $books_steps, $books_id, $img)
-	//header('location:landing.html');
-	//exit();
+	if(isset($_SESSION['Books']))
+	{
+		$use_id = $_SESSION['User']->USE_ID;
+		$cover_title = $_SESSION['Books']['cover_title'];
+		$cover_descr = $_SESSION['Books']['cover_descr'];
+		$cover_img = $_SESSION['Books']['cover_upload'];
+		if(insert_cover($connect, BASE, "DT_BOOKS", $use_id, $cover_title, $cover_descr, $cover_img))
+		{
+			for ($i = 0; $i < count($_SESSION['Books']); $i++) 
+			{
+				if(isset($_SESSION['Books']['Step'.$i]))
+				{
+					$books_id = $_SESSION['cover_session_id'];
+					$step = $_SESSION['Books']['Step'.$i];
+				    if(insert_step($connect, BASE, "DT_BOOKS_STEPS", $books_id, $use_id, $step['content'], $step['start-date'], $step['end-date']))
+				    {
+						for($j = 0; $j < count($step); $j++)
+						{
+							if(isset($step['step_img'.$j]))
+							{
+							
+								 insert_step_img($connect, BASE, "DT_BOOKS_STEPS_PICTURE", $_SESSION['step_session_id'], $books_id, $use_id, $step['step_img'.$j]);
+							}
+										
+						}
+						header('location:index.php?module=users&action=users');
+						exit();
+					   
+				    }
+				}
+			}
+			unset($_SESSION['count-step']);
+		}
+	}
 }
 else
 {
 	$_SESSION['frombooks'] = true;
-	header('location:index.php?module=login&action=login');
+	header('location:index.php?module=users&action=login');
 	exit();
 }
 
