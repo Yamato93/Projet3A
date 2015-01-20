@@ -5,3 +5,4 @@ www/public/images/*.jpg
 www/public/images/*.png
 www/public/images/*.jpeg
 backoffice/index.php
+www/public/css/*
