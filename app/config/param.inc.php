@@ -14,7 +14,7 @@
 	define('MAX_PAGE', 10);
 	
 	/*********************
-	Préfixe BDD
+	Prefixe BDD
 	*********************/
 	define('PREFIX_BASE', "");
 	
@@ -80,7 +80,7 @@
 /**
  ** Config localhost
  **/
-	if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+	if (in_array($_SERVER['HTTP_HOST'], array('localhost', '127.0.0.1', 'local.discoverit.dev', 'localhost:8888'))) // ($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 	{
 		define('DEBUG', TRUE);
 	}
