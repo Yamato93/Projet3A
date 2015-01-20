@@ -12,9 +12,14 @@
 	//die();
 	$debug = array();
 	$_SESSION["requetes"] = array();
-
-	$connect = cnx_site_local( 'pdo' );
 	
+	try {
+		$connect = cnx_site_local( 'pdo' );
+	}
+	catch(Exception $e) { 
+		exit($e); 
+	}
+
 	// DOSSIER
 	if(isset($_GET["module"]))
 	{
