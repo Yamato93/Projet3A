@@ -19,7 +19,6 @@
 				$dbh -> setAttribute( PDO::ATTR_TIMEOUT, 5 );
 				$dbh -> exec('SET NAMES utf8'); // METHOD #3
 				$dbh -> exec('SET CHARACTER SET utf8');
-				
 			break;
 			/*case 'mysqli':
 				$port = (int)$port;
@@ -37,6 +36,7 @@
 	function cnx_site_local( $type_cnx = NULL ){
 		$server_name = explode ( "/" , $_SERVER['REQUEST_URI']);
 		$server_name = $server_name[1];
+		
 		if (($_SERVER["HTTP_HOST"] == "localhost:8888") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 		{
 			$host = 'localhost';
@@ -44,6 +44,14 @@
 			$pass = 'root';
 			$base = 'khauv';
 			$port = 8889;
+		}
+		if (($_SERVER["HTTP_HOST"] == "local.discoverit.dev") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+		{
+			$host = 'localhost';
+			$user = 'root';
+			$pass = '';
+			$base = 'eemi_discoverit';
+			$port = 80;
 		}
 		if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 		{
