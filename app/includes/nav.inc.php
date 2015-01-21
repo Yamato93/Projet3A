@@ -16,11 +16,11 @@
         </a>
     </li>
     <li class="active">
-        <a href="#">
+        <a href="index.php?module=books&action=bookslist">
             <span>
                 <img src="public/img/icons/journal.svg" alt="Journal page"/>
             </span>
-            Travel journal
+            Travel journals
         </a>
     </li>
     <li>

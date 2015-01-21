@@ -1,0 +1,12 @@
+@import "commons";
+
+.journal-list{
+    h1{
+        vertical-align:top;
+        color: $darkbluegreen;
+        span{
+            width: 1.3em;
+            display: inline-block;
+        }
+    }
+}
