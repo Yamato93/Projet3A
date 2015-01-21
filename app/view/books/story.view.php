@@ -31,6 +31,7 @@
                             <span></span> Recount your story
                         </li>
                     </ul>
+                    <?php display_notification(); ?>
                     <div class="form-div">
                         <textarea name="story" placeholder="Write your story"></textarea>
                         <label>Your story</label>

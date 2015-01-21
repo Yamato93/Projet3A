@@ -26,6 +26,7 @@
                 </ul>
                 <div class="connexion-form">
                     <div class="form-container">
+                        <?php display_notification(); ?>
                         <form id="login" method="post" action="" class="tab-content active">
                             <div class="form-div">
                                 <input type="email" name="mail" placeholder="Email" required/>

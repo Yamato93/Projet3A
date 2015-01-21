@@ -212,6 +212,7 @@
         width: (100%/5);
         background-color: $bluegreen;
         float: left;
+        box-sizing:border-box;
         a{
             display: block;
             text-align: center;
@@ -359,18 +360,17 @@
 /***** DESIGN ALERT MESSAGE NOT DEFINATELY *****/
 
 .alert{
-    width: 90%;
     margin: auto;
     padding: 1em;
     box-sizing:border-box;
 
     &-danger{
-        background-color: lighten(red, 50%);
+        background-color: lighten(red, 30%);
         color: #000000;
     }
 
     &-success{
-        background-color: lighten(green, 50%);
+        background-color: lighten(green, 30%);
         color: #000000;
     }
 }

@@ -13,10 +13,8 @@
 	function display_notification()
 	{
 		if (isset($_SESSION['notif'])) {
-			echo '<div class="row">
-					<div class="alert alert-'.$_SESSION['notif']['level'].'">
-						<p> '.$_SESSION['notif']['content'].' </p>
-					</div>
+			echo '<div class="alert alert-'.$_SESSION['notif']['level'].'">
+					<p> '.$_SESSION['notif']['content'].' </p>
 				</div>';
 			unset($_SESSION['notif']);
 		}
