@@ -20,6 +20,13 @@
 	
 	$server_name = explode ( "/" , $_SERVER['REQUEST_URI']);
 	$server_name = $server_name[1];
+	if (($_SERVER["HTTP_HOST"] == "local.discoverit.dev") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
+	{
+		/*********************
+	BDD name
+	*********************/
+	define('BASE', "eemi_discoverit");
+	}
 	if (($_SERVER["HTTP_HOST"] == "localhost:8888") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 	{
 		/*********************
