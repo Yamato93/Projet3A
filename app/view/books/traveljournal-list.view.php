@@ -25,7 +25,15 @@
                     Travel journals
                 </h1>
                 <ul class="grid">
-                    <li class="column-third">
+                    <li class="column-third create">
+                        <div>
+                            <span>+</span>
+                        </div>
+                        <div>
+                            <p>
+                                Create a new travel journal
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>
