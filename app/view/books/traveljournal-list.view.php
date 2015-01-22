@@ -37,52 +37,30 @@
                             </div>
                         </a>
                     </li>
-                    <li class="column-third">
-                        <div>
-                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
-                        </div>
-                        <div>
-                            <h2>
-                                Russia
-                            </h2>
-                            <p>
-                                "Wild open spaces to be discovered"
-                            </p>
-                            <a href="#" class="more">Read more</a>
-                            <a href="#">Edit</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div>
-                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
-                        </div>
-                        <div>
-                            <h2>
-                                Russia
-                            </h2>
-                            <p>
-                                "Wild open spaces to be discovered"
-                            </p>
-                            <a href="#" class="more">Read more</a>
-                            <a href="#">Edit</a>
-                        </div>
-                    </li>
-                    <li class="column-third">
-                        <div>
-                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
-                        </div>
-                        <div>
-                            <h2>
-                                Russia
-                            </h2>
-                            <p>
-                                "Wild open spaces to be discovered"
-                            </p>
-                            <a href="#" class="more">Read more</a>
-                            <a href="#">Edit</a>
-                        </div>
-                    </li>
-                </ul>
+                    <?php
+                    	foreach ($bookslist as $key => $value)
+                    	{
+                    	    //commandes
+					?>
+						<li class="column-third">
+	                        <div>
+	                            <img src="<?php echo $value->BOOKS_COVER;?>" alt="Russian travel book"/>
+	                        </div>
+	                        <div>
+	                            <h2>
+	                                <?php echo $value->BOOKS_TITLE;?>
+	                            </h2>
+	                            <p>
+	                                "<?php echo substr($value->BOOKS_DESCR, 0, 50);?>"
+	                            </p>
+	                            <a href="#" class="more">Read more</a>
+	                            <a href="#">Edit</a>
+	                        </div>
+	                    </li>
+					<?php
+                    	}
+                    ?>
+                 </ul>
             </div>
         </div>
         <!-- END CONTENT -->
