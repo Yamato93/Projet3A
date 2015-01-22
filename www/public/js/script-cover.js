@@ -9,4 +9,7 @@ $(document).ready(function(){
         $(link).addClass('active');
     });
 
+    $("#cover").change(function(){
+        Images.previewBackground.readURL(this, $(".column-half:first-child"));
+    });
 });

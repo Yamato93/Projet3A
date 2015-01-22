@@ -31,7 +31,6 @@
                     </li>
                 </ul>
                 <form action="index.php?module=books&action=cover" class="grid create-cover" method="post" enctype="multipart/form-data">
-                    <?php display_notification(); ?>
                     <div class="column-half">
                         <div class="form-div">
                             <input type="text" name="cover_title" placeholder="Title" required/>
@@ -61,6 +60,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/modules/imageModule.js"></script>
         <script src="public/js/check-form.js"></script>
         <!-- END SCRIPTS -->
     </body>

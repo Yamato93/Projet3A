@@ -503,4 +503,160 @@ img {
 #map img {
   max-width: none; }
 
+.book-edit-container {
+  min-height: 100%;
+  background-color: #eff4f5; }
+  .book-edit-container .journal-container {
+    padding: 2em 0;
+    text-align: center; }
+    .book-edit-container .journal-container h1 {
+      color: #3f5158; }
+    .book-edit-container .journal-container .grid .column-half {
+      position: relative;
+      border: solid 0.5em #eff4f5; }
+      .book-edit-container .journal-container .grid .column-half .cover-title {
+        margin: 0;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        background-color: #ffffff;
+        padding: 0.5em;
+        text-align: center;
+        width: 60%; }
+        .book-edit-container .journal-container .grid .column-half .cover-title input {
+          outline: none;
+          border: none;
+          width: 100%;
+          font-size: 0.8em;
+          padding: 0.5em 0; }
+      .book-edit-container .journal-container .grid .column-half span.input-file {
+        width: 100%;
+        box-sizing: border-box;
+        background: #3f5158;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        z-index: 5;
+        color: #ffffff;
+        padding: 1em 0; }
+        .book-edit-container .journal-container .grid .column-half span.input-file input[type="file"] {
+          position: absolute;
+          width: inherit;
+          left: 0;
+          height: inherit;
+          opacity: 0;
+          cursor: pointer;
+          z-index: 10; }
+      .book-edit-container .journal-container .grid .column-half:last-child {
+        background-color: #ffffff; }
+        .book-edit-container .journal-container .grid .column-half:last-child textarea {
+          resize: none;
+          border: none;
+          width: 100%;
+          outline: none;
+          height: 17em; }
+      .book-edit-container .journal-container .grid .column-half:first-child {
+        background: #ffffff url(../img/preview.jpg) no-repeat center center;
+        background-size: cover;
+        height: 15em; }
+      .book-edit-container .journal-container .grid .column-half:last-child {
+        padding: 0.8em; }
+      @media screen and (max-width: 768px) {
+        .book-edit-container .journal-container .grid .column-half {
+          float: none;
+          width: 100%; }
+          .book-edit-container .journal-container .grid .column-half .cover-title {
+            width: 80%; } }
+    .book-edit-container .journal-container .tab-container {
+      margin: 2em 0; }
+      .book-edit-container .journal-container .tab-container ul {
+        margin: 0;
+        padding: 0; }
+        .book-edit-container .journal-container .tab-container ul li {
+          list-style-type: none;
+          display: inline;
+          float: left;
+          background-color: #f9f9f9;
+          box-sizing: border-box;
+          border: solid 1px #e8e8e8; }
+          .book-edit-container .journal-container .tab-container ul li a {
+            padding: 2em;
+            display: block;
+            color: #709ba8; }
+            .book-edit-container .journal-container .tab-container ul li a:hover, .book-edit-container .journal-container .tab-container ul li a.active {
+              background-color: #ffffff;
+              color: #c8af76;
+              border-bottom: solid 1px #c8af76; }
+        .book-edit-container .journal-container .tab-container ul::after {
+          display: block;
+          content: "";
+          clear: both; }
+      .book-edit-container .journal-container .tab-container > div {
+        border: solid 1px #e8e8e8;
+        background-color: #ffffff;
+        padding: 2em;
+        display: none; }
+        .book-edit-container .journal-container .tab-container > div ul {
+          padding: 0;
+          margin: 0; }
+          .book-edit-container .journal-container .tab-container > div ul li {
+            box-sizing: border-box;
+            list-style-type: none;
+            display: inline;
+            float: left;
+            width: 15em;
+            height: 15em;
+            position: relative; }
+            .book-edit-container .journal-container .tab-container > div ul li a {
+              padding: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: inherit;
+              height: inherit;
+              opacity: 0;
+              transition: all 500ms ease-in-out;
+              -webkit-transition: all 500ms ease-in-out;
+              -moz-transition: all 500ms ease-in-out;
+              text-align: center;
+              font-size: 10em;
+              line-height: 1.5; }
+              .book-edit-container .journal-container .tab-container > div ul li a:hover {
+                color: #c8af76;
+                background-color: rgba(144, 177, 187, 0.7); }
+            .book-edit-container .journal-container .tab-container > div ul li:hover a {
+              opacity: 1; }
+        .book-edit-container .journal-container .tab-container > div.active {
+          display: block; }
+        .book-edit-container .journal-container .tab-container > div:last-child {
+          height: 30em; }
+    .book-edit-container .journal-container .save-journal {
+      position: relative;
+      padding: 0.8em 1em;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-color: #c8af76;
+      border: none;
+      cursor: pointer;
+      border: solid 1px #c8af76;
+      border-radius: 3px;
+      transition: all 500ms ease-in-out;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      font-size: 1em;
+      padding: 1em 5em;
+      box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 5px 0px #9a7e3e, 0px 0px 15px 1px rgba(0, 0, 0, 0.5); }
+      .book-edit-container .journal-container .save-journal:hover {
+        background-color: #b99a52; }
+      .book-edit-container .journal-container .save-journal:active {
+        top: 5px;
+        box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
+        -webkit-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent;
+        -moz-box-shadow: 0px 0px 0px #9a7e3e, 0px 0px 15px 1px transparent; }
+
 /*# sourceMappingURL=memorie.css.map */

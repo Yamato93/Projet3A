@@ -99,6 +99,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/modules/imageModule.js"></script>
         <script src="public/js/story-script.js"></script>
         <!-- END SCRIPTS -->
     </body>
