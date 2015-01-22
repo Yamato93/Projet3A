@@ -26,33 +26,60 @@
                 </h1>
                 <ul class="grid">
                     <li class="column-third create">
+                        <a href="index.php?module=books&action=cover">
+                            <div>
+                                <p>+</p>
+                            </div>
+                            <div>
+                                <p>
+                                    Create a new travel journal
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="column-third">
                         <div>
-                            <span>+</span>
+                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
                         </div>
                         <div>
+                            <h2>
+                                Russia
+                            </h2>
                             <p>
-                                Create a new travel journal
+                                "Wild open spaces to be discovered"
                             </p>
+                            <a href="#" class="more">Read more</a>
+                            <a href="#">Edit</a>
                         </div>
                     </li>
-                    <li class="column-third create">
+                    <li class="column-third">
                         <div>
-                            <span>+</span>
+                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
                         </div>
                         <div>
+                            <h2>
+                                Russia
+                            </h2>
                             <p>
-                                Create a new travel journal
+                                "Wild open spaces to be discovered"
                             </p>
+                            <a href="#" class="more">Read more</a>
+                            <a href="#">Edit</a>
                         </div>
                     </li>
-                    <li class="column-third create">
+                    <li class="column-third">
                         <div>
-                            <span>+</span>
+                            <img src="public/img/diaries/russia.jpg" alt="Russian travel book"/>
                         </div>
                         <div>
+                            <h2>
+                                Russia
+                            </h2>
                             <p>
-                                Create a new travel journal
+                                "Wild open spaces to be discovered"
                             </p>
+                            <a href="#" class="more">Read more</a>
+                            <a href="#">Edit</a>
                         </div>
                     </li>
                 </ul>

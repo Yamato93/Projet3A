@@ -18,16 +18,36 @@
         li{
             list-style-type: none;
             box-sizing:border-box;
+            @media #{$medium}{
+                &.column-third{
+                    width: 50%;
+                }
+            }
+            @media #{$small}{
+                &.column-third{
+                    width: 100%;
+                    float: none;
+                }
+            }
 
             &.create{
+                margin-bottom: 10px;
                 div{
                     float: left;
                     box-sizing:border-box;
 
                     &:first-child{
                         width:30%;
-                        span{
-                            background: $darkbluegreen;
+                        height: 0;
+                        padding-bottom: 30%;
+                        background: $bluegreen;
+                        text-align: center;
+                        p{
+                            color: #ffffff;
+                            font-size: 4em;
+                            margin: 0;
+                            margin-top: 50%;
+                            transform: translateY(-50%);
                         }
                     }
 
@@ -35,10 +55,58 @@
                         width: 70%;
                         p{
                             margin: 0;
+                            padding-left: 10px;
+                            font-size: 1.2em;
+                            font-weight: 600;
+                            color: $darkbluegreen;
+                        }
+                    }
+                }
+            }
+            div{
+                float: left;
+                box-sizing:border-box;
+
+                &:first-child{
+                    width:30%;
+                }
+
+                &:last-child{
+                    width: 70%;
+                    padding-left: 10px;
+                    h2{
+                        margin: 0;
+                        color: $darkbluegreen;
+                        font-weight: 700;
+                    }
+                    p{
+                        color: $darkbluegreen;
+                        font-size: 0.8em;
+                    }
+                    a{
+                        display: inline-block;
+                        padding: 0.5em 0.8em;
+                        border-radius: 3px;
+
+                        &.more{
+                            color:$darkbluegreen;
+                            border: solid 1px $darkbluegreen;
+                        }
+
+                        &:last-child{
+                            color:#ffffff;
+                            background-color: $darkbluegreen;
                         }
                     }
                 }
             }
         }
+    }
+
+    @media #{$medium}{
+        padding: 2em;
+    }
+    @media #{$small}{
+        padding: 2em 1em;
     }
 }
