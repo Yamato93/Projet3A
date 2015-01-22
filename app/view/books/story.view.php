@@ -80,11 +80,11 @@
                         <img src="<?php echo $_SESSION['Books']['cover_upload'];?>" alt="Preview image"/>
                     </div>
                     <div class="form-div">
-                        <input type="text" name="start-date" placeholder="Date of arrival"/>
+                        <input type="date" name="start-date" placeholder="Date of arrival"/>
                         <label>Date of arrival</label>
                     </div>
                     <div class="form-div">
-                        <input type="text" name="end-date"placeholder="Stop date"/>
+                        <input type="date" name="end-date"placeholder="Stop date"/>
                         <label>Stop date</label>
                     </div>
                     <div class="googleMap"></div>
