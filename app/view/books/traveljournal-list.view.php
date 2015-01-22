@@ -35,6 +35,26 @@
                             </p>
                         </div>
                     </li>
+                    <li class="column-third create">
+                        <div>
+                            <span>+</span>
+                        </div>
+                        <div>
+                            <p>
+                                Create a new travel journal
+                            </p>
+                        </div>
+                    </li>
+                    <li class="column-third create">
+                        <div>
+                            <span>+</span>
+                        </div>
+                        <div>
+                            <p>
+                                Create a new travel journal
+                            </p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

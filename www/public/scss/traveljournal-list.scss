@@ -27,14 +27,7 @@
                     &:first-child{
                         width:30%;
                         span{
-                            width: 100%;
-                            padding: 1em 0;
-                            display: block;
-                            vertical-align: middle;
-                            text-align: center;
-                            font-size: 2em;
-                            background-color: $bluegreen;
-                            color: #ffffff;
+                            background: $darkbluegreen;
                         }
                     }
 
