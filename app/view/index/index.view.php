@@ -49,7 +49,7 @@
 		                                    <?php echo $value->BOOKS_TITLE; ?>
 		                                </h3>
 		                                <p class="diary-description">
-		                                    <?php echo $value->BOOKS_DESCR; ?>
+		                                    <?php echo substr($value->BOOKS_DESCR, 0, 50); ?>
 		                                </p>
 		                                <span>Discover this diary > </span>
 		                            </div>
