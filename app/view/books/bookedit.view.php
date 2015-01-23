@@ -14,17 +14,18 @@
 
         <!-- CONTENT -->
         <div class="book-edit-container">
-
+			
             <?php include('../app/includes/nav.inc.php') ?>
-
+			<?php foreach ($bookslist as $key => $value)
+			{
+			?>
             <div class="journal-container u-wrapper">
                 <form method='POST'>
                     <h1>Let's the journey begin</h1>
                     <div class="grid">
-                        <div class="column-half" style="background-image:url(<?php /* echo $_SESSION['Books']['cover_upload'];*/?>);">
+                        <div class="column-half" style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
                             <h2 class="cover-title">
-                                <input type="text" placeholder="Title"/>
-                                <?php /*echo $_SESSION['Books']['cover_title'];*/?>
+                                <input type="text" placeholder="Title" value="<?php echo $value->BOOKS_TITLE;?>"/>
                             </h2>
                             <span class="input-file">
                                 Select an image for your cover
@@ -32,7 +33,7 @@
                             </span>
                         </div>
                         <div class="column-half">
-                            <textarea placeholder="Your description"><?php /* echo $_SESSION['Books']['cover_descr'];*/?></textarea>
+                            <textarea placeholder="Your description"><?php echo $value->BOOKS_DESCR;?></textarea>
                         </div>
                     </div>
                     <div class="tab-container">
@@ -89,6 +90,9 @@
                     <button class="save-journal" onClick="location.href='index.php?module=books&action=books_insert'">Save your books</button>
                 </form>
             </div>
+            <?php 			
+			}
+			?>
         </div>
         <!-- END CONTENT -->
 

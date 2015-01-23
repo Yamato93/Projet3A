@@ -1,6 +1,6 @@
 <?php
 
-function select_books_list($connect, $dbname, $tablename, $id)
+function select_data_books($connect, $dbname, $tablename, $where, $id)
 {
 	try
 	{
@@ -12,7 +12,7 @@ function select_books_list($connect, $dbname, $tablename, $id)
 				
 			$query = "SELECT *
 						FROM ".$dbname.".".$tablename."
-						WHERE USE_ID = :Param1 ORDER BY BOOKS_DATE_CREA DESC";
+						WHERE ".$where." = :Param1 ORDER BY BOOKS_DATE_CREA DESC";
 			
 			$curseur = $connect -> prepare($query);
 			$curseur -> bindValue(':Param1', $id, PDO::PARAM_STR);
