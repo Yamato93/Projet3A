@@ -46,37 +46,32 @@
                             </li>
                         </ul>
                         <div id="memories" class="tab-content active">
-                            <ul>
-                                <?php /*
-                                    $y = 1;
-                                    $x = 0;
-                                    while(isset($_SESSION['Books']['Step'.$y]))
-                                    {
-                                        while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
-                                        {
-                                            
-                                            $x++;
-                                            if(!empty($_SESSION['Books']['Step'.$y]['step_img'.$x]))
-                                            {
-                                                
-                                                $url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
-
-                                            }
-                                            else
-                                            {
-                                                $url = 'public/img/preview.jpg';
-                                            }
-                                        }
-                                        */
-                                ?>
-                                    <li>
-                                        <img src="<?php /* echo $url; */?>" alt="Preview image form empty">
-                                        <a href="index.php?module=books&action=storyedit&info=<?php /* echo $y; */?>"></a>
-                                    </li>
-                                <?php/*
-                                        $y++;
-                       
-                                    }*/
+                        	<ul>
+								<?php
+									foreach ($booksstep as $key => $value)
+								    {
+								    	$passage = false;
+										foreach ($booksstepimg as $keys => $values)
+										{
+										   //commandes
+											if($passage == false)
+											{
+												if($value->BOOKS_STEPS_ID == $values->BOOKS_STEPS)
+												{
+												$passage = true;
+												$url = $values->STEPS_IMG;
+												}
+											}
+											
+										}
+										
+										?>
+		                                <li>
+		                                    <img src="<?php echo $url; ?>" alt="Preview image form empty">
+		                                    <a href="index.php?module=books&action=storyedit&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
+		                                </li>
+                               <?php
+                                    }   
                                 ?>
                                 <li>
                                     <img src="public/img/preview.jpg" alt="Preview image form empty">

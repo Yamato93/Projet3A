@@ -51,33 +51,27 @@
                         <ul>
                         	<?php
                         		$y = 1;
-                        		$x = 0;
+                        		
                         		while(isset($_SESSION['Books']['Step'.$y]))
                         		{
-                        			while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+									$x = 0;
+									while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
 									{
-										
 										$x++;
-										if(!empty($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+										if(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
 										{
 											
 											$url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
-
-										}
-										else
-										{
-											$url = 'public/img/preview.jpg';
+							
 										}
 									}
-					
-	                        ?>
+									?>
 	                        	<li>
-                                	<img src="<?php echo $url; ?>" alt="Preview image form empty">
+                                	<img src="<?php echo $url; ?>" title="<?php echo $url; ?>" alt="Preview image form empty">
 									<a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
 								</li>
 	                        <?php
-	                        		$y++;
-	               
+								$y++;
                         		}
                         	?>
                             <li>
