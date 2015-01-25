@@ -75,7 +75,7 @@
                                 ?>
                                 <li>
                                     <img src="public/img/preview.jpg" alt="Preview image form empty">
-                                    <a href="index.php?module=books&action=story">+</a>
+                                    <a href="index.php?module=books&action=bookseditstory&id=<?php echo $_GET['id']; ?>">+</a>
                                 </li>
                             </ul>
                         </div>

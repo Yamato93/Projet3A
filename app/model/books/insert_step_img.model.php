@@ -4,6 +4,11 @@ function insert_step_img($connect, $dbname, $tablename, $books_steps, $books_id,
 {
 	try 
 	{
+
+		$info = array(
+				"Le nom de la function : ".__FUNCTION__,
+				"Le nom du document : ".__FILE__,
+				"Le numero de la ligne : ".__LINE__);
 		$query="INSERT INTO ".$dbname.".".$tablename." (BOOKS_STEPS, BOOKS_ID, USE_ID,STEPS_IMG) 
 		VALUES (:Param1, :Param2, :Param3, :Param4)";
 
@@ -18,6 +23,8 @@ function insert_step_img($connect, $dbname, $tablename, $books_steps, $books_id,
 		$retour = $curseur -> execute();
 		//var_dump($retour);
 		$curseur -> closeCursor();
+		$debug_tableau = array($info ,$query);
+			$_SESSION["requetes"] = $debug_tableau;	
 		return true;
 
 	}

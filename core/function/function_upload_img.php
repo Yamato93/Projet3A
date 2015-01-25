@@ -1,5 +1,4 @@
 <?php
-
 function upload($fichiers, $infosession, $infosession2, $infosession3 = null)
 {
 			//********************************
