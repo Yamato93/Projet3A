@@ -5,16 +5,22 @@
  * Date: 23/01/15
  * Time: 17:46
  */
-function search($connect, $search){
+function search($connect, $search, $limit, $offset){
     try
     {
-        $query ="SELECT * FROM DT_USERS
-				WHERE USE_ID = :";
-
+        $query ="SELECT *
+                FROM DT_BOOKS, DT_BOOKS_STEPS
+                WHERE BOOKS_TITLE LIKE %:search%";
+         //       LIMIT :offset, :limit ;" ;
         $curseur = $connect->prepare($query);
-        $curseur ->bindValue(':id', $search, PDO::PARAM_STR);
+        $curseur ->bindValue(':search', $search, PDO::PARAM_STR);
+        //$curseur ->bindValue(':offset', $offset, PDO::PARAM_INT);
+        //$curseur ->bindValue(':limit', $limit, PDO::PARAM_INT);
+
         $curseur->execute();
+        var_dump($curseur);
         $data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
+        var_dump($data_user);
         $curseur->closeCursor();
         if(isset($data_user))
         {

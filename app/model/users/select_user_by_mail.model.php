@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @param $connect
+ * @param $mail
+ * @return bool
+ */
 function select_user_by_mail($connect, $mail)
 {
 	try

@@ -1,6 +1,11 @@
 <?php
-if(isset($_POST['search'])) {
+if(isset($_GET['search'])) {
     include_once '../app/model/search/search.model.php';
-    $search = $_POST['search'];
-    $data = search($search);
+    $search = $_GET['search'];
+    $search = 'Cro';
+    $limit = 30;
+    $offset = 0;
+    echo $limit.'//'.$offset.'//'.$search;
+    $data = search($connect, $search, $limit, $offset);
+    var_dump($data);
 }
