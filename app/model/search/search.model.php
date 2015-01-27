@@ -8,12 +8,13 @@
 function search($connect, $search, $limit, $offset){
     try
     {
-        $query ="SELECT *
-                FROM DT_BOOKS, DT_BOOKS_STEPS
-                WHERE BOOKS_TITLE LIKE %:search%
-                OR BOOKS_DESCR LIKE %:search%
-                OR BOOKS_STEPS_CONTENT LIKE %:search%
-                LIMIT :offset, :limit ;" ;
+        $query ='SELECT *
+                FROM DT_BOOKS A, DT_BOOKS_STEPS B
+                WHERE A.BOOKS_ID = B.BOOKS_ID
+                AND ( BOOKS_TITLE LIKE :search
+                OR BOOKS_DESCR LIKE :search
+                OR BOOKS_STEPS_CONTENT LIKE :search )
+                LIMIT :offset, :limit ;' ;
         $curseur = $connect->prepare($query);
         $curseur ->bindValue(':search', $search, PDO::PARAM_STR);
         $curseur ->bindValue(':offset', $offset, PDO::PARAM_INT);
