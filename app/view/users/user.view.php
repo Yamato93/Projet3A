@@ -37,6 +37,9 @@
                 <div class="column-half">
                     <h2>About me</h2>
                     <p><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : "N/A"; echo($retVal); ?></p>
+                    <?php if ($data->USE_ID == $_SESSION['User']->USE_ID){?>
+                    <a href="?module=users&action=edit">Edit profil</a>
+                    <?php } ?>
                 </diV>
             </div>
             <div class="user-stats">
@@ -46,11 +49,11 @@
                         <span>Country visited</span>
                     </li>
                     <li>
-                        6
+                        <?php echo $count->nb_books ?>
                         <span>Travel journals</span>
                     </li>
                     <li>
-                        9
+                        <?php echo $count->nb_routes ?>
                         <span>Routes</span>
                     </li>
                 </ul>
