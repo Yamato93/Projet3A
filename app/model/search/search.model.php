@@ -10,12 +10,14 @@ function search($connect, $search, $limit, $offset){
     {
         $query ="SELECT *
                 FROM DT_BOOKS, DT_BOOKS_STEPS
-                WHERE BOOKS_TITLE LIKE %:search%";
-         //       LIMIT :offset, :limit ;" ;
+                WHERE BOOKS_TITLE LIKE %:search%
+                OR BOOKS_DESCR LIKE %:search%
+                OR BOOKS_STEPS_CONTENT LIKE %:search%
+                LIMIT :offset, :limit ;" ;
         $curseur = $connect->prepare($query);
         $curseur ->bindValue(':search', $search, PDO::PARAM_STR);
-        //$curseur ->bindValue(':offset', $offset, PDO::PARAM_INT);
-        //$curseur ->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $curseur ->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $curseur ->bindValue(':limit', $limit, PDO::PARAM_INT);
 
         $curseur->execute();
         var_dump($curseur);
