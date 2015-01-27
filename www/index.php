@@ -11,7 +11,7 @@
 	//print_r(BASE_DIR);
 	//die();
 	$debug = array();
-	$_SESSION["requetes"] = array();
+	//$_SESSION["requetes"] = array();
 	
 	try {
 		$connect = cnx_site_local( 'pdo' );

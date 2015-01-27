@@ -68,7 +68,7 @@
 										?>
 		                                <li>
 		                                    <img src="<?php echo $url; ?>" alt="Preview image form empty">
-		                                    <a href="index.php?module=books&action=storyedit&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
+		                                    <a href="index.php?module=books&action=bookseditstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
 		                                </li>
                                <?php
                                     }   
@@ -82,7 +82,7 @@
                         <div id="map" class="tab-content">
                         </div>
                     </div>
-                    <button class="save-journal" onClick="location.href='index.php?module=books&action=books_insert'">Save your books</button>
+                    <button class="save-journal" onClick="location.href='index.php?module=books&action=bookseditcover'">Save your books</button>
                 </form>
             </div>
             <?php 			
