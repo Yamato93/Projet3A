@@ -1,1 +1,131 @@
 @import "commons";
+
+.travel-container{
+
+    .travel-cover{
+        box-sizing:border-box;
+        padding: 10em 1em;
+        background: $bluegreen url(../img/create-book-2.png) no-repeat center;
+        background-size: cover;
+        color: #ffffff;
+        position: relative;
+
+        h1{
+            display: block;
+            margin: 0;
+            padding: 0.5em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $darkbluegreen;
+        }
+
+        .travel-nav{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+
+            a{
+                padding: 1em;
+                display: block;
+
+                &:last-child{
+                    padding-top:0;
+                }
+            }
+        }
+    }
+
+    .travel-journal{
+        padding: 2em 0;
+        > div.grid{
+            text-align: center;
+            padding: 1em;
+            border-bottom: solid 1px #000000;
+
+            >div.column-half{
+                padding:1em;
+
+                @media #{$medium}{
+                    width: 100%;
+                }
+            }
+
+            p, h2{
+                text-align: left;
+            }
+
+            p{
+                line-height: 1.4;
+            }
+
+            h2{
+                font-weight: bold;
+            }
+
+            .travel-more{
+                padding: 1em 0.8em;
+                border:solid 1px $darkbluegreen;
+                color: $darkbluegreen;
+                border-radius: 3px;
+                float: right;
+            }
+
+            .travel-add{
+                color:#de4848;
+                text-decoration: underline;
+                text-align: left;
+                float: left;
+            }
+
+            &:last-child{
+                border: none;
+            }
+        }
+
+        >div.inverse{
+            position: relative;
+
+            >.column-half{
+                float: right;
+
+                /*&:last-child{
+                    position:absolute;
+                    top:50%;
+                    left: 0;
+                    transform:translateY(-50%);
+                    -webkit-transform:translateY(-50%);
+
+                    @media #{$medium}{
+                        position: initial;
+                        transform:translateY(0);
+                        -webkit-transform:translateY(0%);
+                    }
+                }*/
+            }
+        }
+    }
+
+    .travel-gallery{
+        h2{
+            padding-bottom: 0.5em;
+            color:$darkbluegreen;
+            border-bottom: solid 1px $darkbluegreen;
+        }
+
+        ul{
+            li{
+                text-align: center;
+
+                @media #{$medium}{
+                    width: 50%;
+                }
+
+                @media #{$small}{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
