@@ -5,13 +5,38 @@
     background-color: lighten($bluegreen, 40%);
 
     .journal-container{
-        padding: 2em 0;
         text-align: center;
+        padding-bottom: 2em;
+
         h1{
             color:$darkbluegreen;
         }
         .grid{
+            h1{
+                color:$darkbluegreen;
+                margin-bottom: 0;
+                @media #{$small}{
+                    font-size:1em;
+                }
+            }
+
+            .column-twothirds{
+                margin-bottom: 2em;
+            }
+
+            .column-third{
+                margin-bottom: 2em;
+                text-align: right;
+            }
+
+            .sub-title{
+                color: $darkbluegreen;
+                font-size: 1em;
+                margin-bottom: 2em;
+            }
+
             .cover-journal{
+                padding: 1em;
                 div:first-child{
                     background:#ffffff url(../img/preview.jpg) no-repeat center center;
                     background-size: cover;
@@ -36,46 +61,17 @@
                     background-color: #ffffff;
                     margin-top: 1em;
                     padding: 1em;
-                }
-            }
-        }
+                    text-align: left;
 
-        .tab-container{
-            margin: 2em 0;
-            ul{
-                margin:0;
-                padding:0;
-                li{
-                    list-style-type: none;
-                    display: inline;
-                    float: left;
-                    background-color: #f9f9f9;
-                    box-sizing:border-box;
-                    border: solid 1px #e8e8e8;
-                    a{
-                        padding: 2em;
-                        display: block;
-                        color: $bluegreen;
-
-                        &:hover,  &.active{
-                            background-color: #ffffff;
-                            color: $golden;
-                            border-bottom: solid 1px $golden;
-                        }
+                    p{
+                        margin:0;
                     }
                 }
-
-                &::after{
-                    @include clearfix();
-                }
             }
 
-            > div{
-                border: solid 1px #e8e8e8;
+            .memorie{
+                padding: 1em;
                 background-color: #ffffff;
-                padding:2em;
-                display: none;
-
                 ul{
                     padding: 0;
                     margin: 0;
@@ -84,17 +80,16 @@
                         list-style-type: none;
                         display: inline;
                         float: left;
-                        width: 15em;
-                        height: 15em;
                         position: relative;
+                        padding:0 0.2em;
 
                         a{
                             padding: 0;
                             position: absolute;
                             top: 0;
                             left: 0;
-                            width: inherit;
-                            height: inherit;
+                            width: 100%;
+                            height: 100%;
                             opacity: 0;
                             @include trans(all, 500ms);
                             text-align: center;
@@ -110,13 +105,6 @@
                             opacity: 1;
                         }
                     }
-                }
-
-                &.active{
-                    display: block;
-                }
-                &:last-child{
-                    height: 30em;
                 }
             }
         }
@@ -136,10 +124,6 @@
             }
         }
     }
-}
-
-#map img{
-    max-width: none;
 }
 
 .book-edit-container{

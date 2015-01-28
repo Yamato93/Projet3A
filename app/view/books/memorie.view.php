@@ -20,6 +20,7 @@
             <div class="journal-container u-wrapper">
                 <div class="grid">
                     <h1>Let's the journey continue</h1>
+                    <h2 class="sub-title">Create a memorie to enrich your travel journal</h2>
                     <ul class="breadcrumb column-twothirds">
                         <li>
                             <span></span> Cover
@@ -42,51 +43,38 @@
                             <p><?php echo $_SESSION['Books']['cover_descr'];?></p>
                         </div>
                     </div>
-                    <div class="column-half"></div>
-                </div>
-                <div class="tab-container">
-                    <ul>
-                        <li>
-                            <a href="#memories" class="active">Memories</a>
-                        </li>
-                        <li>
-                            <a href="#map">Map</a>
-                        </li>
-                    </ul>
-                    <div id="memories" class="tab-content active">
-                        <ul>
-                        	<?php
-                        		$y = 1;
-                        		
-                        		while(isset($_SESSION['Books']['Step'.$y]))
-                        		{
-									$x = 0;
-									while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
-									{
-										$x++;
-										if(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
-										{
-											
-											$url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
-							
-										}
-									}
-									?>
-	                        	<li>
-                                	<img src="<?php echo $url; ?>" title="<?php echo $url; ?>" alt="Preview image form empty">
-									<a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
-								</li>
-	                        <?php
-								$y++;
-                        		}
-                        	?>
-                            <li>
+                    <div class="column-half memorie">
+                        <ul class="grid">
+                            <?php
+                                $y = 1;
+                                
+                                while(isset($_SESSION['Books']['Step'.$y]))
+                                {
+                                    $x = 0;
+                                    while(!isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+                                    {
+                                        $x++;
+                                        if(isset($_SESSION['Books']['Step'.$y]['step_img'.$x]))
+                                        {
+                                            
+                                            $url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
+                            
+                                        }
+                                    }
+                                    ?>
+                                <li class="column-half">
+                                    <img src="<?php echo $url; ?>" title="<?php echo $url; ?>" alt="Preview image form empty">
+                                    <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
+                                </li>
+                            <?php
+                                $y++;
+                                }
+                            ?>
+                            <li class="column-half">
                                 <img src="public/img/preview.jpg" alt="Preview image form empty">
                                 <a href="index.php?module=books&action=story">+</a>
                             </li>
                         </ul>
-                    </div>
-                    <div id="map" class="tab-content">
                     </div>
                 </div>
             </div>

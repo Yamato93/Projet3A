@@ -22,16 +22,15 @@
                     <h1>Let's the journey begin</h1>
                     <ul class="breadcrumb">
                         <li>
-                            <span></span> Start by your cover
+                            <span></span> Cover
                         </li>
                         <li>
-                            <span></span> Create a memorie
+                            <span></span> Memorie
                         </li>
                         <li class="active">
-                            <span></span> Recount your story
+                            <span></span> Story
                         </li>
                     </ul>
-                    <?php display_notification(); ?>
                     <div class="form-div">
                         <textarea name="story" placeholder="Write your story"></textarea>
                         <label>Your story</label>
