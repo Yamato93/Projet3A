@@ -344,13 +344,6 @@ img {
         @media screen and (max-width: 480px) {
           .breadcrumb li:last-child::before {
             left: -10px; } }
-    .breadcrumb li:hover {
-      background-color: #c8af76; }
-      .breadcrumb li:hover::after {
-        border-left-color: #c8af76; }
-      .breadcrumb li:hover::before {
-        border-color: #c8af76;
-        border-left-color: transparent; }
     @media screen and (max-width: 480px) {
       .breadcrumb li {
         font-size: 0.6em; } }

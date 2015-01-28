@@ -338,16 +338,6 @@
                 }
             }
         }
-        &:hover{
-            background-color: $golden;
-            &::after{
-                border-left-color:$golden;
-            }
-            &::before{
-                border-color:$golden;
-                border-left-color:transparent;
-            }
-        }
         @media #{$small}{
             font-size: 0.6em;
         }

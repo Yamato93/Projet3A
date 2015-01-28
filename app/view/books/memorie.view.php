@@ -36,7 +36,7 @@
                         <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Save your books</button>
                     </div>
                     <div class="column-half cover-journal">
-                        <div style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>); background-size: cover;">
+                        <div style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>);">
                             <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
                         </div>
                         <div>
