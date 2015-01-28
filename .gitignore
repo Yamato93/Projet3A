@@ -10,6 +10,7 @@ www/public/images/*
 !www/public/images/9657aef7527042f2c5486112a28fcb44.jpg
 !www/public/images/143156b2b2c63a9c225fc09a23b67008.jpg
 !www/public/images/cef85c542452e6373417e0dcad3d9932.jpg
+*.swp
 .idea/.name
 
 .idea/encodings.xml
