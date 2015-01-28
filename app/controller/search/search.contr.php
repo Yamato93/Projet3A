@@ -13,5 +13,5 @@ if (isset($_POST['search'])) {
         echo "no result";
     }
 } else {
-    header('location : index.php');
+    header('location:index.php');
 }

@@ -114,7 +114,7 @@
                 <div class="column-half profesional-description">
                     <div>
                         <h4>Discover it allows me to share my restaurant worldwide</h4>
-                        <a href="landing.html">Why not me ?</a>
+                        <a href="?module=announcement&action=start">Why not me ?</a>
                     </div>
                 </div>
             </div>
