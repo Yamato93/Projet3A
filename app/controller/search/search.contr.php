@@ -1,11 +1,17 @@
 <?php
-if(isset($_GET['search'])) {
+if (isset($_POST['search'])) {
     include_once '../app/model/search/search.model.php';
-    $search = $_GET['search'];
-    $search = 'Crotian';
+    $search = '%'.$_POST['search'].'%';
     $limit = 30;
     $offset = 0;
-    echo $limit.'//'.$offset.'//'.$search;
     $data = search($connect, $search, $limit, $offset);
-    var_dump($data);
+    if (!empty($data)) {
+        var_dump($data);
+        //include_once '../app/view/search/NOTNAMED.view.php'
+    }
+    else{
+        echo "no result";
+    }
+} else {
+    header('location : index.php');
 }

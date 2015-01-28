@@ -36,15 +36,8 @@ if(isset($_SESSION['User']))
 		exit;
 	}
 	
-	if(isset($_GET['info']) and isset($_GET['bookid']))
-	{
-		$actionurl = "index.php?module=books&action=bookseditstory&id=".$_GET['info'];
-		$bookslist = select_data_book($connect, BASE, "DT_BOOKS", "BOOKS_ID" , $_GET['bookid']);
-		$stepinfo = current(select_data_step_info($connect, BASE, "DT_BOOKS_STEPS", "USE_ID", $_SESSION['User']->USE_ID, "BOOKS_ID", $_GET['bookid'], "BOOKS_STEPS_ID", $_GET['info']));
-		$stepimginfo = select_data_step_picture($connect, BASE, "DT_BOOKS_STEPS_PICTURE", "USE_ID", $_SESSION['User']->USE_ID, "BOOKS_ID", $_GET['bookid'], "BOOKS_STEPS", $_GET['info']);
-
-	}
-	else if(isset($_GET['id']))
+	
+	if(isset($_GET['id']))
 	{
 		$actionurl = "index.php?module=books&action=bookseditstory&id=".$_GET['id'];
 	}

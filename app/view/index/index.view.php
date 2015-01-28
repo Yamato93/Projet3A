@@ -26,8 +26,8 @@
         <div class="diaries">
             <div class="u-wrapper">
                 <h2 class="diaries-title">Search adventures written by travellers like you</h2>
-                <form action="landing.html">
-                    <input type="text" placeholder="Costa rica" />
+                <form action="index.php?module=search&action=search" method="post" id="search">
+                    <input name="search" type="text" placeholder="Costa rica" />
                     <button type="submit">GO</button>
                 </form>
                 <h3 class="diaries-title">Or discover our best trip books</h3>
@@ -53,7 +53,7 @@
 		                                </p>
 		                                <span>Discover this diary > </span>
 		                            </div>
-		                            <a href="landing.html">Discover this diary</a>
+		                            <a href="index.php?module=books&action=traveljournal&id=<?php echo $value->BOOKS_ID ?>">Discover this diary</a>
 		                        </div>
 		                    </li>
 					<?php

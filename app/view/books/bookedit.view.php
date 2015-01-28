@@ -68,7 +68,7 @@
 										?>
 		                                <li>
 		                                    <img src="<?php echo $url; ?>" alt="Preview image form empty">
-		                                    <a href="index.php?module=books&action=bookseditstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
+		                                    <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
 		                                </li>
                                <?php
                                     }   
