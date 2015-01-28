@@ -37,9 +37,9 @@
                 <div class="column-half">
                     <h2>About me</h2>
                     <p><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : "N/A"; echo($retVal); ?></p>
-                    <?php if ($data->USE_ID == $_SESSION['User']->USE_ID){?>
+                    <?php if (isset($_SESSION['User'])) { if ($data->USE_ID == $_SESSION['User']->USE_ID){?>
                     <a href="?module=users&action=edit">Edit profil</a>
-                    <?php } ?>
+                    <?php } } ?>
                 </diV>
             </div>
             <div class="user-stats">

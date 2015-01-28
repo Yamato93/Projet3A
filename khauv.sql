@@ -1,0 +1,361 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.7
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Mer 28 Janvier 2015 à 16:06
+-- Version du serveur: 5.5.29
+-- Version de PHP: 5.4.10
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données: `khauv`
+--
+
+DELIMITER $$
+--
+-- Procédures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ListeUsers`()
+begin
+select * from blog_users;
+end$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_ADMIN`
+--
+
+CREATE TABLE `DT_ADMIN` (
+  `ADM_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ADM_NAME` varchar(45) NOT NULL,
+  `ADM_PASSWORD` varchar(45) NOT NULL,
+  `ADM_LVL` tinyint(5) NOT NULL,
+  PRIMARY KEY (`ADM_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Contenu de la table `DT_ADMIN`
+--
+
+INSERT INTO `DT_ADMIN` (`ADM_ID`, `ADM_NAME`, `ADM_PASSWORD`, `ADM_LVL`) VALUES
+(2, 'Thierry', 'b36d331451a61eb2d76860e00c347396', 5),
+(3, 'Yamato', 'b36d331451a61eb2d76860e00c347396', 2),
+(4, 'Yamato93', 'b36d331451a61eb2d76860e00c347396', 3),
+(5, 'kikou', 'b36d331451a61eb2d76860e00c347396', 4),
+(8, 'admin', '21232f297a57a5a743894a0e4a801fc3', 4),
+(9, 'TEST', '033bd94b1168d7e4f0d644c3c95e35bf', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_ANNOUNCEMENT`
+--
+
+CREATE TABLE `DT_ANNOUNCEMENT` (
+  `ANN_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USE_ID` int(11) NOT NULL,
+  `ANN_TYPE_ID` int(11) NOT NULL,
+  `ANN_NAME` varchar(45) DEFAULT NULL,
+  `ANN_DESCR` varchar(45) DEFAULT NULL,
+  `ANN_ADRESS` varchar(45) DEFAULT NULL,
+  `ANN_ZIPCODE` varchar(45) DEFAULT NULL,
+  `ANN_COUNTRY` varchar(45) DEFAULT NULL,
+  `ANN_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ANN_DATE_START` date DEFAULT NULL,
+  `ANN_DATE_END` date DEFAULT NULL,
+  `DT_LOCALIZATIONS_LOC_ID` int(11) NOT NULL,
+  `DT_LOCALIZATIONS_LOC_TYPE_ID` int(11) NOT NULL,
+  `DT_LOCALIZATIONS_DT_CITY_CITY_ID` int(11) NOT NULL,
+  PRIMARY KEY (`ANN_ID`,`USE_ID`,`ANN_TYPE_ID`,`DT_LOCALIZATIONS_LOC_ID`,`DT_LOCALIZATIONS_LOC_TYPE_ID`,`DT_LOCALIZATIONS_DT_CITY_CITY_ID`),
+  KEY `fk_DT_ANNOUNCEMENT_DT_USERS1_idx` (`USE_ID`),
+  KEY `fk_DT_ANNOUNCEMENT_DT_ANNOUNCEMENT_TYPE1_idx` (`ANN_TYPE_ID`),
+  KEY `fk_DT_ANNOUNCEMENT_DT_LOCALIZATIONS1_idx` (`DT_LOCALIZATIONS_LOC_ID`,`DT_LOCALIZATIONS_LOC_TYPE_ID`,`DT_LOCALIZATIONS_DT_CITY_CITY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_ANNOUNCEMENT_TYPE`
+--
+
+CREATE TABLE `DT_ANNOUNCEMENT_TYPE` (
+  `ANN_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ANN_TYPE_NAME` varchar(45) DEFAULT NULL,
+  `ANN_TYPE_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ANN_TYPE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_BOOKS`
+--
+
+CREATE TABLE `DT_BOOKS` (
+  `BOOKS_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USE_ID` int(11) NOT NULL,
+  `BOOKS_TITLE` varchar(45) DEFAULT NULL,
+  `BOOKS_DESCR` text,
+  `BOOKS_COVER` varchar(255) DEFAULT NULL,
+  `BOOKS_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`BOOKS_ID`,`USE_ID`),
+  KEY `fk_DT_JOURNEY_DT_USERS1_idx` (`USE_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+
+--
+-- Contenu de la table `DT_BOOKS`
+--
+
+INSERT INTO `DT_BOOKS` (`BOOKS_ID`, `USE_ID`, `BOOKS_TITLE`, `BOOKS_DESCR`, `BOOKS_COVER`, `BOOKS_DATE_CREA`) VALUES
+(1, 1, 'Take an amazing road trip', 'Discover USA’s legendary roads.', 'public/images/143156b2b2c63a9c225fc09a23b67008.jpg', '2015-01-17 02:11:21'),
+(2, 1, '2 weeks’ China trip', 'Walk through China’s landscapes!', 'public/images/6396dcf4e70e26edf74069d8c4d54198.jpg', '2015-01-17 02:10:50'),
+(3, 1, 'Canada book trip', 'Beautiful landscapes to discover.', 'public/images/717f14dda30819a4f4f33e9db62d4b11.jpg', '2015-01-17 02:09:44'),
+(4, 1, 'Amazonian forest', 'An incredible circuit into the wild.', 'public/images/9657aef7527042f2c5486112a28fcb44.jpg', '2015-01-17 02:09:14'),
+(5, 1, 'New trip in Russia', 'Wide open spaces to be discovered.', 'public/images/cef85c542452e6373417e0dcad3d9932.jpg', '2015-01-17 02:08:27'),
+(6, 1, 'Discovering Vietnam', 'An incredible adventure that I recommend to all.', 'public/images/854ab38af460ab498f8ec2625f704a01.jpg', '2015-01-17 02:05:32'),
+(15, 2, 'Crotian trip', 'A summer in Croatia', 'public/images/8fb7f7fb7c30fb4ece0b0b018909f380.jpg', '2015-01-21 10:31:57'),
+(16, 5, 'Test de carnet', 'Mon test de carnet', 'public/images/c224cddebbd01012cbae197e20070c08.jpg', '2015-01-22 11:14:06'),
+(17, 2, 'dfliuzdghfpozahfipzehf^zeih epoihfaepoihfapoi', 'azefazgazgazrg zpdoihfzdpofhjzfopzdf^ozidf poihzod ^fhp^zih poh zpofih zf pod fohdf ophif^oihd^f ohz ^hfofophf oh ps ohfpzdoh phazefazgazgazrg zpdoihfzdpofhjzfopzdf^ozidf poihzod ^fhp^zih poh zpofih zf pod fohdf ophif^oihd^f ohz ^hfofophf oh ps ohfpzdoh phazefazgazgazrg zpdoihfzdpofhjzfopzdf^ozidf poihzod ^fhp^zih poh zpofih zf pod fohdf ophif^oihd^f ohz ^hfofophf oh ps ohfpzdoh ph', 'public/images/9fb1668f557ac674d9df1998596f066f.png', '2015-01-22 11:20:06');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_BOOKS_STEPS`
+--
+
+CREATE TABLE `DT_BOOKS_STEPS` (
+  `BOOKS_STEPS_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `BOOKS_ID` int(11) NOT NULL,
+  `USE_ID` int(11) NOT NULL,
+  `LOC_ID` int(11) DEFAULT NULL,
+  `BOOKS_STEPS_CONTENT` text,
+  `BOOKS_STEPS_START_DATE` date DEFAULT NULL,
+  `BOOKS_STEPS_END_DATE` date DEFAULT NULL,
+  `BOOKS_STEPS_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`BOOKS_STEPS_ID`,`BOOKS_ID`,`USE_ID`),
+  KEY `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_LOCALIZATIONS1_idx` (`LOC_ID`),
+  KEY `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_JOURNEY1_idx` (`BOOKS_ID`,`USE_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Contenu de la table `DT_BOOKS_STEPS`
+--
+
+INSERT INTO `DT_BOOKS_STEPS` (`BOOKS_STEPS_ID`, `BOOKS_ID`, `USE_ID`, `LOC_ID`, `BOOKS_STEPS_CONTENT`, `BOOKS_STEPS_START_DATE`, `BOOKS_STEPS_END_DATE`, `BOOKS_STEPS_DATE_CREA`) VALUES
+(8, 15, 2, NULL, 'Festival', '2026-08-14', '2028-08-14', '2015-01-21 10:31:57');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_BOOKS_STEPS_PICTURE`
+--
+
+CREATE TABLE `DT_BOOKS_STEPS_PICTURE` (
+  `PIC_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `BOOKS_STEPS` int(11) NOT NULL,
+  `BOOKS_ID` int(11) NOT NULL,
+  `USE_ID` int(11) NOT NULL,
+  `STEPS_DATE_CREAT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `STEPS_IMG` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`PIC_ID`,`BOOKS_STEPS`,`BOOKS_ID`,`USE_ID`),
+  KEY `fk_DT_BOOKS_STEPS_PICTURE_DT_BOOKS_STEPS1_idx` (`BOOKS_STEPS`,`BOOKS_ID`,`USE_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `DT_BOOKS_STEPS_PICTURE`
+--
+
+INSERT INTO `DT_BOOKS_STEPS_PICTURE` (`PIC_ID`, `BOOKS_STEPS`, `BOOKS_ID`, `USE_ID`, `STEPS_DATE_CREAT`, `STEPS_IMG`) VALUES
+(6, 8, 15, 2, '2015-01-21 10:31:57', 'public/images/084a8a1cbe74584f8b002f985fe08e2b.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_CITY`
+--
+
+CREATE TABLE `DT_CITY` (
+  `CITY_ID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`CITY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_LOCALIZATIONS`
+--
+
+CREATE TABLE `DT_LOCALIZATIONS` (
+  `LOC_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `LOC_TYPE_ID` int(11) NOT NULL,
+  `DT_CITY_CITY_ID` int(11) NOT NULL,
+  `LOC_NAME` varchar(45) DEFAULT NULL,
+  `LOC_DATE_CREA` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`LOC_ID`,`LOC_TYPE_ID`,`DT_CITY_CITY_ID`),
+  KEY `fk_DT_LOCALIZATIONS_DT_LOCALIZATIONS_TYPE1_idx` (`LOC_TYPE_ID`),
+  KEY `fk_DT_LOCALIZATIONS_DT_CITY1_idx` (`DT_CITY_CITY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_LOCALIZATIONS_TYPE`
+--
+
+CREATE TABLE `DT_LOCALIZATIONS_TYPE` (
+  `LOC_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `LOC_TYPE_NAME` varchar(45) DEFAULT NULL,
+  `LOC_TYPE_DATE_CREA` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`LOC_TYPE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_ROUTE`
+--
+
+CREATE TABLE `DT_ROUTE` (
+  `ROUTE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USE_ID` int(11) NOT NULL,
+  `ROUTE_TITLE` varchar(45) DEFAULT NULL,
+  `ROUTE_DESCR` text,
+  `ROUTE_COVER` varchar(45) DEFAULT NULL,
+  `ROUTE_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ROUTE_ID`,`USE_ID`),
+  KEY `fk_DT_ROUTE_DT_USERS_idx` (`USE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_ROUTE_STEPS`
+--
+
+CREATE TABLE `DT_ROUTE_STEPS` (
+  `ROU_STEPS_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ROU_ID` int(11) NOT NULL,
+  `USE_ID` int(11) NOT NULL,
+  `LOC_ID` int(11) DEFAULT NULL,
+  `ROUTE_STEPS_TITLE` varchar(45) DEFAULT NULL,
+  `ROUTE_STEPS_CONTENT` text,
+  `ROUTE_STEPS_DATE` datetime DEFAULT NULL,
+  `ROUTE-STEPS_DATE_CREA` datetime DEFAULT NULL,
+  PRIMARY KEY (`ROU_STEPS_ID`,`ROU_ID`,`USE_ID`),
+  KEY `fk_DT_ROUTE_has_DT_LOCALIZATIONS_DT_LOCALIZATIONS1_idx` (`LOC_ID`),
+  KEY `fk_DT_ROUTE_has_DT_LOCALIZATIONS_DT_ROUTE1_idx` (`ROU_ID`,`USE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_USERS`
+--
+
+CREATE TABLE `DT_USERS` (
+  `USE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USE_TYPE` tinyint(1) DEFAULT NULL,
+  `USE_MAIL` varchar(45) DEFAULT NULL,
+  `USE_PASSWORD` varchar(255) DEFAULT NULL,
+  `USE_LASTNAME` varchar(45) DEFAULT NULL,
+  `USE_FIRSTNAME` varchar(45) DEFAULT NULL,
+  `USE_BIRTHDAY` date DEFAULT NULL,
+  `USE_DESCR` text,
+  `USE_PIC` varchar(255) DEFAULT NULL,
+  `USE_CLE` varchar(255) DEFAULT NULL,
+  `USE_VERIF` tinyint(1) DEFAULT NULL,
+  `USE_COUNTRY` varchar(45) DEFAULT NULL,
+  `USE_LVL` varchar(45) DEFAULT NULL,
+  `USE_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`USE_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Contenu de la table `DT_USERS`
+--
+
+INSERT INTO `DT_USERS` (`USE_ID`, `USE_TYPE`, `USE_MAIL`, `USE_PASSWORD`, `USE_LASTNAME`, `USE_FIRSTNAME`, `USE_BIRTHDAY`, `USE_DESCR`, `USE_PIC`, `USE_CLE`, `USE_VERIF`, `USE_COUNTRY`, `USE_LVL`, `USE_DATE_CREA`) VALUES
+(1, 1, 'khauv.t@gmail.com', 'b36d331451a61eb2d76860e00c347396', 'Thierry', 'Khauv', NULL, 'Etudiant', NULL, NULL, NULL, NULL, NULL, '2014-12-17 21:30:20'),
+(2, 1, 'd.alexandre@me.com', '3d65fd70d95a4edfe9555d0ebeca2b17', 'DUPONT', 'Alexandre', '1994-01-20', 'Etudiant jeune et motivé ! good english', '', NULL, NULL, 'Spain', 'Beginner', '2015-01-06 07:19:59'),
+(3, 1, 'gboedec@orange.fr', 'f71dbe52628a3f83a77ab494817525c6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2015-01-21 08:40:55'),
+(4, 1, 'tohiermarie@gmail.com', '0c3d1c61871e9cb83cbbe2d1979866c4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2015-01-21 09:41:39'),
+(5, 1, 'cogitium@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2015-01-22 11:13:09');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `DT_USERS_TYPE`
+--
+
+CREATE TABLE `DT_USERS_TYPE` (
+  `USE_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USE_TYPE_NAME` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`USE_TYPE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `DT_ANNOUNCEMENT`
+--
+ALTER TABLE `DT_ANNOUNCEMENT`
+  ADD CONSTRAINT `fk_DT_ANNOUNCEMENT_DT_ANNOUNCEMENT_TYPE1` FOREIGN KEY (`ANN_TYPE_ID`) REFERENCES `DT_ANNOUNCEMENT_TYPE` (`ANN_TYPE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DT_ANNOUNCEMENT_DT_LOCALIZATIONS1` FOREIGN KEY (`DT_LOCALIZATIONS_LOC_ID`, `DT_LOCALIZATIONS_LOC_TYPE_ID`, `DT_LOCALIZATIONS_DT_CITY_CITY_ID`) REFERENCES `DT_LOCALIZATIONS` (`LOC_ID`, `LOC_TYPE_ID`, `DT_CITY_CITY_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DT_ANNOUNCEMENT_DT_USERS1` FOREIGN KEY (`USE_ID`) REFERENCES `DT_USERS` (`USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_BOOKS`
+--
+ALTER TABLE `DT_BOOKS`
+  ADD CONSTRAINT `fk_DT_JOURNEY_DT_USERS1` FOREIGN KEY (`USE_ID`) REFERENCES `DT_USERS` (`USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_BOOKS_STEPS`
+--
+ALTER TABLE `DT_BOOKS_STEPS`
+  ADD CONSTRAINT `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_JOURNEY1` FOREIGN KEY (`BOOKS_ID`, `USE_ID`) REFERENCES `DT_BOOKS` (`BOOKS_ID`, `USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_LOCALIZATIONS1` FOREIGN KEY (`LOC_ID`) REFERENCES `DT_LOCALIZATIONS` (`LOC_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_BOOKS_STEPS_PICTURE`
+--
+ALTER TABLE `DT_BOOKS_STEPS_PICTURE`
+  ADD CONSTRAINT `fk_DT_BOOKS_STEPS_PICTURE_DT_BOOKS_STEPS1` FOREIGN KEY (`BOOKS_STEPS`, `BOOKS_ID`, `USE_ID`) REFERENCES `DT_BOOKS_STEPS` (`BOOKS_STEPS_ID`, `BOOKS_ID`, `USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_LOCALIZATIONS`
+--
+ALTER TABLE `DT_LOCALIZATIONS`
+  ADD CONSTRAINT `fk_DT_LOCALIZATIONS_DT_CITY1` FOREIGN KEY (`DT_CITY_CITY_ID`) REFERENCES `DT_CITY` (`CITY_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DT_LOCALIZATIONS_DT_LOCALIZATIONS_TYPE1` FOREIGN KEY (`LOC_TYPE_ID`) REFERENCES `DT_LOCALIZATIONS_TYPE` (`LOC_TYPE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_ROUTE`
+--
+ALTER TABLE `DT_ROUTE`
+  ADD CONSTRAINT `fk_DT_ROUTE_DT_USERS` FOREIGN KEY (`USE_ID`) REFERENCES `DT_USERS` (`USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `DT_ROUTE_STEPS`
+--
+ALTER TABLE `DT_ROUTE_STEPS`
+  ADD CONSTRAINT `fk_DT_ROUTE_has_DT_LOCALIZATIONS_DT_LOCALIZATIONS1` FOREIGN KEY (`LOC_ID`) REFERENCES `DT_LOCALIZATIONS` (`LOC_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DT_ROUTE_has_DT_LOCALIZATIONS_DT_ROUTE1` FOREIGN KEY (`ROU_ID`, `USE_ID`) REFERENCES `DT_ROUTE` (`ROUTE_ID`, `USE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
