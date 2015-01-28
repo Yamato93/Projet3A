@@ -15,9 +15,9 @@
 // 	include_once 'logout.contr.php';
 // }
 #TODO 'revoir les test à faire en sorte que ce soit en fonction d'un ID en GET'
-if (isset($_SESSION['User']->USE_ID)) {
+if (isset($_GET['id'])) {
 
-	$id = $_SESSION['User']->USE_ID;
+	$id = $_GET['id'];
 	//MODELS
 	include_once("../app/model/users/select_user_by_id.model.php");
 	include_once("../app/model/users/count_books_and_travel_by_id.model.php");

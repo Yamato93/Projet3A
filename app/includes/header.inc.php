@@ -9,7 +9,7 @@
     	if(isset($_SESSION['User']))
     	{
     ?>		
-    		 <a href="index.php?module=users&action=users" style='background-color:white;'>Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
+    		 <a href="index.php?module=users&action=users&id=<?php $retVal = (isset($_SESSION['User']->USE_ID)) ? $_SESSION['User']->USE_ID : ""; echo($retVal); ?>" style='background-color:white;'>Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
 	    	 <a href="index.php?module=users&action=logout">Log off</a>
 	<?php
     	}
