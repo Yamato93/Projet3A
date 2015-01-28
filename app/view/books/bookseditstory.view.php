@@ -43,27 +43,8 @@
 							$i=1;
 							foreach ($stepimginfo as $key => $value)
 							{
-							}
-								while($i<9)
-								{
-									
-									$url = "public/img/preview.jpg";
-									if(isset($_GET['info']) and isset($_GET['bookid']))
-									{  
-										if(isset($value->STEPS_IMG))
-										{
-											$url = $value->STEPS_IMG;
-										}
-										else
-										{
-											$url = "public/img/preview.jpg";
-										}
-										
-									}
-									else
-									{
-										$url = "public/img/preview.jpg";
-									}
+								$url = $value->STEPS_IMG;		
+								
 									?>	
 									<li>
 										<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
@@ -71,10 +52,21 @@
 									</li>
 									<?php
 									$i++;
-								}
-							
+							}
+							$i = count($stepimginfo);
+							while($i<8)
+							{
+								$url = 'public/img/preview.jpg';
+							?>
+							<li>
+								<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
+								<input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
+							</li>
+							<?php
+								$i++;
 							}
 							?>
+							
                         </ul>
                     </div>
                     <input type="submit" value="Validate my memorie"/>
