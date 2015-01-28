@@ -375,14 +375,25 @@ img {
   min-height: 100%;
   background-color: #eff4f5; }
   .cover-container .journal-container {
-    padding: 0.5em; }
+    padding: 0.5em;
+    text-align: center; }
     .cover-container .journal-container h1 {
-      color: #3f5158; }
+      color: #3f5158;
+      font-weight: bold;
+      margin-bottom: 0; }
       @media screen and (max-width: 480px) {
         .cover-container .journal-container h1 {
-          font-size: 1.5em; } }
+          font-size: 1em; } }
+    .cover-container .journal-container h2 {
+      color: #3f5158;
+      font-size: 1em;
+      margin-bottom: 2em; }
+    .cover-container .journal-container .column-twothirds {
+      margin-bottom: 2em; }
+    .cover-container .journal-container .column-third {
+      margin-bottom: 2em;
+      text-align: right; }
     .cover-container .journal-container div.column-half {
-      padding: 0.8em;
       position: relative; }
       @media screen and (max-width: 768px) {
         .cover-container .journal-container div.column-half {
@@ -409,14 +420,16 @@ img {
         margin-bottom: 2em; }
       .cover-container .journal-container div.column-half .form-div textarea {
         height: 30em; }
-      .cover-container .journal-container div.column-half:nth-child(2) {
+      .cover-container .journal-container div.column-half:last-child {
+        padding: 1em;
         background-color: #ffffff; }
+    .cover-container .journal-container .column-half div {
+      padding-right: 1em; }
     .cover-container .journal-container form {
       text-align: center;
       padding-bottom: 5em; }
       .cover-container .journal-container form input[type="submit"] {
         outline: none;
-        margin-top: 2em;
         font-size: 1em;
         position: relative;
         padding: 0.8em 1em;

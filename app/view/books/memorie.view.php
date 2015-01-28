@@ -18,25 +18,31 @@
             <?php include('../app/includes/nav.inc.php') ?>
 
             <div class="journal-container u-wrapper">
-                <h1>Let's the journey begin</h1>
-                <ul class="breadcrumb">
-                    <li>
-                        <span></span> Start by your cover
-                    </li>
-                    <li class="active">
-                        <span></span> Create a memorie
-                    </li>
-                    <li>
-                        <span></span> Recount your story
-                    </li>
-                </ul>
                 <div class="grid">
-                    <div class="column-half" style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>); background-size: cover;">
-                        <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
+                    <h1>Let's the journey continue</h1>
+                    <ul class="breadcrumb column-twothirds">
+                        <li>
+                            <span></span> Cover
+                        </li>
+                        <li class="active">
+                            <span></span> Memorie
+                        </li>
+                        <li>
+                            <span></span> Story
+                        </li>
+                    </ul>
+                    <div class="column-third">
+                        <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Save your books</button>
                     </div>
-                    <div class="column-half">
-                        <p><?php echo $_SESSION['Books']['cover_descr'];?></p>
+                    <div class="column-half cover-journal">
+                        <div style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>); background-size: cover;">
+                            <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>
+                        </div>
+                        <div>
+                            <p><?php echo $_SESSION['Books']['cover_descr'];?></p>
+                        </div>
                     </div>
+                    <div class="column-half"></div>
                 </div>
                 <div class="tab-container">
                     <ul>
@@ -83,7 +89,6 @@
                     <div id="map" class="tab-content">
                     </div>
                 </div>
-                <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Save your books</button>
             </div>
         </div>
         <!-- END CONTENT -->

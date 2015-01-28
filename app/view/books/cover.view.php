@@ -19,18 +19,22 @@
 
             <div class="journal-container u-wrapper">
                 <h1>Let's the journey begin</h1>
-                <ul class="breadcrumb">
-                    <li class="active">
-                        <span></span> Start by your cover
-                    </li>
-                    <li>
-                        <span></span> Create a memorie
-                    </li>
-                    <li>
-                        <span></span> Recount your story
-                    </li>
-                </ul>
+                <h2>Start your travel journal by creating a cover</h2>
                 <form action="index.php?module=books&action=cover" class="grid create-cover" method="post" enctype="multipart/form-data">
+                    <ul class="breadcrumb column-twothirds">
+                        <li class="active">
+                            <span></span> Cover
+                        </li>
+                        <li>
+                            <span></span> Memorie
+                        </li>
+                        <li>
+                            <span></span> Story
+                        </li>
+                    </ul>
+                    <div class="column-third">
+                        <input type="submit" value="Continue the adventure"/>
+                    </div>
                     <div class="column-half">
                         <div class="form-div">
                             <input type="text" name="cover_title" placeholder="Title" required/>
@@ -48,7 +52,6 @@
                         </span>
                         <img src="public/img/preview.jpg" id="cover-preview" alt="Preview image form empty">
                     </diV>
-                    <input type="submit" value="Continue the adventure"/>
                 </form>
             </div>
         </div>
