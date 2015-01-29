@@ -7,6 +7,7 @@
 	include_once("../app/config/connect.bdd.php");
 	include_once("../core/function/function_start_session.php");
 	include_once("../core/function/function_notification.php");
+	include_once("../core/function/function_log.php");
 	my_session_start(SESSION_NAME);
 	//print_r(BASE_DIR);
 	//die();
@@ -40,7 +41,8 @@
 	}
 	
 	$url = "../app/controller/".$module."/".$action.".contr.php";
-		
+
+	log_call($url);
 
 	if(file_exists($url))
 	{		
