@@ -34,20 +34,20 @@
                     <div class="journal-container">
                         <h1>Tell us more about your journey</h1>
                         <h2>Write about a place you went and add some pictures to illustrate</h2>
-                        <div class="grid">
+                        <div class="grid grid-vertical">
                             <ul class="breadcrumb column-twothirds">
                                 <li>
                                     <span></span> Cover
                                 </li>
                                 <li>
-                                    <span></span> Memorie
+                                    <span></span> Memory
                                 </li>
                                 <li class="active">
                                     <span></span> Story
                                 </li>
                             </ul>
                             <div class="column-third">
-                                <input type="submit" value="Validate my memorie"/>
+                                <input type="submit" value="Validate my memory"/>
                             </div>
                         </div>
                         <div class="form-div">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column-third">
+                <div class="column-third gallery">
                     <h2>Gallery</h2>
                     <ul class="grid">
                         <li class="column-half">

@@ -8,6 +8,12 @@
         min-height: 100%;
         position: relative;
 
+        >div:first-child{
+            @media #{$medium}{
+                width: 100%;
+            }
+        }
+
         .cover-journal{
             padding: 8em 0;
             background: no-repeat center;
@@ -26,6 +32,7 @@
         .journal-container{
             padding: 2em;
             text-align: center;
+            box-sizing:border-box;
 
             h1{
                 color:$darkbluegreen;
@@ -42,16 +49,18 @@
                 margin-bottom: 2em;
             }
 
+            .column-third{
+                text-align: right;
+            }
+
             .form-div{
+                margin-top: 2em;
                 textarea{
-                    min-height: 40em;
+                    min-height: 30em;
                 }
             }
 
             input[type="submit"]{
-                display: block;
-                margin: auto;
-                margin-top: 2em;
                 font-size: 1em;
                 @include button(#ffffff, $golden);
                 box-shadow: 0px 5px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0.5);
@@ -64,6 +73,14 @@
                     -webkit-box-shadow: 0px 0px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0);
                     -moz-box-shadow: 0px 0px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0);
                 }
+
+                @media #{$medium}{
+                    font-size: 0.7em;
+                }
+
+                @media #{$small}{
+                    font-size: 0.5em;
+                }
             }
 
             @media #{$medium}{
@@ -72,9 +89,13 @@
             }
         }
 
-        .column-third{
+        .gallery{
             background-color: $darkbluegreen;
             padding: 1em;
+
+            @media #{$medium}{
+                width: 100%;
+            }
 
             h2{
                 border: solid 2px #ffffff;
@@ -92,6 +113,7 @@
                     list-style-type: none;
                     display: inline-block;
                     position: relative;
+                    border: solid 5px transparent;
 
                     input[type="file"]{
                         width: 100%;
