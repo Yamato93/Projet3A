@@ -18,7 +18,7 @@
             <?php include('../app/includes/nav.inc.php') ?>
 
             <div class="journal-container u-wrapper">
-                <h1>Let's the journey begin</h1>
+                <h1>Let the journey begin</h1>
                 <h2>Start your travel journal by creating a cover</h2>
                 <form action="index.php?module=books&action=cover" class="grid create-cover" method="post" enctype="multipart/form-data">
                     <ul class="breadcrumb column-twothirds">
@@ -26,7 +26,7 @@
                             <span></span> Cover
                         </li>
                         <li>
-                            <span></span> Memorie
+                            <span></span> Memory
                         </li>
                         <li>
                             <span></span> Story

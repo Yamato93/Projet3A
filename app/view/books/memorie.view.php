@@ -19,21 +19,21 @@
 
             <div class="journal-container u-wrapper">
                 <div class="grid">
-                    <h1>Let's the journey continue</h1>
-                    <h2 class="sub-title">Create a memorie to enrich your travel journal</h2>
+                    <h1>Let the journey continue</h1>
+                    <h2 class="sub-title">Create a memory to enrich your travel journal</h2>
                     <ul class="breadcrumb column-twothirds">
                         <li>
                             <span></span> Cover
                         </li>
                         <li class="active">
-                            <span></span> Memorie
+                            <span></span> Memory
                         </li>
                         <li>
                             <span></span> Story
                         </li>
                     </ul>
                     <div class="column-third">
-                        <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Save your books</button>
+                        <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Publish your journal</button>
                     </div>
                     <div class="column-half cover-journal">
                         <div style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>);">
@@ -88,6 +88,7 @@
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
         <script src="public/js/script-cover.js"></script>
+        <script src="public/js/pageScript/memory.js"></script>
         <!-- END SCRIPTS -->
     </body>
 </html>

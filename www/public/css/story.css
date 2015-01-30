@@ -384,6 +384,9 @@ img {
         right: 0;
         top: 0;
         width: 20%; }
+      @media screen and (max-width: 480px) {
+        .cover-container .grid .cover-journal {
+          padding: 5em 0; } }
     .cover-container .grid .journal-container {
       padding: 2em;
       text-align: center;
@@ -405,6 +408,9 @@ img {
         margin-top: 2em; }
         .cover-container .grid .journal-container .form-div textarea {
           min-height: 30em; }
+          @media screen and (max-width: 480px) {
+            .cover-container .grid .journal-container .form-div textarea {
+              min-height: 15em; } }
       .cover-container .grid .journal-container input[type="submit"] {
         font-size: 1em;
         position: relative;
