@@ -82,7 +82,7 @@
                         <div id="map" class="tab-content">
                         </div>
                     </div>
-                    <button class="save-journal" onClick="location.href='index.php?module=books&action=bookseditcover'">Save your books</button>
+                    <button class="save-journal" onClick="location.href='index.php?module=books&action=updatebookscover'">Save your books</button>
                 </form>
             </div>
             <?php 			

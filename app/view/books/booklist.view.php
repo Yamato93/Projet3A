@@ -53,7 +53,7 @@
 	                            <p>
 	                                "<?php echo substr($value->BOOKS_DESCR, 0, 50);?>"
 	                            </p>
-	                            <a href="#" class="more">Read more</a>
+	                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>" class="more">Read more</a>
 	                            <a href="index.php?module=books&action=bookedit&id=<?php echo $value->BOOKS_ID;?>">Edit</a>
 	                        </div>
 	                    </li>

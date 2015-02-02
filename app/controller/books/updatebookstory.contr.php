@@ -8,7 +8,16 @@ if(isset($_SESSION['User']))
 {	
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		
+		if(update_book_story($connect, BASE, "DT_BOOKS_STEPS", "ADM_ID", $_GET['id'], array_values($datamerge)))
+		{
+			header('location:index.php?module=index&action=index&message=editok');
+			exit;
+		}
+		else
+		{
+			header('location:index.php?module=index&action=index&message=editnook');
+			exit;
+		}
 	}
 	
 	
