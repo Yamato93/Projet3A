@@ -84,4 +84,45 @@ if(isset($_POST['type']))
 	}
 }
 
+// Facebook app settings
+$appId = '513750448764721';
+$appSecret = '98ac17a5d2a6fdaef378fefd7bfd9dca';
+
+//$redirect_uri = 'http://localhost:8888/3A/Projet/Projet3A/www/index.php?module=users&action=login' ;
+$redirect_uri = 'http://ns366377.ovh.net/dupont/perso/Discoverit/Projet3A/www/index.php?module=users&action=login' ;
+//
+include_once ('../core/class/facebookConnect.class.php');
+$user = (new FacebookConnect($appId, $appSecret))->connect($redirect_uri);
+
+if(is_string($user)){
+	$url_fb = $user;
+} else {
+	$fb_id = $user->getId();
+	$email = $user->getEmail();
+
+	//var_dump($user);
+
+	include_once '../app/model/users/select_user_by_mail_fbid.model.php';
+	//Mail already use ?
+	$user =  select_user_by_mail_fbid($connect, $email, $fb_id);
+	if (!empty($user)){
+
+		$_SESSION["User"] = current($user);
+		sessionize('success', 'You are logged in');
+		if(!isset($_SESSION['frombooks']))
+		{
+			header('location:index.php');
+			exit();
+		}
+		else
+		{
+			unset($_SESSION['frombooks']);
+			header('location:index.php?module=books&action=memorie');
+			exit();
+		}
+	} else {
+
+		sessionize('success', 'Welcome, configure your password ');
+	}
+}
 include_once("../app/view/users/login.view.php");
