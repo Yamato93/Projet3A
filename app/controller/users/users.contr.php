@@ -19,8 +19,9 @@ if (isset($_GET['id'])) {
 
 	//CHANGE DateOfBirth IN AGE
 	include_once("../core/function/function_age.php");
-	$data->USE_BIRTHDAY = ageFR($data->USE_BIRTHDAY);
-
+	if ($data->USE_BIRTHDAY > 0) {
+		$data->USE_BIRTHDAY = ageFR($data->USE_BIRTHDAY);
+	}
 	//VIEW
 	if (!empty($data) && !empty($count)) {
 		include_once("../app/view/users/user.view.php");
