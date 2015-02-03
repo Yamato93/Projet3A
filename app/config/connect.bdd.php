@@ -61,6 +61,14 @@
 			$base = 'khauv';
 			$port = 80;
 		}
+		if (($_SERVER["HTTP_HOST"] == "discoverit.fr") or ($_SERVER["HTTP_HOST"] == "www.discoverit.fr"))
+		{
+			$host = 'gaetanboe.mysql.db';
+			$user = 'gaetanboe';
+			$pass = 'Discoverit1';
+			$base = 'gaetanboe';
+			$port = 3306;
+		}
 		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "khauv") )
 		{
 			$host = 'localhost';
