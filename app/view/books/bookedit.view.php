@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Discover it - Edit your travel journal</title>
-        <meta name="description" content="Zdit your travel journal">
+        <meta name="description" content="Edit your travel journal">
         <link rel="stylesheet" href="public/css/memorie.css">
     </head>
     <body>
