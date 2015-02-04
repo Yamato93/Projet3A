@@ -425,7 +425,8 @@ img {
             -webkit-transition: all 500ms ease-in-out;
             -moz-transition: all 500ms ease-in-out; }
             .connexion-container .connexion-content .connexion-form > div form input[type=submit]:hover {
-              background-color: #e6e6e6; }
+              background-color: #e6e6e6;
+              border: solid 1px #e6e6e6; }
           .connexion-container .connexion-content .connexion-form > div form.active {
             display: block; }
         @media screen and (max-width: 768px) {
@@ -458,7 +459,8 @@ img {
           -moz-transition: all 500ms ease-in-out;
           margin-bottom: 20px; }
           .connexion-container .connexion-content .connexion-form .social-container a:first-child:hover {
-            background-color: #2d4373; }
+            background-color: #2d4373;
+            border: solid 1px #2d4373; }
         .connexion-container .connexion-content .connexion-form .social-container a:last-child {
           position: relative;
           padding: 0.8em 1em;
@@ -474,7 +476,8 @@ img {
           -webkit-transition: all 500ms ease-in-out;
           -moz-transition: all 500ms ease-in-out; }
           .connexion-container .connexion-content .connexion-form .social-container a:last-child:hover {
-            background-color: #c23321; }
+            background-color: #c23321;
+            border: solid 1px #c23321; }
         @media screen and (max-width: 768px) {
           .connexion-container .connexion-content .connexion-form .social-container {
             width: 100%;

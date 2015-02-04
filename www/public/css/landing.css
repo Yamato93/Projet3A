@@ -395,6 +395,7 @@ img {
       -webkit-transition: all 500ms ease-in-out;
       -moz-transition: all 500ms ease-in-out; }
       #content-maintenance .error a:hover {
-        background-color: #b99a52; }
+        background-color: #b99a52;
+        border: solid 1px #b99a52; }
 
 /*# sourceMappingURL=landing.css.map */

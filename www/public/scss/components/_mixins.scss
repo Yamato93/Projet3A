@@ -28,6 +28,7 @@
     @include trans(all, 500ms);
     &:hover{
         background-color:darken($background, 10%);
+        border:solid 1px darken($background, 10%);
     }
 }
 
