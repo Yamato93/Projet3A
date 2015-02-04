@@ -19,7 +19,7 @@
 	}
 	catch(Exception $e) { 
 		exit($e); 
-	}
+	} 
 
 	// DOSSIER
 	if(isset($_GET["module"]))

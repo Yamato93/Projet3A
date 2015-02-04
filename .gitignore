@@ -24,6 +24,5 @@ www/public/images/*
 .idea/dataSources.xml
 .idea/sqldialects.xml
 log/call.log
-log/call.log
-log/call.log
 log/call.log.txt
+/log/
