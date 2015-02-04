@@ -121,7 +121,7 @@ if(is_string($user)){
 			exit();
 		}
 	} else {
-
+		$user = 
 		sessionize('success', 'Welcome, configure your password ');
 	}
 }
