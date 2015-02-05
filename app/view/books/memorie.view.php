@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Discover it - Create a memorie</title>
-        <meta name="description" content="Organize your travel from the others feedbacks.">
-        <link rel="stylesheet" href="public/css/memorie.css">
-    </head>
+
+    <?php
+        $title = "Create a memorie";
+        include('../app/includes/head.inc.php')
+    ?>
+
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
 
         <!-- CONTENT -->
-        <div class="cover-container">
+        <div class="memorie-container">
 
             <?php include('../app/includes/nav.inc.php') ?>
 

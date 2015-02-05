@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Discover it - Edit your travel journal</title>
-        <meta name="description" content="Edit your travel journal">
-        <link rel="stylesheet" href="public/css/memorie.css">
-    </head>
+    <?php
+        $title = "Edit your travel journal";
+        include('../app/includes/head.inc.php')
+    ?>
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>

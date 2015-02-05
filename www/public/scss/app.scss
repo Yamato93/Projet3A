@@ -1,0 +1,22 @@
+/***** COMPONENTS *****/
+
+@import 'components/variables';
+@import 'components/grid';
+@import 'components/mixins';
+@import 'components/grid';
+@import 'components/fonts';
+@import 'components/base';
+@import 'components/commons';
+@import 'components/utils';
+
+
+/***** PAGES *****/
+@import 'template/index';
+@import 'template/login';
+@import 'template/cover';
+@import 'template/landing';
+@import 'template/memorie';
+@import 'template/story';
+@import 'template/travel-journal';
+@import 'template/traveljournal-list';
+@import 'template/user';

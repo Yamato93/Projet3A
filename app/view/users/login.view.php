@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
-        <title>Discover it - Discover, Desire, Go</title>
-        <meta name="description" content="Organize your travel from the others feedbacks.">
-        <link rel="stylesheet" href="public/css/login.css">
-    </head>
+    <?php
+        $title = "Log in / Register";
+        include('../app/includes/head.inc.php')
+    ?>
     <body>
 
         <!-- HEADER -->
