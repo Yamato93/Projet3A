@@ -3,6 +3,7 @@ app/config/connect.bdd.php
 www/public/.sass-cache/*
 backoffice/index.php
 www/public/css/*
+!www/public/css/app.min.css
 www/public/images/*
 !www/public/images/717f14dda30819a4f4f33e9db62d4b11.jpg
 !www/public/images/854ab38af460ab498f8ec2625f704a01.jpg
