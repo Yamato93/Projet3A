@@ -1,4 +1,0 @@
-[5/02/15 09:54:33] -  = ../app/controller/index/index.contr.php 
-[5/02/15 09:54:25] -  = ../app/controller/users/login.contr.php 
-[5/02/15 09:54:08] -  = ../app/controller/index/index.contr.php 
-[5/02/15 09:54:06] -  = ../app/controller/users/login.contr.php 
