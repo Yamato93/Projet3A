@@ -47,7 +47,6 @@
 									?>	
 									<li>
 										<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
-										<input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
 									</li>
 									<?php
 									$i++;
