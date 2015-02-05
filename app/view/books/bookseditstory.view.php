@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <?php
-        $title = "Edit your story";
-        include('../app/includes/head.inc.php')
-    ?>
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Discover it - Write a story</title>
+        <meta name="description" content="Organize your travel from the others feedbacks.">
+        <link rel="stylesheet" href="public/css/story.css">
+    </head>
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
@@ -47,6 +48,7 @@
 									?>	
 									<li>
 										<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
+										<input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
 									</li>
 									<?php
 									$i++;

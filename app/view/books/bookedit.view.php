@@ -17,21 +17,21 @@
 			{
 			?>
             <div class="journal-container u-wrapper">
-                <form method='POST'>
+                <form action="index.php?module=books&action=updatebookscover&bookid=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
                     <h1>Let's the journey begin</h1>
                     <h2 class="sub-title">Edit your travel journal to enrich your travel journal</h2>
                     <div class="grid">
                         <div class="column-half" style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
                             <h2 class="cover-title">
-                                <input type="text" placeholder="Title" value="<?php echo $value->BOOKS_TITLE;?>"/>
+                                <input type="text" name="cover_title" placeholder="Title" value="<?php echo $value->BOOKS_TITLE;?>"/>
                             </h2>
                             <span class="input-file">
                                 Select an image for your cover
-                                <input type="file" name="cover_img" id="cover" required/>
+                                <input type="file" name="cover_img" id="cover"/>
                             </span>
                         </div>
                         <div class="column-half">
-                            <textarea placeholder="Your description"><?php echo $value->BOOKS_DESCR;?></textarea>
+                            <textarea placeholder="Your description" value="<?php echo $value->BOOKS_DESCR;?>" name="cover_descr" ><?php echo $value->BOOKS_DESCR;?></textarea>
                         </div>
                     </div>
                     <div class="tab-container">
@@ -80,7 +80,7 @@
                         <div id="map" class="tab-content">
                         </div>
                     </div>
-                    <button class="save-journal" onClick="location.href='index.php?module=books&action=updatebookscover'">Save your books</button>
+                    <button class="save-journal" type="submit">Save your books</button>
                 </form>
             </div>
             <?php 			
