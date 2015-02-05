@@ -501,7 +501,8 @@ img {
           border: none;
           width: 100%;
           font-size: 0.8em;
-          padding: 0.5em 0; }
+          padding: 0.5em 0;
+          text-align: center; }
       .book-edit-container .journal-container .grid .column-half span.input-file {
         width: 100%;
         box-sizing: border-box;
@@ -515,8 +516,9 @@ img {
         .book-edit-container .journal-container .grid .column-half span.input-file input[type="file"] {
           position: absolute;
           width: inherit;
+          top: 0;
+          height: 100%;
           left: 0;
-          height: inherit;
           opacity: 0;
           cursor: pointer;
           z-index: 10; }

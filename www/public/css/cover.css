@@ -404,8 +404,9 @@ img {
         .cover-container .journal-container div.column-half span.input-file input[type="file"] {
           position: absolute;
           width: inherit;
+          top: 0;
           left: 0;
-          height: inherit;
+          height: 100%;
           opacity: 0;
           cursor: pointer;
           z-index: 10; }

@@ -22,6 +22,7 @@
             <div class="journal-container u-wrapper">
                 <form method='POST'>
                     <h1>Let's the journey begin</h1>
+                    <h2 class="sub-title">Edit your travel journal to enrich your travel journal</h2>
                     <div class="grid">
                         <div class="column-half" style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
                             <h2 class="cover-title">
