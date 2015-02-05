@@ -25,7 +25,7 @@ www/public/images/*
 .idea/sqldialects.xml
 log/call.log
 log/call.log.txt
-/log/
+log/
 node_modules/*
 Gruntfile.js
 package.json
