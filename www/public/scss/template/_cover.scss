@@ -1,5 +1,3 @@
-@import "commons";
-
 .cover-container{
     min-height: 100%;
     background-color: lighten($bluegreen, 40%);
@@ -51,8 +49,9 @@
                 input[type="file"]{
                     position: absolute;
                     width: inherit;
+                    top: 0;
                     left: 0;
-                    height: inherit;
+                    height: 100%;
                     opacity: 0;
                     cursor: pointer;
                     z-index: 10;

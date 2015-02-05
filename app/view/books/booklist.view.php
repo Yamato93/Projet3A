@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Discover it - Travel journal list</title>
-        <meta name="description" content="Access to your full list of travel journals in on place">
-        <link rel="stylesheet" href="public/css/traveljournal-list.css">
-    </head>
+
+    <?php
+        $title = "Travel journal list";
+        include('../app/includes/head.inc.php')
+    ?>
+
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>

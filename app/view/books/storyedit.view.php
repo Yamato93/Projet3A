@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Discover it - Write a story</title>
-        <meta name="description" content="Organize your travel from the others feedbacks.">
-        <link rel="stylesheet" href="public/css/story.css">
-    </head>
+
+    <?php
+        $title = "Edit your story";
+        include('../app/includes/head.inc.php')
+    ?>
+
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
 
         <!-- CONTENT -->
-        <div class="cover-container">
+        <div class="story-container">
 
             <?php include('../app/includes/nav.inc.php') ?>
 

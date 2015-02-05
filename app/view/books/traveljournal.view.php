@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
-        <title>Discover it - Name of the travel journal</title>
-        <meta name="description" content="Description of travel journal">
-        <link rel="stylesheet" href="public/css/travel-journal.css">
-    </head>
-    <body>
 
+    <?php
+        $title = "Name of the travel journal";
+        include('../app/includes/head.inc.php')
+    ?>
+
+    <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->

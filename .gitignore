@@ -26,3 +26,6 @@ www/public/images/*
 log/call.log
 log/call.log.txt
 /log/
+node_modules/*
+Gruntfile.js
+package.json

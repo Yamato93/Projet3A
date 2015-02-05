@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Discover it - Edit your travel journal</title>
-        <meta name="description" content="Edit your travel journal">
-        <link rel="stylesheet" href="public/css/memorie.css">
-    </head>
+    <?php
+        $title = "Edit your travel journal";
+        include('../app/includes/head.inc.php')
+    ?>
     <body>
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
@@ -22,6 +19,7 @@
             <div class="journal-container u-wrapper">
                 <form method='POST'>
                     <h1>Let's the journey begin</h1>
+                    <h2 class="sub-title">Edit your travel journal to enrich your travel journal</h2>
                     <div class="grid">
                         <div class="column-half" style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
                             <h2 class="cover-title">
