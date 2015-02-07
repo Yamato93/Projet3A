@@ -2,12 +2,9 @@
 if (isset($_SESSION['User']->USE_ID)) {
 	header('location:index.php');
 }
-if(isset($_POST['type']))
-{
-	if($_POST['type'] == 'login')
-	{
+if(isset($_POST['type'])) {
+	if($_POST['type'] == 'login') {
 		if (isset($_POST['mail']) && isset($_POST['password'])) {
-			
 			if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 				$mail = $_POST['mail'];
 				$password = md5($_POST['password']);
@@ -19,28 +16,22 @@ if(isset($_POST['type']))
 					{	
 						header('location:index.php');
 						exit();
-					}
-					else
-					{
+					} else {
 						unset($_SESSION['frombooks']);
 						header('location:index.php?module=books&action=memorie');
 						exit();
 					}
-				}
-				else{
+				} else{
 					sessionize('danger', 'mail and/or password no match');
 				}
-			}
-			else{
+			} else{
 				sessionize('danger', 'mail and/or password empty');
 			}
 		}
 	}
 }
-if(isset($_POST['type']))
-{
-	if($_POST['type'] == 'register')
-	{
+if(isset($_POST['type'])) {
+	if($_POST['type'] == 'register') {
 		if (isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['passwordconfirm'])){
 			if (!empty($_POST['mail']) && !empty($_POST['password']) && !empty($_POST['passwordconfirm']) ) {
 				$mail = $_POST['mail'];
@@ -52,32 +43,25 @@ if(isset($_POST['type']))
 					//test if mail is already exist
 					if (select_user_by_mail($connect, $mail)) {
 						if ($passwordconfirm == $password) {
+
 							include_once '../app/model/users/insert_new_user.model.php';
 							
 							$password = md5($password);
-							if(insert_new_user($connect, $mail, $password))
-							{
+							if(insert_new_user($connect, $mail, $password)) {
 								sessionize('success','You are registered');
-							}
-							else
-							{
+							} else {
 								sessionize('danger', 'Registration error');
 							}
-						}
-						else 
-						{	
+						} else {
 							sessionize('danger', 'password is different of the confirmation');
 						}
-					}
-					else{
+					} else{
 						sessionize('danger', 'Mail is already use for a user');
 					}
-				}
-				else{
+				} else{
 					sessionize('danger', 'Mail is not correct');
 				}
-			}
-			else{
+			} else{
 				sessionize('danger', 'mail or password are not good ');
 			}
 		}
