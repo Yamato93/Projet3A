@@ -52,7 +52,39 @@
                         padding: 0.5em;
                         text-align: center;
                         width: 60%;
+
+                        input{
+                            outline:none;
+                            border: none;
+                            width: 100%;
+                            font-size: 0.8em;
+                            padding: 0.5em 0;
+                            text-align: center;
+                        }
                     }
+
+                    span.input-file{
+                    width: 100%;
+                    box-sizing:border-box;
+                    background:$darkbluegreen;
+                    cursor: pointer;
+                    display: block;
+                    position: relative;
+                    z-index: 5;
+                    color: #ffffff;
+                    padding: 1em 0;
+
+                    input[type="file"]{
+                        position: absolute;
+                        width: inherit;
+                        top: 0;
+                        height: 100%;
+                        left: 0;
+                        opacity: 0;
+                        cursor: pointer;
+                        z-index: 10;
+                    }
+                }
                 }
 
                 div:last-child{
@@ -63,6 +95,15 @@
 
                     p{
                         margin:0;
+                    }
+
+                    textarea{
+                        resize:none;
+                        border: none;
+                        width: 100%;
+                        outline: none;
+                        height: 17em;
+                        font-size: 0.8em;
                     }
                 }
             }
@@ -129,7 +170,7 @@
     }
 }
 
-.book-edit-container{
+/*.book-edit-container{
     min-height: 100%;
     background-color: lighten($bluegreen, 40%);
 
@@ -316,4 +357,4 @@
             }
         }
     }
-}
+}*/
