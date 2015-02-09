@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <?php
         $title = "Edit your travel journal";
@@ -46,11 +47,16 @@
                                            //commandes
                                             if($passage == false)
                                             {
-                                                if($value->BOOKS_STEPS_ID == $values->BOOKS_STEPS)
-                                                {
-                                                $passage = true;
-                                                $url = $values->STEPS_IMG;
-                                                }
+												
+	                                                if($value->BOOKS_STEPS_ID == $values->BOOKS_STEPS)
+	                                                {
+	                                                $passage = true;
+	                                                $url = $values->STEPS_IMG;
+	                                                }
+	                                                else
+	                                                {
+		                                               $url = 'public/img/preview.jpg';
+	                                                }    
                                             }
                                             
                                         }
