@@ -41,6 +41,7 @@ if(isset($_SESSION['User']))
 	{
 		$actionurl = "index.php?module=books&action=bookseditstory&id=".$_GET['id'];
 	}
+	$bookslist = select_data_book($connect, BASE, "DT_BOOKS", "BOOKS_ID" , $_GET['id']);
 	include_once("../app/view/books/bookseditstory.view.php");
 	
 	

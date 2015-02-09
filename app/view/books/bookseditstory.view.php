@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
-        $title = "Edit your story";
-        include('../app/includes/head.inc.php')
-    ?>
+		<?php
+		//from updatebookstory.contr.php
+	        $title = "Edit your story";
+	        include('../app/includes/head.inc.php')
+	    ?>
 
-    <body>
+        <body>
+
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
@@ -46,19 +48,23 @@
                     <ul class="grid">
                         <?php
                         $i=1;
-                        foreach ($stepimginfo as $key => $value)
+                        if(isset($stepimginfo))
                         {
-                            $url = $value->STEPS_IMG;
-                            ?>
-                            <li class="column-half">
-                                <img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
-                                <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
-                            </li>
-                            <?php
-                            $i++;
+                        
+	                        foreach ($stepimginfo as $key => $value)
+	                        {
+	                            $url = $value->STEPS_IMG;
+	                            ?>
+	                            <li class="column-half">
+	                                <img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
+	                                <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
+	                            </li>
+	                            <?php
+	                            $i++;
+	                        }
+							$i = count($stepimginfo);
                         }
-                        $i = count($stepimginfo);
-                        while($i<8)
+                        while($i<9)
                         {
                             $url = 'public/img/preview.jpg';
                         ?>
