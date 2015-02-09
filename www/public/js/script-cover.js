@@ -10,6 +10,6 @@ $(document).ready(function(){
     });
 
     $("#cover").change(function(){
-        Images.previewBackground.readURL(this, $(".column-half:first-child"));
+        Images.previewBackground.readURL(this, $(".cover-journal div:first-child"));
     });
 });

@@ -59,35 +59,27 @@
                     <h2>Gallery</h2>
                     <ul class="grid">
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img1" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img2" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img3" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img4" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img5" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img6" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img7" class="addFile"/>
                         </li>
                         <li class="column-half">
-                            <img src="public/img/preview.jpg" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img8"class="addFile"/>
                         </li>
                     </ul> 

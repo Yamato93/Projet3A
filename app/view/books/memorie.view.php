@@ -61,8 +61,7 @@
                                         }
                                     }
                                     ?>
-                                <li class="column-half">
-                                    <img src="<?php echo $url; ?>" title="<?php echo $url; ?>" alt="Preview image form empty">
+                                <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
                                     <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
                                 </li>
                             <?php
@@ -70,7 +69,6 @@
                                 }
                             ?>
                             <li class="column-half">
-                                <img src="public/img/preview.jpg" alt="Preview image form empty">
                                 <a href="index.php?module=books&action=story">+</a>
                             </li>
                         </ul>

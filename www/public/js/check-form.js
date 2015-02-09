@@ -16,7 +16,11 @@ $(document).ready(function(){
             $(this).find('#cover').parent().parent().append('<span class="error">You have to choose an image</span>');
             ga('send', 'event', 'form-cover', 'submit', 'error image');
             return false;
-        }else if($(this).find('textarea').val() == ''){
+        }else if((this.files[0].size) > 5000000){
+            $(this).parent().parent().append('<span class="error">Your image is too heavy, please select an other</span>');
+            return false;
+        }
+        else if($(this).find('textarea').val() == ''){
             $(this).find('textarea').parent().children('label').removeClass('active');
             $(this).find('textarea').parent().append('<span class="error">You have to fill this field</span>');
             ga('send', 'event', 'form-cover', 'submit', 'error textarea');
@@ -38,9 +42,11 @@ $(document).ready(function(){
     });
     $(".create-cover input[type='file']").change(function(){
         if($(this).val() == ''){
-            console.log('toto');
-            $(this).parent().parent().append('<span class="error">You have to choose an image');
-        }else{
+            $(this).parent().parent().append('<span class="error">You have to choose an image</span>');
+        }else if((this.files[0].size) > 5000000){
+            $(this).parent().parent().append('<span class="error">Your image is too heavy, please select an other</span>');
+        }
+        else{
             $(this).parent().parent().children('.error').remove();
         }
     });

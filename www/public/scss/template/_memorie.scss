@@ -64,27 +64,27 @@
                     }
 
                     span.input-file{
-                    width: 100%;
-                    box-sizing:border-box;
-                    background:$darkbluegreen;
-                    cursor: pointer;
-                    display: block;
-                    position: relative;
-                    z-index: 5;
-                    color: #ffffff;
-                    padding: 1em 0;
-
-                    input[type="file"]{
-                        position: absolute;
-                        width: inherit;
-                        top: 0;
-                        height: 100%;
-                        left: 0;
-                        opacity: 0;
+                        width: 100%;
+                        box-sizing:border-box;
+                        background:$darkbluegreen;
                         cursor: pointer;
-                        z-index: 10;
+                        display: block;
+                        position: relative;
+                        z-index: 5;
+                        color: #ffffff;
+                        padding: 1em 0;
+
+                        input[type="file"]{
+                            position: absolute;
+                            width: inherit;
+                            top: 0;
+                            height: 100%;
+                            left: 0;
+                            opacity: 0;
+                            cursor: pointer;
+                            z-index: 10;
+                        }
                     }
-                }
                 }
 
                 div:last-child{
@@ -114,13 +114,16 @@
                 ul{
                     padding: 0;
                     margin: 0;
+                    text-align: left;
                     li{
+                        border: solid 5px #ffffff;
                         box-sizing:border-box;
                         list-style-type: none;
-                        display: inline;
-                        float: left;
                         position: relative;
-                        padding:0 0.2em;
+                        padding-bottom: 50%;
+                        height: 0;
+                        background: no-repeat center;
+                        background-size: cover;
 
                         a{
                             padding: 0;
@@ -138,6 +141,10 @@
                                 color: $golden;
                                 background-color: rgba(144, 177, 187, 0.7);
                             }
+                        }
+
+                        &:last-child{
+                            background-image: url(../img/preview.jpg);
                         }
 
                         &:hover a{
