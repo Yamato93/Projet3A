@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
-
     <?php
         $title = "Edit your story";
         include('../app/includes/head.inc.php')
     ?>
 
     <body>
-=======
-		<?php
-	        $title = "Edit your story";
-	        include('../app/includes/head.inc.php')
-	    ?>
-
-        <body>
->>>>>>> Stashed changes
         <!-- HEADER -->
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
