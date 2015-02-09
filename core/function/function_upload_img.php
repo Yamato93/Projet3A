@@ -50,13 +50,13 @@ function upload($fichiers, $infosession, $infosession2, $infosession3 = null)
 			if ($width>$height)
 			{
 				// Format horizontale
-				$new_width = 580;
+				$new_width = 1080;
 				$new_height = ($new_width * $height) / $width ;
 			}
 			else
 			{
 				// Format vertical
-				$new_height = 340;
+				$new_height = 720;
 				$new_width = ($new_height * $width) / $height ;
 			}
 			$thumb = imagecreatetruecolor($new_width, $new_height);
