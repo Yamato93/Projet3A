@@ -62,15 +62,13 @@
                                         }
                                         
                                         ?>
-                                        <li class="column-half">
-                                            <img src="<?php echo $url; ?>" alt="Preview image form empty">
+                                        <li class="column-half" style="background-image:url(<?php echo $url; ?>)">
                                             <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
                                         </li>
                                <?php
                                     }   
                                 ?>
                                 <li class="column-half">
-                                    <img src="public/img/preview.jpg" alt="Preview image form empty">
                                     <a href="index.php?module=books&action=bookseditstory&id=<?php echo $_GET['id']; ?>">+</a>
                                 </li>
                             </ul>

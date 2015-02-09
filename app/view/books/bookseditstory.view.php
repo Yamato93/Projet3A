@@ -55,8 +55,7 @@
 	                        {
 	                            $url = $value->STEPS_IMG;
 	                            ?>
-	                            <li class="column-half">
-	                                <img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
+	                            <li class="column-half" style="background-image:url(<?php echo $url; ?>)">
 	                                <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
 	                            </li>
 	                            <?php
@@ -66,10 +65,8 @@
                         }
                         while($i<9)
                         {
-                            $url = 'public/img/preview.jpg';
                         ?>
                         <li class="column-half">
-                            <img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
                             <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
                         </li>
                         <?php
