@@ -17,13 +17,12 @@ if(isset($_SESSION['User']))
 				$y = 1;
 					while(isset($_FILES['story-img'.$i]) and ($_FILES['story-img'.$i]['name'] != ''))
 					{
-						if($_FILES['story-img'.$x]['name'] != '')
-						{
+						
 							if($_FILES['story-img'.$i]['error'] == 0)
 							{
 								upload('story-img'.$i,'Bookseditstory', 'step_img'.$i);
 							}
-						}
+						
 						$i++;
 					}
 					

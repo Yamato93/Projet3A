@@ -32,12 +32,12 @@ if(isset($_SESSION['User']))
 				}
 				//unset($_SESSION['Updatebookstory']);
 			}
-			header('location:index.php?module=index&action=index&message=editok');
+			header('location:index.php?module=books&action=bookslist&message=editok');
 			exit;
 		}
 		else
 		{
-			header('location:index.php?module=index&action=index&message=editnook');
+			header('location:index.php?module=books&action=bookslist&message=editnook');
 			exit;
 		}
 	}
