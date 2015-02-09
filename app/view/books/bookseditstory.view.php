@@ -17,7 +17,7 @@
 
             <form action="<?php echo $actionurl; ?>" class="grid" method="post" enctype="multipart/form-data">
                 <div class="column-twothirds">
-                    <div class="cover-journal" style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>)">
+                    <div class="cover-journal" style="background-image:url(<?php echo $bookslist[0]->BOOKS_COVER;?>)">
                         <div>
                             <div class="form-div">
                                 <input type="date" name="start-date" placeholder="Date of arrival" value="<?php if(isset($_GET['info']) and isset($_GET['bookid']))

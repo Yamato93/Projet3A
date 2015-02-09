@@ -42,8 +42,7 @@
                     	    //commandes
 					?>
 						<li class="column-third">
-	                        <div>
-	                            <img src="<?php echo $value->BOOKS_COVER;?>" alt="Russian travel book"/>
+	                        <div style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
 	                        </div>
 	                        <div>
 	                            <h2>
@@ -55,6 +54,7 @@
 	                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>" class="more">Read more</a>
 	                            <a href="index.php?module=books&action=bookedit&id=<?php echo $value->BOOKS_ID;?>">Edit</a>
 	                        </div>
+                            <a href="#" title="Delete this travel journal" class="delete">X</a>
 	                    </li>
 					<?php
                     	}

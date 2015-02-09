@@ -14,6 +14,7 @@
         padding: 0;
         margin: 0;
         li{
+            position: relative;
             list-style-type: none;
             box-sizing:border-box;
             @media #{$medium}{
@@ -30,10 +31,10 @@
 
             &.create{
                 margin-bottom: 10px;
+                a::after{
+                    @include clearfix();
+                }
                 div{
-                    float: left;
-                    box-sizing:border-box;
-
                     &:first-child{
                         width:30%;
                         height: 0;
@@ -67,9 +68,13 @@
 
                 &:first-child{
                     width:30%;
+                    height: 0;
+                    padding-bottom: 30%;
+                    background: no-repeat center;
+                    background-size: cover;
                 }
 
-                &:last-child{
+                &:nth-child(2){
                     width: 70%;
                     padding-left: 10px;
                     h2{
@@ -96,6 +101,24 @@
                             background-color: $darkbluegreen;
                         }
                     }
+                }
+            }
+            a.delete{
+                position: absolute;
+                top: 0;
+                right:0;
+                color:red;
+                font-size: 1.5em;
+                opacity: 0;
+                @include trans(opacity, 500ms);
+
+                @media #{$medium}{
+                    opacity: 1;
+                }
+            }
+            &:hover{
+                a.delete{
+                    opacity: 1;
                 }
             }
         }
