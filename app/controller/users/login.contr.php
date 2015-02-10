@@ -72,9 +72,12 @@ if(isset($_POST['type'])) {
 $appId = '513750448764721';
 $appSecret = '98ac17a5d2a6fdaef378fefd7bfd9dca';
 
-$redirect_uri = 'http://localhost:8888/3A/Projet/Projet3A/www/index.php?module=users&action=login' ;
-//$redirect_uri = 'http://ns366377.ovh.net/dupont/perso/Discoverit/Projet3A/www/index.php?module=users&action=login' ;
-//
+if ($_SERVER["HTTP_HOST"] == "localhost:8888") {
+	$redirect_uri = 'http://localhost:8888/3A/Projet/Projet3A/www/index.php?module=users&action=login' ;
+} else{
+	$redirect_uri = 'http://ns366377.ovh.net/dupont/perso/Discoverit/Projet3A/www/index.php?module=users&action=login' ;
+}
+
 include_once ('../core/class/facebookConnect.class.php');
 $user = (new FacebookConnect($appId, $appSecret))->connect($redirect_uri);
 
@@ -129,6 +132,9 @@ if(is_string($user)){
 				header('location:index.php?module=books&action=memorie');
 				exit();
 			}
+		} else {
+			header('location:index.php?module=users&action=logout');
+			exit;
 		}
 
 	}

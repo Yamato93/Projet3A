@@ -25,13 +25,13 @@ function search($connect, $search, $limit, $offset){
 
         $curseur->execute();
 
-        $data_user = $curseur -> fetchAll(PDO::FETCH_OBJ);
+        $data = $curseur -> fetchAll(PDO::FETCH_OBJ);
 
         $curseur->closeCursor();
-        if(isset($data_user))
+        if(isset($data))
 
         {
-            return current($data_user);
+            return $data;
         }
         else
         {

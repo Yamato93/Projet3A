@@ -30,3 +30,4 @@ log/*
 node_modules/*
 Gruntfile.js
 package.json
+.idea/deployment.xml
