@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
     <?php
-        $title = "Name of the travel journal";
+        $title = $bookslist[0]->BOOKS_TITLE;
         include('../app/includes/head.inc.php')
     ?>
 
@@ -13,84 +15,84 @@
 
         <!-- CONTENT -->
         <div class="travel-container">
-            <div class="travel-cover">
-                <h1>Discovering vietnam</h1>
+            <div class="travel-cover" style="background-image:url(<?php echo $bookslist[0]->BOOKS_COVER;?>);">
+                <h1><?php echo $bookslist[0]->BOOKS_TITLE;?></h1>
                 <div class="travel-nav">
                     <a href="#journal">Go to journal</a>
                     <a href="#gallery">Go to gallery</a>
                 </div>
             </div>
             <div id="journal" class="travel-journal u-wrapper">
-                <div class="grid grid-vertical">
-                    <div class="column-half">
-                        <h2>Chau Doc</h2>
-                        <p>
-                            Chau Doc is a small city in the Mekong Delta close to the Vietnam-Cambodia border.  Due to its proximity to the border, the people of this region are  either Cham, Cambodian, or Vietnamese in ethnicity, and they all live together in harmony.  The Cham people who live in Chau Doc are descendents of the Muslim Cham people who were displaced from Central and South Vietnam during the war in the 18th century. This unique mix of cultures and religions gives this town a different kind of vibe.  The main draw to this town, besides the slower paced life, is the religious architecture.  A few kilometres outside of Chau Doc is Mount Sam, where they have many temples and pagodas, and around the area you will find many mosques as well. 
-                        </p>
-                        <div class="grid">
-                            <div class="column-half">
-                                <a href="#" class="travel-add">+ Add your business here</a>
-                            </div>
-                            <div class="column-half">
-                                <a href="#" class="travel-more">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column-half">
-                        <img src="public/img/country_image.jpg" alt="Memorie image"/>
-                    </div>
-                </div>
-                <div class="grid grid-vertical inverse">
-                    <div class="column-half">
-                        <h2>Chau Doc</h2>
-                        <p>
-                            Chau Doc is a small city in the Mek.
-                        </p>
-                        <div class="grid">
-                            <div class="column-half">
-                                <a href="#" class="travel-add">+ Add your business here</a>
-                            </div>
-                            <div class="column-half">
-                                <a href="#" class="travel-more">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column-half">
-                        <img src="public/img/viet.jpg" alt="Memorie image"/>
-                    </div>
-                </div>
-                <div class="grid grid-vertical">
-                    <div class="column-half">
-                        <h2>Chau Doc</h2>
-                        <p>
-                            Chau Doc is a small city in the Mekong Delta close to the Vietnam-Cambodia border.  Due to its proximity to the border, the people of this region are  either Cham, Cambodian, or Vietnamese in ethnicity, and they all live together in harmony.  The Cham people who live in Chau Doc are descendents of the Muslim Cham people who were displaced from Central and South Vietnam during the war in the 18th century. This unique mix of cultures and religions gives this town a different kind of vibe.  The main draw to this town, besides the slower paced life, is the religious architecture.  A few kilometres outside of Chau Doc is Mount Sam, where they have many temples and pagodas, and around the area you will find many mosques as well. 
-                        </p>
-                        <div class="grid">
-                            <div class="column-half">
-                                <a href="#" class="travel-add">+ Add your business here</a>
-                            </div>
-                            <div class="column-half">
-                                <a href="#" class="travel-more">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column-half">
-                        <img src="public/img/boat.jpg" alt="Memorie image"/>
-                    </div>
-                </div>
+            <?php
+            	$nb = 0;
+                foreach ($booksstep as $key => $value)
+                {
+	                	if(($nb%2)!=1)
+	                	{
+	            ?>
+			            	<div class="grid grid-vertical">
+			                    <div class="column-half">
+			                      
+			                        <p>
+			                        	<?php echo $value->BOOKS_STEPS_CONTENT;?>
+			                        </p>
+			                        <div class="grid">
+			                            <div class="column-half">
+			                                <a href="#" class="travel-add">+ Add your business here</a>
+			                            </div>
+			                            <div class="column-half">
+			                                <a href="#" class="travel-more">Read more</a>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="column-half">
+			                        <img src="<?php echo $booksstepimgbook[$nb]->STEPS_IMG; ?>" alt="Memorie image"/>
+			                    </div>
+			                </div>
+				<?php    	
+	                	}  
+	                	else
+	                	{
+				?>
+				        	<div class="grid grid-vertical inverse">
+			                    <div class="column-half">
+			                        
+			                        <p>
+			                            <?php echo $value->BOOKS_STEPS_CONTENT;?>
+			                        </p>
+			                        <div class="grid">
+			                            <div class="column-half">
+			                                <a href="#" class="travel-add">+ Add your business here</a>
+			                            </div>
+			                            <div class="column-half">
+			                                <a href="#" class="travel-more">Read more</a>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="column-half">
+			                        <img src="<?php echo $booksstepimgbook[$nb]->STEPS_IMG; ?>" alt="Memorie image"/>
+			                    </div>
+			                </div>
+		        <?php
+	                	} 
+	                	$nb++;
+	                
+                }
+            ?>
             </div>
             <div id="gallery" class="travel-gallery u-wrapper">
                 <h2>Gallery</h2>
                 <ul class="grid grid-vertical">
+                	<?php
+            		foreach ($booksstepimggalery as $key => $value)
+					{
+                	?>
                     <li class="column-third">
-                        <img src="public/img/diaries/bridge.jpg" alt="Name Picture"/>
+                        <img src="<?php echo $value->STEPS_IMG; ?>" alt="Name Picture"/>
                     </li>
-                    <li class="column-third">
-                        <img src="public/img/diaries/cascade.jpg" alt="Name Picture"/>
-                    </li>
-                    <li class="column-third">
-                        <img src="public/img/diaries/lake.jpg" alt="Name Picture"/>
-                    </li>
+                    <?php
+                	}
+                	?>
                 </ul>
             </div>
         </div>
