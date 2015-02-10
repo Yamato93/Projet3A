@@ -1,5 +1,5 @@
 <?php
-function select_data_step($connect, $dbname, $tablename, $where, $id, $where2, $id2)
+function select_data_step($connect, $dbname, $tablename, $where, $id, $where2, $id2, $limit = null, $offset = null)
 {
 	try
 	{
@@ -13,6 +13,14 @@ function select_data_step($connect, $dbname, $tablename, $where, $id, $where2, $
 						FROM ".$dbname.".".$tablename."
 						WHERE ".$where." = :Param1
 						AND ".$where2." = :Param2";
+			if($limit != null)
+			{
+				$query .= " LIMIT ".$limit;
+			}
+			if($offset != null)
+			{
+				$query .= " OFFSET ".$offset;
+			}
 						
 			$curseur = $connect -> prepare($query);
 			$curseur -> bindValue(':Param1', $id, PDO::PARAM_STR);
@@ -32,7 +40,8 @@ function select_data_step($connect, $dbname, $tablename, $where, $id, $where2, $
 	}
 		
 }
-function select_data_step_picture($connect, $dbname, $tablename, $where, $id, $where2, $id2, $where3 = null, $id3 = null)
+
+function select_data_step_picture($connect, $dbname, $tablename, $where, $id, $where2, $id2, $where3 = null, $id3 = null, $limit = null, $offset = null)
 {
 	try
 	{
@@ -50,6 +59,15 @@ function select_data_step_picture($connect, $dbname, $tablename, $where, $id, $w
 			{
 				$query .= " AND ".$where3." = :Param3";
 			}
+			if($limit != null)
+			{
+				$query .= " LIMIT ".$limit;
+			}
+			if($offset != null)
+			{
+				$query .= " OFFSET ".$offset;
+			}
+					
 			
 			$curseur = $connect -> prepare($query);
 			$curseur -> bindValue(':Param1', $id, PDO::PARAM_STR);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 09 Février 2015 à 16:16
+-- Généré le: Mar 10 Février 2015 à 16:30
 -- Version du serveur: 5.5.29
 -- Version de PHP: 5.4.10
 
@@ -13,7 +13,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `khauv`
 --
-
 
 -- --------------------------------------------------------
 
@@ -132,7 +131,7 @@ CREATE TABLE `DT_BOOKS_STEPS` (
   PRIMARY KEY (`BOOKS_STEPS_ID`,`BOOKS_ID`,`USE_ID`),
   KEY `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_LOCALIZATIONS1_idx` (`LOC_ID`),
   KEY `fk_DT_JOURNEY_has_DT_LOCALIZATIONS_DT_JOURNEY1_idx` (`BOOKS_ID`,`USE_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Contenu de la table `DT_BOOKS_STEPS`
@@ -181,7 +180,11 @@ INSERT INTO `DT_BOOKS_STEPS` (`BOOKS_STEPS_ID`, `BOOKS_ID`, `USE_ID`, `LOC_ID`, 
 (70, 15, 1, NULL, 'kovkdfopk', '0000-00-00', '0000-00-00', '2015-02-09 15:07:50'),
 (71, 15, 1, NULL, 'dfkgopdfk', '0000-00-00', '0000-00-00', '2015-02-09 15:08:02'),
 (72, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:09:13'),
-(73, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:09:17');
+(73, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:09:17'),
+(74, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:18:30'),
+(75, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:21:08'),
+(76, 15, 1, NULL, '', '0000-00-00', '0000-00-00', '2015-02-09 15:21:16'),
+(77, 16, 1, NULL, 'sdfklsjfklj', '0000-00-00', '0000-00-00', '2015-02-09 16:38:53');
 
 -- --------------------------------------------------------
 
@@ -198,7 +201,7 @@ CREATE TABLE `DT_BOOKS_STEPS_PICTURE` (
   `STEPS_IMG` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`PIC_ID`,`BOOKS_STEPS`,`BOOKS_ID`,`USE_ID`),
   KEY `fk_DT_BOOKS_STEPS_PICTURE_DT_BOOKS_STEPS1_idx` (`BOOKS_STEPS`,`BOOKS_ID`,`USE_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11542 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11543 ;
 
 --
 -- Contenu de la table `DT_BOOKS_STEPS_PICTURE`
@@ -235,7 +238,8 @@ INSERT INTO `DT_BOOKS_STEPS_PICTURE` (`PIC_ID`, `BOOKS_STEPS`, `BOOKS_ID`, `USE_
 (11538, 57, 16, 1, '2015-02-09 14:41:32', 'public/images/7a73361c6f79c040a46dddcb1f6e41a2.jpg'),
 (11539, 58, 16, 1, '2015-02-09 14:42:05', 'public/images/86c56cb15a7a2edb1b26f5c58bb4a6d0.jpg'),
 (11540, 59, 16, 1, '2015-02-09 14:42:14', 'public/images/202f3ded8b463927a88b9138b57d5582.jpg'),
-(11541, 61, 16, 1, '2015-02-09 14:44:25', 'public/images/0472b7f7bd6ebae1c9bbda3bde5aad8b.jpg');
+(11541, 61, 16, 1, '2015-02-09 14:44:25', 'public/images/0472b7f7bd6ebae1c9bbda3bde5aad8b.jpg'),
+(11542, 77, 16, 1, '2015-02-09 16:38:53', 'public/images/958aab888100093bf3e4aad9fe76328b.jpg');
 
 -- --------------------------------------------------------
 
@@ -325,7 +329,7 @@ CREATE TABLE `DT_USERS` (
   `USE_ID` int(11) NOT NULL AUTO_INCREMENT,
   `USE_TYPE` tinyint(1) DEFAULT NULL,
   `USE_MAIL` varchar(45) DEFAULT NULL,
-  `USE_PASSWORD` varchar(255) DEFAULT NULL,
+  `USE_PASSWORD` varchar(32) DEFAULT NULL,
   `USE_LASTNAME` varchar(45) DEFAULT NULL,
   `USE_FIRSTNAME` varchar(45) DEFAULT NULL,
   `USE_BIRTHDAY` date DEFAULT NULL,
@@ -336,7 +340,7 @@ CREATE TABLE `DT_USERS` (
   `USE_COUNTRY` varchar(45) DEFAULT NULL,
   `USE_LVL` varchar(45) DEFAULT NULL,
   `USE_DATE_CREA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `USE_FACEBOOK_ID` int(11) DEFAULT NULL,
+  `USE_FACEBOOK_ID` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`USE_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
