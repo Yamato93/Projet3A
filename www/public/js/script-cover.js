@@ -11,5 +11,10 @@ $(document).ready(function(){
 
     $("#cover").change(function(){
         Images.previewBackground.readURL(this, $(".cover-journal div:first-child"));
+        console.log(this);
+    });
+
+    $(".deleteFile").click(function(){
+
     });
 });
