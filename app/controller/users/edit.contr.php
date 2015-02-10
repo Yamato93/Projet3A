@@ -22,10 +22,10 @@ if (isset($_POST['id']) && $_POST['type'] == 'edit_user') {
 
     if (update_user($connect, $lastname, $firstname, $dateofbirth, $descr, $level ,$picture, $country, $id)){
         sessionize('success','Informations are registered');
-        header('location:?module=users&action=users&id='.$id);
+        header('location:?module=users&action=users&id='.$id.'&state=OK');
     } else {
         sessionize('danger','Sorry, error when saving, please try again later');
-        header('location:?module=users&action=users&id='.$id);
+        header('location:?module=users&action=users&id='.$id.'&state=OK');
     }
 } elseif (isset($_SESSION['User']->USE_ID)) {
 
