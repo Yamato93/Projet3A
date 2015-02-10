@@ -136,6 +136,21 @@
                         z-index: 10;
                     }
 
+                    span.removeFile{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        left: 0;
+                        padding: 0.5em;
+                        box-sizing:border-box;
+                        background: lighten(red,20%);
+                        cursor: pointer;
+                        color: #000000;
+                        z-index: 11;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+
                     &::after{
                         content: " + ";
                         color: $golden;
