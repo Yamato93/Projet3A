@@ -57,7 +57,6 @@
                                         {
                                             
                                             $url = $_SESSION['Books']['Step'.$y]['step_img'.$x];
-                            
                                         }
                                     }
                                     ?>

@@ -59,24 +59,23 @@
                     <h2>Gallery</h2>
                     <ul class="grid">
                         <?php 
-                        		for ($i = 1; $i <= 8; $i++) 
-                        		{
-                        			if(!isset($infostory['step_img'.$i]))
-                        			{
-	                        			$url = 'public/img/preview.jpg';
-                        			}
-                        			else
-                        			{
-	                        			$url = $infostory['step_img'.$i];
-                        			}
-							?>
-                        			<li class="column-half">
-			                        	<img src="<?php echo $url; ?>" class="filePreview" alt="Preview image form empty">
-			                            <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
-			                        </li>		
-                        	<?php
-                        		}
-                        	?>
+                            for ($i = 1; $i <= 8; $i++)
+                            {
+                                if(!isset($infostory['step_img'.$i]))
+                                {
+                                    $url = 'public/img/preview.jpg';
+                                }
+                                else
+                                {
+                                    $url = $infostory['step_img'.$i];
+                                }
+                            ?>
+                            <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
+                                <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
+                            </li>
+                        <?php
+                            }
+                        ?>
                     </ul> 
                 </div>
             </form>
