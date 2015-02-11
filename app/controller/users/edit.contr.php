@@ -25,7 +25,7 @@ if (isset($_POST['id']) && $_POST['type'] == 'edit_user') {
         header('location:?module=users&action=users&id='.$id.'&state=OK');
     } else {
         sessionize('danger','Sorry, error when saving, please try again later');
-        header('location:?module=users&action=users&id='.$id.'&state=OK');
+        header('location:?module=users&action=users&id='.$id.'&state=NOK');
     }
 } elseif (isset($_SESSION['User']->USE_ID)) {
 
