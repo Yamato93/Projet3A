@@ -4,7 +4,7 @@
 <html lang="en">
 
     <?php
-        $title = $bookslist[0]->BOOKS_TITLE;
+        $title = $book[0]->BOOKS_TITLE;
         include('../app/includes/head.inc.php')
     ?>
 
@@ -15,8 +15,8 @@
 
         <!-- CONTENT -->
         <div class="travel-container">
-            <div class="travel-cover" style="background-image:url(<?php echo $bookslist[0]->BOOKS_COVER;?>);">
-                <h1><?php echo $bookslist[0]->BOOKS_TITLE;?></h1>
+            <div class="travel-cover" style="background-image:url(<?php echo $book[0]->BOOKS_COVER;?>);">
+                <h1><?php echo $book[0]->BOOKS_TITLE;?></h1>
                 <div class="travel-nav">
                     <a href="#journal">Go to journal</a>
                     <a href="#gallery">Go to gallery</a>
@@ -25,7 +25,7 @@
             <div id="journal" class="travel-journal u-wrapper">
             <?php
             	$nb = 0;
-                foreach ($booksstep as $key => $value)
+                foreach ($bookStep as $key => $value)
                 {
 	                	if(($nb%2)!=1)
 	                	{

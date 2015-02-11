@@ -14,7 +14,7 @@
         <div class="memorie-container">
 			
             <?php include('../app/includes/nav.inc.php') ?>
-			<?php foreach ($bookslist as $key => $value)
+			<?php foreach ($book as $key => $value)
 			{
 			?>
             <div class="journal-container u-wrapper">
@@ -39,7 +39,7 @@
                     <div class="column-half memorie">
                             <ul class="grid">
                                 <?php
-                                    foreach ($booksstep as $key => $value)
+                                    foreach ($bookStep as $key => $value)
                                     {
                                         $passage = false;
                                         foreach ($booksstepimg as $keys => $values)

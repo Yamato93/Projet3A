@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <?php
-                    	foreach ($bookslist as $key => $value)
+                    	foreach ($book as $key => $value)
                     	{
                     	    //commandes
 					?>
