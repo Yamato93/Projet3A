@@ -15,13 +15,9 @@
 
         <!-- CONTENT -->
         <div class="travel-container">
-<<<<<<< Updated upstream:app/view/books/book.view.php
             <div class="travel-cover" style="background-image:url(<?php echo $book[0]->BOOKS_COVER;?>);">
                 <h1><?php echo $book[0]->BOOKS_TITLE;?></h1>
-=======
-            <div class="travel-cover" style="background-image:url( <?php echo $bookslist[0]->BOOKS_COVER;?> );">
-                <h1><?php echo $bookslist[0]->BOOKS_TITLE;?></h1>
->>>>>>> Stashed changes:app/view/books/traveljournal.view.php
+
                 <div class="travel-nav">
                     <a href="#journal">Go to journal</a>
                     <a href="#gallery">Go to gallery</a>
