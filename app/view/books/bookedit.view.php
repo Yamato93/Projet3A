@@ -14,7 +14,7 @@
         <div class="memorie-container">
 			
             <?php include('../app/includes/nav.inc.php') ?>
-			<?php foreach ($book as $key => $value)
+			<?php foreach ($bookslist as $key => $value)
 			{
 			?>
             <div class="journal-container u-wrapper">
