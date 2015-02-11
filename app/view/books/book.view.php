@@ -26,58 +26,78 @@
             <div id="journal" class="travel-journal u-wrapper">
             <?php
             	$nb = 0;
-                foreach ($bookStep as $key => $value)
+            	foreach ($bookStep as $key => $value)
                 {
-	                	if(($nb%2)!=1)
-	                	{
-	            ?>
-			            	<div class="grid grid-vertical">
-			                    <div class="column-half">
-			                      
-			                        <p>
-			                        	<?php echo $value->BOOKS_STEPS_CONTENT;?>
-			                        </p>
-			                        <div class="grid">
-			                            <div class="column-half">
-			                                <a href="#" class="travel-add">+ Add your business here</a>
-			                            </div>
-			                            <div class="column-half">
-			                                <a href="#" class="travel-more">Read more</a>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="column-half">
-			                        <img src="<?php echo $booksstepimgbook[$nb]->STEPS_IMG; ?>" alt="Memorie image"/>
-			                    </div>
-			                </div>
-				<?php    	
-	                	}  
-	                	else
-	                	{
-				?>
-				        	<div class="grid grid-vertical inverse">
-			                    <div class="column-half">
-			                        
-			                        <p>
-			                            <?php echo $value->BOOKS_STEPS_CONTENT;?>
-			                        </p>
-			                        <div class="grid">
-			                            <div class="column-half">
-			                                <a href="#" class="travel-add">+ Add your business here</a>
-			                            </div>
-			                            <div class="column-half">
-			                                <a href="#" class="travel-more">Read more</a>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="column-half">
-			                        <img src="<?php echo $booksstepimgbook[$nb]->STEPS_IMG; ?>" alt="Memorie image"/>
-			                    </div>
-			                </div>
-		        <?php
-	                	} 
-	                	$nb++;
-	                
+	                $test = false;
+	                foreach ($booksstepimgbook as $key2 => $value2)
+					{
+						if($test == true)
+						{
+							$test == false;
+						}
+						else
+						{
+							if($value->BOOKS_STEPS_ID == $value2->BOOKS_STEPS)
+							{
+								
+								if(($nb%2)!=1)
+			                	{
+			?>
+					            	<div class="grid grid-vertical">
+					                    <div class="column-half">
+					                      
+					                        <p>
+					                        	<?php echo $value->BOOKS_STEPS_CONTENT;?>
+					                        </p>
+					                        <div class="grid">
+					                            <div class="column-half">
+					                                <a href="#" class="travel-add">+ Add your business here</a>
+					                            </div>
+					                            <div class="column-half">
+					                                <a href="#" class="travel-more">Read more</a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="column-half">
+					                        <img src="<?php echo $value2->STEPS_IMG; ?>" alt="Memorie image"/>
+					                    </div>
+					                </div>
+					                
+						<?php    	
+								
+			                	}  
+			                	else
+			                	{
+						?>
+						        	<div class="grid grid-vertical inverse">
+					                    <div class="column-half">
+					                        
+					                        <p>
+					                            <?php echo $value->BOOKS_STEPS_CONTENT;?>
+					                        </p>
+					                        <div class="grid">
+					                            <div class="column-half">
+					                                <a href="#" class="travel-add">+ Add your business here</a>
+					                            </div>
+					                            <div class="column-half">
+					                                <a href="#" class="travel-more">Read more</a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="column-half">
+					                        <img src="<?php echo $value2->STEPS_IMG; ?>" alt="Memorie image"/>
+					                    </div>
+					                </div>
+				        <?php
+			                	} 
+			                	$nb++;
+						
+								$test = true;
+						 	}
+
+						}
+	                }
+		                	
                 }
             ?>
             </div>
