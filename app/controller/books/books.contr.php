@@ -9,7 +9,7 @@ if (isset($_GET['id'])){
 
     $bookStep = select_data_steps($connect, $IdBook);
 
-    
+
 
 } else {
     header('location:index.php');

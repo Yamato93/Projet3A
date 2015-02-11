@@ -39,7 +39,7 @@
                     <div class="column-half memorie">
                             <ul class="grid">
                                 <?php
-                                    foreach ($bookStep as $key => $value)
+                                    foreach ($book as $key => $value)
                                     {
                                         $passage = false;
                                         foreach ($booksstepimg as $keys => $values)
