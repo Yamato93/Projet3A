@@ -28,8 +28,6 @@ var Images = (function(){
                 }
                 reader.readAsDataURL(input.files[0]);
                 $(selector).append(remove);
-            }else if(input.files == undefined){
-                $(selector).removeAttr("style")
             }
         }
 

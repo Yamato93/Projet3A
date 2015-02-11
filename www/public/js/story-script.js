@@ -5,7 +5,7 @@ $(document).ready(function(){
         var elem = $(".addFile").parent();
 
         elem.each(function(){
-            if($(this).attr("style") != 'background-image:url(public/img/preview.jpg);'){
+            if($(this).attr("style") != 'background-image:url(public/img/preview.jpg);' && $(this).attr("style")){
                 $(this).append(remove);
             }else{
                 $(this).removeAttr("style");
@@ -18,8 +18,10 @@ $(document).ready(function(){
     });
 
     $("body").on("click",".removeFile",function(){
-        $(this).closest('input[type="file"]').val('');
-        Images.previewBackground.readURL($(this).closest('input[type="file"]'), $(this).parent());
+        var input = $(this).siblings('input[type="file"]');
+
+        input.val('');
+        $(this).parent().removeAttr('style');
         $(this).remove();
     });
 });
