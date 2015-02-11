@@ -68,3 +68,30 @@ function select_data_books($connect, $dbname, $tablename, $where, $id, $where2 =
 	}
 		
 }
+
+function select_data_steps($connect, $bookId){
+	try
+	{
+		$query ="SELECT * FROM `DT_BOOKS_STEPS`
+				WHERE `BOOKS_ID` = :id";
+
+		$curseur = $connect->prepare($query);
+		$curseur ->bindValue(':id', $bookId, PDO::PARAM_STR);
+		$curseur->execute();
+		$data = $curseur -> fetchAll(PDO::FETCH_OBJ);
+		$curseur->closeCursor();
+		if(isset($data))
+		{
+			return $data;
+		}
+		else{
+			return false;
+		}
+
+	}
+
+	catch ( Exception $e )
+	{
+		die('Erreur Mysql : '.$e->getMessage());
+	}
+}
