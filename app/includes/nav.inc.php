@@ -8,7 +8,7 @@
         </a>
     </li>
     <li>
-        <a href="index.php?module=users&action=users">
+        <a href="index.php?module=users&action=users&id=<?php $retVal = (isset($_SESSION['User']->USE_ID)) ? $_SESSION['User']->USE_ID : ""; echo($retVal); ?>">
             <span>
                 <img src="public/img/icons/user.svg" alt="User page"/>
             </span>
