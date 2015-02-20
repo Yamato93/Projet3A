@@ -18,9 +18,7 @@ $(document).ready(function(){
     });
 
     $("body").on("click",".removeFile",function(){
-        var input = $(this).siblings('input[type="file"]');
-
-        input.val('');
+        $(this).siblings('input[type="file"]').val('');
         $(this).parent().removeAttr('style');
         $(this).remove();
     });
