@@ -15,7 +15,7 @@ function update_user($connect, $lastname, $firstname, $dateofbirth, $descr, $lev
 {
 	try
 	{
-		$query ="UPDATE  `khauv`.`DT_USERS` SET  `USE_LASTNAME` =  :lastname,
+		$query ="UPDATE  `DT_USERS` SET  `USE_LASTNAME` =  :lastname,
 				`USE_FIRSTNAME` =  :firstname,
 				`USE_BIRTHDAY` =  :dateofbirth,
 				`USE_DESCR` =  :descr,
@@ -34,6 +34,7 @@ function update_user($connect, $lastname, $firstname, $dateofbirth, $descr, $lev
 		$curseur ->bindValue(':id', $id, PDO::PARAM_INT);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();
+
 		return $retour;
 	}
 			

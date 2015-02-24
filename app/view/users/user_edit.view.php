@@ -35,9 +35,14 @@
                         <label for="country">Country</label>
                         <input type="text" id="country" name="country" value="<?php $retVal = (isset($data->USE_COUNTRY)) ? $data->USE_COUNTRY : ""; echo($retVal); ?>"><br/>
                         <label for="level">What type of traveler are you?</label>
-                        <input type="text" id="level" name="level" value="<?php $retVal = (isset($data->USE_LVL)) ? $data->USE_LVL : ""; echo($retVal); ?>"><br/>
-                        <label for="level">Write a few lines about yourself ..</label>
-                        <textarea name="descr" id="" rows="4" cols="20"><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : ""; echo(trim($retVal)); ?></textarea><br/>
+                        <select name="level" id="level">
+                            <option value="Novice">Novice</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Expert">Expert</option>
+                        </select><br/>
+                        <label for="descr">Write a few lines about yourself ..</label>
+                        <textarea name="descr" id="descr" rows="4" cols="20"><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : ""; echo(trim($retVal)); ?></textarea><br/>
                         <input type="hidden" value="<?php $retVal = (isset($data->USE_ID)) ? $data->USE_ID : ""; echo($retVal); ?>" name="id">
                         <input type="hidden" name="type" value="edit_user">
                         <input type="submit" value="save">

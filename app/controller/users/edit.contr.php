@@ -6,6 +6,8 @@
  * Time: 17:57
  */
 if (isset($_POST['id']) && $_POST['type'] == 'edit_user') {
+
+
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $dateofbirth = $_POST['dateofbirth'];
@@ -22,10 +24,10 @@ if (isset($_POST['id']) && $_POST['type'] == 'edit_user') {
 
     if (update_user($connect, $lastname, $firstname, $dateofbirth, $descr, $level ,$picture, $country, $id)){
         sessionize('success','Informations are registered');
-        header('location:?module=users&action=users&id='.$id.'&state=OK');
+        header('location:?module=users&action=users&id='.$id);
     } else {
         sessionize('danger','Sorry, error when saving, please try again later');
-        header('location:?module=users&action=users&id='.$id.'&state=NOK');
+        header('location:?module=users&action=users&id='.$id);
     }
 } elseif (isset($_SESSION['User']->USE_ID)) {
 
