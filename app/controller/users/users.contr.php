@@ -7,9 +7,9 @@
  * 
  */
 
-if (isset($_GET['id'])) {
+if (isset($_SESSION['User']->USE_ID)) {
 
-	$id = $_GET['id'];
+	$id = $_SESSION['User']->USE_ID;;
 	//MODELS
 	include_once("../app/model/users/select_user_by_id.model.php");
 	include_once("../app/model/users/count_books_and_travel_by_id.model.php");

@@ -28,7 +28,7 @@ if(isset($_SESSION['User']))
 				    }
 				}
 				
-				$countfilesession = count($_SESSION['Updatebookstory']);
+				$countfilesession = count(isset($_SESSION['Updatebookstory']));
 				for ($y = 1; $y <= $countfilesession; $y++) 
 				{
 					if(isset($_SESSION['Updatebookstory']['step_img'.$y]))
