@@ -74,7 +74,11 @@ $appSecret = '98ac17a5d2a6fdaef378fefd7bfd9dca';
 
 if ($_SERVER["HTTP_HOST"] == "localhost:8888") {
 	$redirect_uri = 'http://localhost:8888/3A/Projet/Projet3A/www/index.php?module=users&action=login' ;
-} else{
+}
+else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "alexandr") ){
+	$redirect_uri = 'http://ns366377.ovh.net/alexandr/projet3a/Discoverit/www/index.php?module=users&action=login' ;
+}
+else{
 	$redirect_uri = 'http://ns366377.ovh.net/dupont/perso/Discoverit/Projet3A/www/index.php?module=users&action=login' ;
 }
 
