@@ -9,12 +9,19 @@
  */
 function ageFR($DateNaissance)
 {
+		
+	// YYYY-MM-DD
     $DateNaissance = explode("-", $DateNaissance);
-    $Date = explode("/", date("Y/m/d"));
-
-    if (($DateNaissance[1] <= $Date[1]) && ($DateNaissance[0] <= $Date[0])) $Age = $Date[0] - $DateNaissance[0];
-    else $Age = $Date[2] - $DateNaissance[2] - 1;
-
-
-    return $Age;
+    $year = @date('Y');
+    $month = @date('m');
+    $day = @date('d');
+    
+    $age = $year - $DateNaissance[0];
+    
+    // 02/02 - 31/07
+    if($month <= $DateNaissance[1] && $day < $DateNaissance[2])
+    	$age--;
+    	    	
+    return $age;
+    
 }
