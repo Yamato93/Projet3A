@@ -1,4 +1,5 @@
 <?php
+		      //$_file name, session name after upload (array name), 2nd lvl of session name (array key name), 
 function upload($fichiers, $infosession, $infosession2, $infosession3 = null)
 {
 			//********************************

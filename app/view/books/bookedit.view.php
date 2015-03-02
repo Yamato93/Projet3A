@@ -52,20 +52,18 @@
 	                                                {
 	                                                $passage = true;
 	                                                $url = $values->STEPS_IMG;
-	                                                }
-	                                                else
-	                                                {
-		                                               $url = 'public/img/preview.jpg';
-	                                                }    
-                                            }
-                                            
-                                        }
-                                        
-                                        ?>
+	                                                ?>
                                         <li class="column-half" style="background-image:url(<?php echo $url; ?>)">
                                             <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
                                         </li>
                                <?php
+	                                                }
+	                                                  
+                                            }
+                                            
+                                        }
+                                        
+                                        
                                     }   
                                 ?>
                                 <li class="column-half">

@@ -13,24 +13,32 @@ if(isset($_SESSION['User']))
 		
 			if(insert_step($connect, BASE, "DT_BOOKS_STEPS", $books_id, $use_id, $_POST['story'], $_POST['start-date'], $_POST['end-date']))
 			{
-				$i = 1;
-				$y = 1;
-					while(isset($_FILES['story-img'.$i]) and ($_FILES['story-img'.$i]['name'] != ''))
+				if(isset($_FILES))
+				{
+					$countfile = count($_FILES);
+					$z=1;
+					for ($i = 1; $i <= $countfile; $i++) 
 					{
-						
+					    if((isset($_FILES['story-img'.$i])) and ($_FILES['story-img'.$i]['name'] != ''))
+					    {
 							if($_FILES['story-img'.$i]['error'] == 0)
 							{
-								upload('story-img'.$i,'Bookseditstory', 'step_img'.$i);
+								upload('story-img'.$i,'Bookseditstory', 'step_img'.$z);
 							}
-						
-						$i++;
+							$z++;
+					    }
 					}
 					
-					while(isset($_SESSION['Bookseditstory']['step_img'.$y]))
+					$countfilesession = count($_SESSION['Bookseditstory']);
+					for ($y = 1; $y <= $countfilesession; $y++) 
 					{
-						insert_step_img($connect, BASE, "DT_BOOKS_STEPS_PICTURE", $_SESSION['step_session_id'], $books_id, $use_id, $_SESSION['Bookseditstory']['step_img'.$y]);
-						$y++;
+						if(isset($_SESSION['Bookseditstory']['step_img'.$y]))
+						{
+							insert_step_img($connect, BASE, "DT_BOOKS_STEPS_PICTURE", $_SESSION['step_session_id'], $books_id, $use_id, $_SESSION['Bookseditstory']['step_img'.$y]);
+						}
+	
 					}
+				}
 			}	
 		
 		unset($_SESSION['Bookseditstory']);

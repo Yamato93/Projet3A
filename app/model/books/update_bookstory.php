@@ -10,11 +10,11 @@ function update_book_story($connect, $dbname, $tablename, $id1, $id2, $id3, $tab
 			BOOKS_STEPS_START_DATE = '".$table2."',
 			BOOKS_STEPS_END_DATE = '".$table3."'
 		WHERE
-			USE_ID = $id1
+			USE_ID = :Param1
 		AND
-			BOOKS_ID = $id2
+			BOOKS_ID = :Param2
 		AND
-			BOOKS_STEPS_ID = $id3";
+			BOOKS_STEPS_ID = :Param3";
 
 		$curseur = $connect -> prepare($query);
 		//var_dump($curseur);

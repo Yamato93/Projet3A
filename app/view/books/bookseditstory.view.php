@@ -61,7 +61,7 @@
 	                            <?php
 	                            $i++;
 	                        }
-							$i = count($stepimginfo);
+							$i = count($stepimginfo) +1;
                         }
                         while($i<9)
                         {
