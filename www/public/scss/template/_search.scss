@@ -1,0 +1,23 @@
+.search-container{
+
+    .search-form{
+
+    }
+
+    .search-result{
+        .search-journal{
+            height: 200px;
+
+            div{
+                box-sizing:border-box;
+                height: 100%;
+                padding: 1em;
+            }
+
+            .journal-cover{
+                background: center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

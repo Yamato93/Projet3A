@@ -52,7 +52,7 @@
 		                                </p>
 		                                <span>Discover this diary > </span>
 		                            </div>
-		                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>"">Discover this diary</a>
+		                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>">Discover this diary</a>
 		                        </div>
 		                    </li>
 					<?php
