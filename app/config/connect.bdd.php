@@ -89,8 +89,8 @@
 		{
 			$host = 'localhost';
 			$user = 'alexandr';
-			$pass = '';
-			$base = '';
+			$pass = '601915';
+			$base = 'alexandr';
 			$port = 80;
 		}
 		return _cnx( $user, $pass, $base, $host, $port, $type_cnx );

@@ -55,6 +55,13 @@
 	*********************/
 	define('BASE', "dupont");
 	}
+	else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "alexandr") )
+	{
+		/*********************
+	BDD name
+	*********************/
+	define('BASE', "alexandr");
+	}
 
 	/*********************
 	Name for the site
