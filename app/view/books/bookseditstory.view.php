@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 		<?php
 		//from updatebookstory.contr.php
@@ -51,10 +52,15 @@
                         if(isset($stepimginfo))
                         {
 	                        foreach ($stepimginfo as $key => $value)
-	                        {
+	                        {	
+								if(isset($_GET['info']) and isset($_GET['bookid']))
+								{
+
+								$url_ajax = "index.php?module=books&action=updatebookstory&bookid=".$_GET['bookid']."&info=".$_GET['info']."&img_id=".$value->PIC_ID;	
+								}
 	                            $url = $value->STEPS_IMG;
 	                            ?>
-	                            <li class="column-half" style="background-image:url(<?php echo $url; ?>)">
+	                            <li class="column-half" style="background-image:url(<?php echo $url; ?>)" data-url="<?php echo $url_ajax; ?>">
 	                                <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
 	                            </li>
 	                            <?php
