@@ -5,7 +5,7 @@ if(!isset($_SESSION['Books']['cover_title']))
 	exit;
 }
 include_once("../core/function/function_upload_img.php");
-if(isset($_POST['story']) and isset($_POST['start-date']) and isset($_POST['end-date']))
+if(isset($_POST['story']))
 {
 	if(!isset($_SESSION['Books']['Step1']) and !isset($_SESSION['count-step']))
 	{
@@ -17,7 +17,7 @@ if(isset($_POST['story']) and isset($_POST['start-date']) and isset($_POST['end-
 	$_SESSION['Books']['Step'.$step]['end-date'] = $_POST['end-date'];
 	for($i=1; $i < count($_FILES); $i++)
 	{
-		if($_FILES['story-img'.$i]['error'] == 0)
+		if($_FILES['story-img'.$i]['error'] == 0 and $_FILES['story-img'.$i]['name'] != '')
 		{
 			upload('story-img'.$i,'Books','Step'.$step,'step_img'.$i);
 		}

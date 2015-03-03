@@ -10,6 +10,8 @@ if(isset($_SESSION['User']))
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{	   
 		
+
+		
 		if(update_book_story($connect, BASE, "DT_BOOKS_STEPS", $_SESSION['User']->USE_ID, $_GET['bookid'], $_GET['info'], $_POST['story'], $_POST['start-date'], $_POST['end-date']))
 		{
 			if(isset($_FILES))
@@ -27,8 +29,16 @@ if(isset($_SESSION['User']))
 						$z++;
 				    }
 				}
-				
-				$countfilesession = count(isset($_SESSION['Updatebookstory']));
+				if(isset($_SESSION['Updatebookstory']))
+				{
+					$nbUpdatebookstory = $_SESSION['Updatebookstory'];
+				}
+				else
+				{
+					$nbUpdatebookstory = 0;
+				}
+				$countfilesession =  count(array_keys($nbUpdatebookstory));
+
 				for ($y = 1; $y <= $countfilesession; $y++) 
 				{
 					if(isset($_SESSION['Updatebookstory']['step_img'.$y]))
@@ -57,7 +67,7 @@ if(isset($_SESSION['User']))
 		$stepinfo = current(select_data_step_info($connect, BASE, "DT_BOOKS_STEPS", "USE_ID", $_SESSION['User']->USE_ID, "BOOKS_ID", $_GET['bookid'], "BOOKS_STEPS_ID", $_GET['info']));
 		$stepimginfo = select_data_step_picture($connect, BASE, "DT_BOOKS_STEPS_PICTURE", "USE_ID", $_SESSION['User']->USE_ID, "BOOKS_ID", $_GET['bookid'], "BOOKS_STEPS", $_GET['info']);
 
-
+		$_SESSION['count_update_story'] = count($stepimginfo);
 	}
 	include_once("../app/view/books/bookseditstory.view.php");
 	
