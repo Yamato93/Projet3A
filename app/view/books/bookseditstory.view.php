@@ -12,7 +12,7 @@
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
 
-        <!-- CONTENT -->
+        <!-- CONTENT --> <!-- DELETE IMAGE FROM DATABASE -->
         <div class="story-container">
 
             <?php include('../app/includes/nav.inc.php') ?>

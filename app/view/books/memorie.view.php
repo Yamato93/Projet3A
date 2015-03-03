@@ -61,14 +61,18 @@
                                     }
                                     ?>
                                 <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
-                                    <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>"></a>
+                                    <div class="grid">
+                                        <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>" class="edit column-half">Edit</a>
+                                        <!-- DELETE URL OF A STORY HERE -->
+                                        <a href="#" class="delete column-half">Delete</a>
+                                    </div>
                                 </li>
                             <?php
                                 $y++;
                                 }
                             ?>
                             <li class="column-half">
-                                <a href="index.php?module=books&action=story">+</a>
+                                <a href="index.php?module=books&action=story" class="add-new">+</a>
                             </li>
                         </ul>
                     </div>

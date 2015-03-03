@@ -11,7 +11,7 @@
         <?php include('../app/includes/header.inc.php') ?>
         <!-- END HEADER -->
 
-        <!-- CONTENT -->
+        <!-- CONTENT --><!-- DELETE IMAGE IN THE SESSION -->
         <div class="story-container">
 
             <?php include('../app/includes/nav.inc.php') ?>
