@@ -37,12 +37,12 @@ var Images = (function(){
     })();
 
     var deleteImage = (function(){
-        function success(){
-            console.log('toto');
+        function success(data){
+            console.log('success');
         }
 
-        function error(){
-            console.log('titi');
+        function error(data){
+            console.log('error');
         }
 
         return{
