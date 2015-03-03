@@ -46,7 +46,8 @@
                         <ul class="grid">
                             <?php
                                 $y = 1;
-                                
+                                if(isset($_SESSION['Books']['Step'.$y]))
+                                {
                                 while(isset($_SESSION['Books']['Step'.$y]))
                                 {
                                     $x = 0;
@@ -60,15 +61,16 @@
                                         }
                                     }
                                     ?>
-                                <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
-                                    <div class="grid">
-                                        <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>" class="edit column-half">Edit</a>
-                                        <!-- DELETE URL OF A STORY HERE -->
-                                        <a href="#" class="delete column-half">Delete</a>
-                                    </div>
-                                </li>
-                            <?php
-                                $y++;
+	                                <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
+	                                    <div class="grid">
+	                                        <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>" class="edit column-half">Edit</a>
+	                                        <!-- DELETE URL OF A STORY HERE -->
+	                                        <a href="#" class="delete column-half">Delete</a>
+	                                    </div>
+	                                </li>
+	                            <?php
+	                                $y++;
+	                                }
                                 }
                             ?>
                             <li class="column-half">
