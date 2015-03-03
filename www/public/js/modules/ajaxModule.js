@@ -36,7 +36,6 @@ var Ajax = (function (){
 
   return{
         send: send,
-        sendHtml: sendHtml,
-        tools: tools
+        tools: tools,
     }
 }());

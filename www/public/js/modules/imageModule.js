@@ -38,11 +38,11 @@ var Images = (function(){
 
     var deleteImage = (function(){
         function success(){
-
+            console.log('toto');
         }
 
         function error(){
-
+            console.log('titi');
         }
 
         return{
