@@ -5,9 +5,13 @@ include_once("../app/model/books/select_data_steps.php");
 
 if (isset($_GET['id'])){
     $IdBook = $_GET['id'];
-    $book =  select_data_book($connect, BASE, "DT_BOOKS", "BOOKS_ID", $IdBook);
-
+    $book = select_data_book($connect, BASE, "DT_BOOKS", "BOOKS_ID", $IdBook);
     $bookStep = select_data_steps($connect, $IdBook);
+    if(empty($book))
+{
+	header('location:index.php?module=others&action=404');
+	exit;
+}
 
 
 

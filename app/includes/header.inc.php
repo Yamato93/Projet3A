@@ -8,16 +8,24 @@
     <?php
     	if(isset($_SESSION['User']))
     	{
+	    	if($_SESSION['User']->USE_LASTNAME != '')
+	    	{
+		    	$user_name = $_SESSION['User']->USE_LASTNAME;
+	    	}
+	    	else
+	    	{
+		    	$user_name = $_SESSION['User']->USE_MAIL;
+	    	}
     ?>
-    		<a href="index.php?module=users&action=users">Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
-	    	<a href="index.php?module=users&action=logout">Log out</a>
+    		 <a href="index.php?module=users&action=users">Hello, <?php echo $user_name; ?></a>
+	    	 <a href="index.php?module=users&action=logout">Log out</a>
 	<?php
     	}
     	else
     	{
 	?>
 			<a href="index.php?module=users&action=login">Log in / Sign in</a>
-			<a href="landing.html">Profesionnal ?</a>
+			<a href="landing.html">Are you a pro ?</a>
 	<?php
     	}
     ?>

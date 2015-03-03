@@ -16,11 +16,13 @@ if(isset($_SESSION['User']))
 				} 
 				update_book_cover_img($connect, BASE, "DT_BOOKS", $_SESSION['User']->USE_ID, $_GET['bookid'], $_SESSION['Updatebookcover']['cover_img']);
 			}
-			header('location:index.php?module=books&action=bookedit&id='.$_GET['bookid'].'&message=editok');
+			sessionize('success','Your book has been edit');
+			header('location:index.php?module=books&action=books&id='.$_GET['bookid'].'&message=editok');
 			exit;
 		}
 		else
 		{
+			sessionize('danger', 'Your book has not been edit');
 			header('location:index.php?module=books&action=bookedit&id='.$_GET['bookid'].'&message=editnook');
 			exit;
 		}
