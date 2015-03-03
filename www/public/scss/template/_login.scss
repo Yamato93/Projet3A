@@ -79,15 +79,11 @@
                 text-align: center;
                 box-sizing:border-box;
                 padding: 1em;
+
                 a{
-                    display: inline-block; 
-                }
-                a:first-child{
+                    display: inline-block;
                     @include button(#ffffff,$facebook);
                     margin-bottom: 20px;
-                }
-                a:last-child{
-                    @include button(#ffffff,$google);
                 }
 
                 @media #{$medium}{

@@ -1,4 +1,4 @@
-.jumbotron {
+.jumbotron{
     &#{-content}{
         background: $bluegreen url(../img/create-book-2.jpg) bottom center no-repeat;
         background-size: cover;
@@ -67,18 +67,18 @@
         margin: 1em;
         text-align: center;
 
-        .diary-preview {
-            position: relative; 
+        .diary-preview{
+            background:center no-repeat;
+            background-size: cover;
+            position: relative;
             margin: 0;
             padding: 0;
             width: 100%;
-            
-            > img {
-                width: 100%;
-                display: block;
-            }
+            padding-bottom: 100%;
+
             @media  #{$small}{
                 width: 33.333333%;
+                padding-bottom: 33.333333%;
                 float: left;
             }
         }
@@ -254,6 +254,8 @@
                     top:50%;
                     transform:translateY(-50%);
                     -webkit-transform: translateY(-50%);
+                    width: 60px;
+                    height: 60px;
                 }
 
                 @media #{$small}{

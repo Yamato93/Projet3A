@@ -24,7 +24,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="landing.html">
             <span>
                 <img src="public/img/icons/pin.svg" alt="Routes page"/>
             </span>
@@ -32,7 +32,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="landing.html">
             <span>
                 <img src="public/img/icons/star.svg" alt="Best journals page"/>
             </span>

@@ -37,8 +37,7 @@
 					?>
 							<li class="column-third">
 		                        <div class="diary">
-		                            <div class="diary-preview">
-		                                <img src="<?php echo $value->BOOKS_COVER; ?>" alt="<?php echo $value->BOOKS_TITLE; ?>" />
+		                            <div class="diary-preview" style="background-image:url(<?php echo $value->BOOKS_COVER; ?>);">
 		                                <div class="diary-more">
 		                                    <span class="diary-button">Discover this diary</span>
 		                                </div>
@@ -86,7 +85,7 @@
                 <ul class="grid">
                     <li class="column-third">
                         <div>
-                            <img src="public/img/map.png" alt="Discovert it map">
+                            <img src="public/img/icons/journal-grey.svg" alt="Discovert it map">
                         </div>
                         <p>Create your itineraries</p>
                     </li>

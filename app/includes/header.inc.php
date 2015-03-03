@@ -8,16 +8,16 @@
     <?php
     	if(isset($_SESSION['User']))
     	{
-    ?>		
-    		 <a href="index.php?module=users&action=users">Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
-	    	 <a href="index.php?module=users&action=logout">Log off</a>
+    ?>
+    		<a href="index.php?module=users&action=users">Hello, <?php echo $_SESSION['User']->USE_LASTNAME; ?></a>
+	    	<a href="index.php?module=users&action=logout">Log out</a>
 	<?php
     	}
     	else
     	{
 	?>
-			<a href="index.php?module=users&action=login">Connexion</a>
-			<a href="landing.html">Are you a pro ?</a>
+			<a href="index.php?module=users&action=login">Log in / Sign in</a>
+			<a href="landing.html">Profesionnal ?</a>
 	<?php
     	}
     ?>

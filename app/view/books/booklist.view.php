@@ -42,19 +42,21 @@
                     	    //commandes
 					?>
 						<li class="column-third">
-	                        <div style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
-	                        </div>
-	                        <div>
-	                            <h2>
-	                                <?php echo $value->BOOKS_TITLE;?>
-	                            </h2>
-	                            <p>
-	                                "<?php echo substr($value->BOOKS_DESCR, 0, 50);?>"
-	                            </p>
-	                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>" class="more">Read more</a>
-	                            <a href="index.php?module=books&action=bookedit&id=<?php echo $value->BOOKS_ID;?>">Edit</a>
-	                        </div>
-                            <a href="index.php?module=books&action=delete_books&id=<?php echo $value->BOOKS_ID;?>" title="Delete this travel journal" class="delete">X</a>
+                            <div class="grid grid-vertical">
+    	                        <div class="column-third" style="background-image:url(<?php echo $value->BOOKS_COVER;?>);">
+    	                        </div>
+    	                        <div class="column-twothirds">
+    	                            <h2>
+    	                                <?php echo $value->BOOKS_TITLE;?>
+    	                            </h2>
+    	                            <p>
+    	                                "<?php echo substr($value->BOOKS_DESCR, 0, 50);?>"
+    	                            </p>
+    	                            <a href="index.php?module=books&action=books&id=<?php echo $value->BOOKS_ID;?>" class="more">Read more</a>
+    	                            <a href="index.php?module=books&action=bookedit&id=<?php echo $value->BOOKS_ID;?>">Edit</a>
+                                    <a href="index.php?module=books&action=delete_books&id=<?php echo $value->BOOKS_ID;?>" class="delete">Delete</a>
+    	                        </div>
+                            </div>
 	                    </li>
 					<?php
                     	}
@@ -70,6 +72,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/pageScript/travel-journal-list.js" type="text/javascript"></script>
         <!-- END SCRIPTS -->
     </body>
 </html>

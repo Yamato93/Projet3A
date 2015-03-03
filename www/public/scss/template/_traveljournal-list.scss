@@ -13,10 +13,10 @@
     ul{
         padding: 0;
         margin: 0;
-        li{
+        li[class*="column"]{
+            margin-bottom: 1em;
             position: relative;
             list-style-type: none;
-            box-sizing:border-box;
             @media #{$medium}{
                 &.column-third{
                     width: 50%;
@@ -30,15 +30,15 @@
             }
 
             &.create{
-                margin-bottom: 10px;
                 a::after{
                     @include clearfix();
                 }
                 div{
+                    float: left;
                     &:first-child{
-                        width:30%;
+                        width:33.333333%;
                         height: 0;
-                        padding-bottom: 30%;
+                        padding-bottom: 33.333333%;
                         background: $bluegreen;
                         text-align: center;
                         p{
@@ -51,7 +51,7 @@
                     }
 
                     &:last-child{
-                        width: 70%;
+                        width: 66.666666%;
                         p{
                             margin: 0;
                             padding-left: 10px;
@@ -63,19 +63,15 @@
                 }
             }
             div{
-                float: left;
                 box-sizing:border-box;
 
-                &:first-child{
-                    width:30%;
-                    height: 0;
-                    padding-bottom: 30%;
+                div:first-child{
+                    padding-bottom: 33.333333%;
                     background: no-repeat center;
                     background-size: cover;
                 }
 
                 &:nth-child(2){
-                    width: 70%;
                     padding-left: 10px;
                     h2{
                         margin: 0;
@@ -91,34 +87,37 @@
                         padding: 0.5em 0.8em;
                         border-radius: 3px;
 
-                        &.more{
+                        @media #{$small}{
+                            font-size: 0.8em;
+                        }
+
+                        &:nth-child(3){
                             color:$darkbluegreen;
                             border: solid 1px $darkbluegreen;
                         }
 
-                        &:last-child{
+                        &:nth-child(4){
                             color:#ffffff;
                             background-color: $darkbluegreen;
                         }
-                    }
-                }
-            }
-            a.delete{
-                position: absolute;
-                top: 0;
-                right:0;
-                color:red;
-                font-size: 1.5em;
-                opacity: 0;
-                @include trans(opacity, 500ms);
 
-                @media #{$medium}{
-                    opacity: 1;
-                }
-            }
-            &:hover{
-                a.delete{
-                    opacity: 1;
+                        &:last-child{
+                            background-color: lighten(red,10%);
+                            color:#ffffff;
+                            @include trans(opacity,500ms);
+                            opacity: 0;
+
+                            @media #{$medium}{
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        .delete{
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }

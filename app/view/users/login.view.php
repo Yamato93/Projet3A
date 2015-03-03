@@ -55,8 +55,7 @@
                         </form>
                     </div>
                     <div class="social-container">
-                        <a href="<?php if(isset($url_fb)){ echo $url_fb; } else { echo 'landing.html' ; } ?>">Connexion avec Facebook</a>
-                        <a href="landing.html">Connexion avec Google +</a>
+                        <a href="<?php if(isset($url_fb)){ echo $url_fb; } else { echo 'landing.html' ; } ?>">Log in with Facebook</a>
                     </div>
                 </div>
             </div>
