@@ -19,9 +19,9 @@ $(document).ready(function(){
 
     $("body").on("click",".removeFile",function(){
         var url = $(this).parent().data('url');
-        Ajax.send(url,'',true,'GET',Images.deleteImage.success,Images.deleteImage.error)
-        // $(this).siblings('input[type="file"]').val('');
-        // $(this).parent().removeAttr('style');
-        // $(this).remove();
+        Ajax.send(url,'',true,'GET',Images.deleteImage.success,Images.deleteImage.error);
+        $(this).siblings('input[type="file"]').val('');
+        $(this).parent().removeAttr('style data-url');
+        $(this).remove();
     });
 });

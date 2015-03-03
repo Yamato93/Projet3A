@@ -27,7 +27,10 @@ var Images = (function(){
                     $(selector).css('background-image', 'url("'+e.target.result+'")');
                 }
                 reader.readAsDataURL(input.files[0]);
-                $(selector).append(remove);
+
+                if(!$(selector).find('span').length){
+                    $(selector).append(remove);
+                }
             }
         }
 
@@ -39,11 +42,11 @@ var Images = (function(){
     var deleteImage = (function(){
 
         function success(data){
-            console.log('success');
+            // display message
         }
 
         function error(data){
-            console.log('error');
+            // display error
         }
 
         return{

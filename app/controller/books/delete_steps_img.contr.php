@@ -8,14 +8,14 @@ if(select_data_step_info($connect, BASE, "DT_BOOKS_STEPS", "BOOKS_STEPS_ID", $_G
 	{
 		sessionize('success','Your picture has been delete');
 		$retour = array(
-			"data_return" => true
+			"message" => "Your picture has been delete successfully."
 		);
 	}
 	else
 	{
 		sessionize('danger','Your picture has not been delete');
 		$retour = array(
-			"data_return" => false
+			"message" => "Your picture has not been delete."
 		);
 	}
 	echo json_encode($retour);
