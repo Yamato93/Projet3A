@@ -35,6 +35,11 @@
 
             .cover-journal{
                 padding: 1em;
+
+                @media #{$medium}{
+                    width: 100%;
+                }
+
                 div:first-child{
                     background:#ffffff url(../img/preview.jpg) no-repeat center center;
                     background-size: cover;
@@ -111,6 +116,11 @@
             .memorie{
                 padding: 1em;
                 background-color: #ffffff;
+
+                @media #{$medium}{
+                    width: 100%;
+                }
+
                 ul{
                     padding: 0;
                     margin: 0;
@@ -125,7 +135,7 @@
                         background: no-repeat center;
                         background-size: cover;
 
-                        a{
+                        a.add-new{
                             padding: 0;
                             position: absolute;
                             top: 0;
@@ -140,6 +150,25 @@
                             &:hover{
                                 color: $golden;
                                 background-color: rgba(144, 177, 187, 0.7);
+                            }
+                        }
+
+                        div{
+                            position: absolute;
+                            bottom: 0;
+                            text-align: center;
+                            width: 100%;
+                            a{
+                                padding: 0.8em;
+                                color: #ffffff;
+
+                                &.edit{
+                                    background-color: $darkbluegreen;
+                                }
+
+                                &.delete{
+                                    background-color: lighten(red,10%);
+                                }
                             }
                         }
 

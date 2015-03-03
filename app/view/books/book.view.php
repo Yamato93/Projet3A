@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +22,7 @@
                 </div>
             </div>
             <div id="journal" class="travel-journal u-wrapper">
+                <h1>Journal</h1>
             <?php
             	$nb = 0;
             	foreach ($bookStep as $key => $value)
@@ -58,8 +57,7 @@
 					                            </div>
 					                        </div>
 					                    </div>
-					                    <div class="column-half">
-					                        <img src="<?php echo $value2->STEPS_IMG; ?>" alt="Memorie image"/>
+					                    <div class="column-half" style="background-image:url(<?php echo $value2->STEPS_IMG; ?>);">
 					                    </div>
 					                </div>
 					                
@@ -71,7 +69,6 @@
 						?>
 						        	<div class="grid grid-vertical inverse">
 					                    <div class="column-half">
-					                        
 					                        <p>
 					                            <?php echo $value->BOOKS_STEPS_CONTENT;?>
 					                        </p>
@@ -84,8 +81,7 @@
 					                            </div>
 					                        </div>
 					                    </div>
-					                    <div class="column-half">
-					                        <img src="<?php echo $value2->STEPS_IMG; ?>" alt="Memorie image"/>
+					                    <div class="column-half" style="background-image:url(<?php echo $value2->STEPS_IMG; ?>);">
 					                    </div>
 					                </div>
 				        <?php
@@ -108,8 +104,7 @@
             		foreach ($booksstepimggalery as $key => $value)
 					{
                 	?>
-                    <li class="column-third">
-                        <img src="<?php echo $value->STEPS_IMG; ?>" alt="Name Picture"/>
+                    <li class="column-third" style="background-image:url(<?php echo $value->STEPS_IMG; ?>);">
                     </li>
                     <?php
                 	}

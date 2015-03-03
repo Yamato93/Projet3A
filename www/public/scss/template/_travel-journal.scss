@@ -36,14 +36,34 @@
     }
 
     .travel-journal{
-        padding: 2em 0;
+        padding: 2em;
+
+        h1{
+            padding-bottom: 0.5em;
+            color:$darkbluegreen;
+            border-bottom: solid 1px $darkbluegreen;
+        }
+
         > div.grid{
             text-align: center;
             padding: 1em;
             border-bottom: solid 1px #000000;
 
             >div.column-half{
-                padding:1em;
+
+                &:first-child{
+                    padding:1em;
+                }
+
+                &:last-child{
+                    padding-bottom:50%;
+                    background: center no-repeat;
+                    background-size: cover;
+
+                    @media #{$medium}{
+                        padding-bottom: 100%;
+                    }
+                }
 
                 @media #{$medium}{
                     width: 100%;
@@ -84,28 +104,19 @@
 
         >div.inverse{
             position: relative;
+            transform:rotateY(180deg);
+            -webkit-transform:rotateY(180deg);
 
-            >.column-half{
-                float: right;
-
-                /*&:last-child{
-                    position:absolute;
-                    top:50%;
-                    left: 0;
-                    transform:translateY(-50%);
-                    -webkit-transform:translateY(-50%);
-
-                    @media #{$medium}{
-                        position: initial;
-                        transform:translateY(0);
-                        -webkit-transform:translateY(0%);
-                    }
-                }*/
+            > div{
+                transform:rotateY(-180deg);
+                -webkit-transform:rotateY(-180deg);
             }
         }
     }
 
     .travel-gallery{
+        padding: 2em;
+
         h2{
             padding-bottom: 0.5em;
             color:$darkbluegreen;
@@ -114,14 +125,20 @@
 
         ul{
             li{
+                background: center no-repeat;
+                background-size: cover;
+                padding-bottom: 33.333333%;
                 text-align: center;
+                border: solid 5px #ffffff;
 
                 @media #{$medium}{
                     width: 50%;
+                    padding-bottom: 50%;
                 }
 
                 @media #{$small}{
                     width: 100%;
+                    padding-bottom: 100%;
                 }
             }
         }

@@ -28,7 +28,7 @@
                                 <input type="text" name="cover_title" placeholder="Title" value="<?php echo $value->BOOKS_TITLE;?>"/>
                             </h2>
                             <span class="input-file">
-                                Select an image for your cover
+                                Edit your cover
                                 <input type="file" name="cover_img" id="cover"/>
                             </span>
                         </div>
@@ -47,27 +47,26 @@
                                            //commandes
                                             if($passage == false)
                                             {
-												
 	                                                if($value->BOOKS_STEPS_ID == $values->BOOKS_STEPS)
 	                                                {
 	                                                $passage = true;
 	                                                $url = $values->STEPS_IMG;
 	                                                ?>
                                         <li class="column-half" style="background-image:url(<?php echo $url; ?>)">
-                                            <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>"></a>
+                                            <div class="grid">
+                                                <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>" class="edit column-half">Edit</a>
+                                                <!-- DELETE URL OF A STORY HERE -->
+                                                <a href="#" class="delete column-half">Delete</a>
+                                            </div>
                                         </li>
                                <?php
 	                                                }
-	                                                  
                                             }
-                                            
                                         }
-                                        
-                                        
-                                    }   
+                                    }
                                 ?>
                                 <li class="column-half">
-                                    <a href="index.php?module=books&action=bookseditstory&id=<?php echo $_GET['id']; ?>">+</a>
+                                    <a href="index.php?module=books&action=bookseditstory&id=<?php echo $_GET['id']; ?>" class="add-new">+</a>
                                 </li>
                             </ul>
                         </div>
@@ -85,6 +84,7 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/pageScript/travel-journal-edit.js"></script>
         <script src="public/js/modules/imageModule.js"></script>
         <script src="public/js/script-cover.js"></script>
         <!-- END SCRIPTS -->
