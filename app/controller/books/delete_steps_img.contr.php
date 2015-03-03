@@ -7,13 +7,14 @@ if(select_data_step_info($connect, BASE, "DT_BOOKS_STEPS", "BOOKS_STEPS_ID", $_G
 	if(delete($connect, BASE, "DT_BOOKS_STEPS_PICTURE", "PIC_ID", $_GET['img_id']))
 	{
 		sessionize('success','Your picture has been delete');
-		return true;
+		$retour = true;
 	}
 	else
 	{
 		sessionize('danger','Your picture has not been delete');
-		return false;
+		$retour = true;
 	}
+	echo json_encode($retour);
 }
 else
 {
