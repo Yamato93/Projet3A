@@ -50,7 +50,6 @@
                         $i=1;
                         if(isset($stepimginfo))
                         {
-                        
 	                        foreach ($stepimginfo as $key => $value)
 	                        {
 	                            $url = $value->STEPS_IMG;
@@ -85,8 +84,9 @@
 
         <!-- SCRIPTS -->
         <?php include('../app/includes/blockScript.php') ?>
+        <script src="public/js/modules/ajaxModule.js"></script>
         <script src="public/js/modules/imageModule.js"></script>
-        <script src="public/js/story-script.js"></script>
+        <script src="public/js/pageScript/edit-story-page.js"></script>
         <!-- END SCRIPTS -->
     </body>
 </html>

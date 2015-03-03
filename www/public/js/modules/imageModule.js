@@ -36,8 +36,25 @@ var Images = (function(){
         }
     })();
 
+    var deleteImage = (function(){
+        function success(){
+
+        }
+
+        function error(){
+
+        }
+
+        return{
+            success: success,
+            error: error,
+        }
+
+    })();
+
     return{
         preview: preview,
         previewBackground:previewBackground,
+        deleteImage: deleteImage,
     }
 })();
