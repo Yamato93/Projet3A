@@ -56,7 +56,7 @@
 								if(isset($_GET['info']) and isset($_GET['bookid']))
 								{
 
-								$url_ajax = "index.php?module=books&action=updatebookstory&bookid=".$_GET['bookid']."&info=".$_GET['info']."&img_id=".$value->PIC_ID;	
+								$url_ajax = "index.php?module=books&action=delete_steps_img&bookid=".$_GET['bookid']."&info=".$_GET['info']."&img_id=".$value->PIC_ID;	
 								}
 	                            $url = $value->STEPS_IMG;
 	                            ?>
