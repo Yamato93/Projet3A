@@ -22,7 +22,7 @@ if(isset($_POST['type'])) {
 						exit();
 					}
 				} else{
-					sessionize('danger', 'mail and/or password no match');
+					sessionize('danger', 'mail and/or password no match ');
 				}
 			} else{
 				sessionize('danger', 'mail and/or password empty');
@@ -49,6 +49,31 @@ if(isset($_POST['type'])) {
 							$password = md5($password);
 							if(insert_new_user($connect, $mail, $password)) {
 								sessionize('success','You are registered');
+								include_once "../tools/swiftmailer/swift_required.php";
+
+								//Instancier le nouveau message
+								$message = Swift_Message::newInstance();
+
+								//Objet
+								$message->setSubject('Welcome on DiscoverIt');
+
+								//Expéditeur
+								$message->setFrom(array('noreply@discoverit.fr' => 'DiscoverIt'));
+
+								$text = 'Welcome on DiscoverIt';
+								$to = $mail;
+
+								//Contenu
+								$message->setBody($text);
+
+								$message->setTo(array($to));
+								$headers = $message->getHeaders();
+								$transport = Swift_MailTransport::newInstance();
+								$mailer = Swift_Mailer::newInstance($transport);
+								if($mailer->send($message)){
+									sessionize('success','You are registered');
+								}
+
 							} else {
 								sessionize('danger', 'Registration error');
 							}
