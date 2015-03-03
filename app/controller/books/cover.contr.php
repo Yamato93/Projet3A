@@ -29,16 +29,3 @@ if(isset($_POST))
 	}
 }
 include_once("../app/view/books/cover.view.php");
-
-/*
-include('../function/function_upload_photo.php');
-if (isset($_FILES['photo1']) AND $_FILES['photo1']['error'] == 0)
-{
-upload('photo1');
-$img_repas = $_SESSION['BACKOFFICE']['photo1'];
-}
-else
-{
-	$img_repas = false;
-}
-*/
