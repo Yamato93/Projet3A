@@ -21,6 +21,7 @@ if(isset($_POST['story']) and isset($_POST['start-date']) and isset($_POST['end-
 		{
 			upload('story-img'.$i,'Books','Step'.$step,'step_img'.$i);
 		}
+		$_SESSION['max_chan_id'] = $i;
 	}
 	$_SESSION['count-step']++;
 	header("location:index.php?module=books&action=memorie");

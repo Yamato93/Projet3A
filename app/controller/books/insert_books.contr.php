@@ -28,7 +28,7 @@ if(isset($_SESSION['User']) and !empty($_SESSION['User']))
 					$step = $_SESSION['Books']['Step'.$i];
 				    if(insert_step($connect, BASE, "DT_BOOKS_STEPS", $books_id, $use_id, $step['content'], $step['start-date'], $step['end-date']))
 				    {
-						for($j = 0; $j < count($step); $j++)
+						for($j = 0; $j < $_SESSION['max_chan_id ']; $j++)
 						{
 							if(isset($step['step_img'.$j]))
 							{
@@ -43,7 +43,7 @@ if(isset($_SESSION['User']) and !empty($_SESSION['User']))
 		}
 		unset($_SESSION['count-step']);
 		unset($_SESSION['Books']);
-		header('location:index.php?module=users&action=users');
+		header('location:index.php?module=books&action=books&id='.$books_id);
 		exit();
 	}
 }
