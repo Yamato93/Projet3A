@@ -37,6 +37,7 @@ var Images = (function(){
     })();
 
     var deleteImage = (function(){
+
         function success(data){
             console.log('success');
         }
