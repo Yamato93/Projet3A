@@ -91,7 +91,7 @@ function select_data_step_picture($connect, $dbname, $tablename, $where, $id, $w
 	}
 		
 }
-
+// $connect = PDO connect / $dbname / $tablename / $where = col name / $id =  
 function select_data_step_info($connect, $dbname, $tablename, $where, $id, $where2, $id2, $where3, $id3)
 {
 	try

@@ -17,4 +17,8 @@ if(select_data_books($connect, BASE, "DT_BOOKS", "BOOKS_ID" , $_GET['id'], "USE_
 		exit();
 	}
 }
-
+else
+{
+	header('Location:index.php?module=books&action=bookslist');
+	exit();
+}

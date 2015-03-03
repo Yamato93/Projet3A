@@ -56,7 +56,7 @@
                                             <div class="grid">
                                                 <a href="index.php?module=books&action=updatebookstory&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>" class="edit column-half">Edit</a>
                                                 <!-- DELETE URL OF A STORY HERE -->
-                                                <a href="#" class="delete column-half">Delete</a>
+                                                <a href="index.php?module=books&action=delete_books_steps&bookid=<?php echo $_GET['id']; ?>&info=<?php echo $value->BOOKS_STEPS_ID; ?>" class="delete column-half">Delete</a>
                                             </div>
                                         </li>
                                <?php
