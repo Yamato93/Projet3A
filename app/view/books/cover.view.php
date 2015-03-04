@@ -34,6 +34,7 @@
                     <div class="column-third">
                         <input type="submit" value="Continue the adventure"/>
                     </div>
+                    <?php display_notification(); ?>
                     <div class="column-half">
                         <div class="form-div">
                             <input type="text" name="cover_title" placeholder="Title" required/>

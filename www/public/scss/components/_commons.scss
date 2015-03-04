@@ -351,17 +351,17 @@
 /***** DESIGN ALERT MESSAGE NOT DEFINATELY *****/
 
 .alert{
-    margin: auto;
+    margin:1em auto;
     padding: 1em;
     box-sizing:border-box;
 
     &-danger{
-        background-color: lighten(red, 30%);
+        background-color: lighten(red, 40%);
         color: #000000;
     }
 
     &-success{
-        background-color: lighten(green, 30%);
+        background-color: lighten(green, 40%);
         color: #000000;
     }
 }

@@ -25,7 +25,7 @@
     	{
 	?>
 			<a href="index.php?module=users&action=login">Log in / Sign in</a>
-			<a href="landing.html">Are you a pro ?</a>
+			<a href="landing.php">Professional ?</a>
 	<?php
     	}
     ?>

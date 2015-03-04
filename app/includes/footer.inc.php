@@ -1,10 +1,10 @@
 <div class="site-footer">
     <ul>
         <li>
-            <a href="#">Privacy</a>
+            <a href="landing.php">Privacy</a>
         </li>
         <li>
-            <a href="#">Contact</a>
+            <a href="landing.php">Contact</a>
         </li>
         <li>
             <a href="https://www.facebook.com/discover.fr" target="_blank"></a>

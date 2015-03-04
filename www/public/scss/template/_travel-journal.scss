@@ -26,10 +26,20 @@
 
             a{
                 padding: 1em;
+                padding-left: 2.5em;
                 display: block;
+                position: relative;
 
-                &:last-child{
-                    padding-top:0;
+                &::before{
+                    top:50%;
+                    content:"";
+                    position:absolute;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid #ffffff;
+                    left:1.5em;
+                    transform:translate(-50%,-50%);
+                    @include trans(all, 200ms);
                 }
             }
         }

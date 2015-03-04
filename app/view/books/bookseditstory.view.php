@@ -35,6 +35,7 @@
                         </div>
                     </div>
                     <div class="journal-container">
+                        <?php display_notification(); ?>
                         <h1>Let's the journey begin</h1>
                         <input type="submit" value="Validate my memorie"/>
                         <div class="form-div">

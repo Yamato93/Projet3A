@@ -22,11 +22,20 @@
 
         .column-twothirds{
             margin-bottom: 2em;
+
+            @media #{$medium}{
+                width: 100%;
+            }
         }
 
         .column-third{
             margin-bottom: 2em;
             text-align: right;
+
+            @media #{$medium}{
+                width: 100%;
+                text-align: center;
+            }
         }
 
         div.column-half{

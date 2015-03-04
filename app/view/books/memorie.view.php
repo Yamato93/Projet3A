@@ -34,6 +34,7 @@
                     <div class="column-third">
                         <button class="save-journal" onClick="location.href='index.php?module=books&action=insert_books'">Publish your journal</button>
                     </div>
+                    <?php display_notification(); ?>
                     <div class="column-half cover-journal">
                         <div style="background-image:url(<?php echo $_SESSION['Books']['cover_upload'];?>);">
                             <h2 class="cover-title"><?php echo $_SESSION['Books']['cover_title'];?></h2>

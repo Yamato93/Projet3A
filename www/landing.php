@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="public/css/app.min.css">
 	</head>
 	<body>
+
+		<?php include('../app/includes/header.inc.php') ?>
+
 	    <div id="content-maintenance">
 	        <div class="error">
 	            <h1 id="maintenance">Maintenance</h1>
@@ -15,6 +18,9 @@
 	            <a href="index.php">Go back home</a>
 	        </div>
 	    </div>
+
+	    <?php include('../app/includes/footer.inc.php') ?>
+
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

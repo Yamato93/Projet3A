@@ -12,6 +12,7 @@
         <!-- END HEADER -->
 
         <!-- CONTENT -->
+        <?php include('../app/includes/nav.inc.php') ?>
         <div class="travel-container">
             <div class="travel-cover" style="background-image:url(<?php echo $book[0]->BOOKS_COVER;?>);">
                 <h1><?php echo $book[0]->BOOKS_TITLE;?></h1>

@@ -31,6 +31,7 @@
                         </div>
                     </div>
                     <div class="journal-container">
+                        <?php display_notification(); ?>
                         <h1>Tell us more about your journey</h1>
                         <h2>Write about a place you went and add some pictures to illustrate</h2>
                         <div class="grid grid-vertical">
