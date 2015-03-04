@@ -59,28 +59,28 @@
                     <h2>Gallery</h2>
                     <ul class="grid">
                         <li class="column-half">
-                            <input type="file" name="story-img1" class="addFile"/>
+                            <input type="file" name="story-img1" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img2" class="addFile"/>
+                            <input type="file" name="story-img2" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img3" class="addFile"/>
+                            <input type="file" name="story-img3" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img4" class="addFile"/>
+                            <input type="file" name="story-img4" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img5" class="addFile"/>
+                            <input type="file" name="story-img5" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img6" class="addFile"/>
+                            <input type="file" name="story-img6" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img7" class="addFile"/>
+                            <input type="file" name="story-img7" class="addFile" required/>
                         </li>
                         <li class="column-half">
-                            <input type="file" name="story-img8"class="addFile"/>
+                            <input type="file" name="story-img8"class="addFile" required/>
                         </li>
                     </ul> 
                 </div>

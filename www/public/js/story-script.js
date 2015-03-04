@@ -14,6 +14,7 @@ $(document).ready(function(){
     })();
 
     $(".addFile").change(function(){
+        $(".addFile").removeAttr('required');
         Images.previewBackground.readURL(this, $(this).parent());
     });
 
@@ -21,5 +22,9 @@ $(document).ready(function(){
         $(this).siblings('input[type="file"]').val('');
         $(this).parent().removeAttr('style');
         $(this).remove();
+
+        if(!$(".gallery ul li").attr('style') || $(".addFile").val() == ''){
+            $(".addFile").attr("required", true);
+        }
     });
 });
