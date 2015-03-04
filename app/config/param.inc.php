@@ -6,7 +6,7 @@
  	/*********************
 	Name for the session
 	*********************/
-	define('SESSION_NAME', "Discoverit_bo_session");
+	define('SESSION_NAME', "Discoverit_session");
 	
 	/***********************
 	Max post per page
