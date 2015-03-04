@@ -18,9 +18,6 @@
         <div class="user-container">
             <div class="user-profil grid">
                 <div class="column-half">
-                    <div class="user-picture">
-                        <img src='<?php $retVal = (isset($data->USE_PICTURE)) ? $data->USE_PICTURE : "public/img/preview.jpg"; echo($retVal); ?>' alt="User picture"/>
-                    </div>
                     <ul class="user-infos">
                         <li>
                             <h1><?php $retVal = (isset($data->USE_FIRSTNAME)) ? $data->USE_FIRSTNAME : "FirstName"; echo($retVal); ?> 
@@ -35,7 +32,7 @@
                     <h2>About me</h2>
                     <p><?php $retVal = (isset($data->USE_DESCR)) ? $data->USE_DESCR : "N/A"; echo($retVal); ?></p>
                     <?php if (isset($_SESSION['User'])) { if ($data->USE_ID == $_SESSION['User']->USE_ID){?>
-                    <a href="?module=users&action=edit">Edit profil</a>
+                    <a href="?module=users&action=edit" class="edit">Edit profil</a>
                     <?php } } ?>
                 </diV>
             </div>

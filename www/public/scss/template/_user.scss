@@ -11,16 +11,58 @@
                 width: 100%;
             }
         }
-        .user-picture{
-            width: 150px;
-            height: 150px;
-            margin-bottom: 1em;
-            float: left;
+
+        form{
+            width: 100%;
+            background-color: $darkbluegreen;
             box-sizing:border-box;
-            img{
-                width: 100%;
+            padding: 1em;
+
+            .column-half{
+                &:first-child{
+                    padding-right:1em;
+                }
+
+                &:last-child{
+                    padding-left: 1em;
+                }
+
+                @media #{$medium}{
+                    width: 100%;
+
+                    &:first-child{
+                        padding:0;
+                    }
+
+                    &:last-child{
+                        padding: 0;
+                    }
+                }
+            }
+
+            .form-div{
+                margin: 1em 0;
+
+                &.select{
+                    label{
+                        position: initial;
+                        opacity: 1;
+                        color: #ffffff;
+                        display: block;
+                        margin-bottom: 0.5em;
+                    }
+                }
+            }
+
+            input[type="submit"]{
+                @include button(#ffffff, $golden);
             }
         }
+
+        .edit{
+            @include button(#ffffff, $darkbluegreen);
+        }
+
         .user-infos{
             padding-left: 1em ;
             margin: 1em 0;
