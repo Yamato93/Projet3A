@@ -4,7 +4,7 @@ $(document).ready(function(){
         var remove = '<span class="removeFile">Remove this image</span>';
         var elem = $(".addFile").parent();
 
-        if(!$(".gallery ul li").attr('style') || $(".addFile").val() == ''){
+        if(!$(".gallery ul li").attr('style') && $(".addFile").val() == ''){
             $(".addFile").attr("required", true);
         }
 
