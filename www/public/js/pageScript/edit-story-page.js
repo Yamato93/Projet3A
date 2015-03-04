@@ -29,7 +29,7 @@ $(document).ready(function(){
         $(this).parent().removeAttr('style data-url');
         $(this).remove();
 
-        if(!$(".gallery ul li").attr('style') || $(".addFile").val() == ''){
+        if(!$(".gallery ul li").attr('style') && $(".addFile").val() == ''){
             $(".addFile").attr("required", true);
         }
     });
