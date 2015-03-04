@@ -87,7 +87,7 @@
                         <div>
                             <img src="public/img/icons/journal-grey.svg" alt="Discovert it map">
                         </div>
-                        <p>Create your itineraries</p>
+                        <p>Create your travel journal</p>
                     </li>
                     <li class="column-third">
                         <div>
