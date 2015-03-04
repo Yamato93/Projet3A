@@ -1,0 +1,38 @@
+.center{
+	text-align: center;
+}
+#menu{
+	padding-top: 20px;
+}
+#content p{
+	line-height: 25px;
+}
+/*Galerie*/
+#poptrox {
+	width: 960px;
+	margin: 0px auto;
+}
+
+#gallery {
+	width: 960px;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#gallery li {
+	float: left;
+	margin: 4px;
+	padding: 10px;
+}
+
+#zoom {
+	border: 10px solid #FFFFFF;
+	padding: 0 5% 0 5%;
+	width: 100%;
+}
+#delai{
+	padding-top: 10px;
+	
+}

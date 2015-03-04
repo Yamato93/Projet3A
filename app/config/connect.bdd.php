@@ -1,6 +1,7 @@
 <?php
 //if(!defined('Portefollio')|| !Portefollio) die("URL non valide !");
 
+
 	define("CHARSET","utf-8");
 	define("PREFIXE","PF_");
 	$nom_serveur = explode ( "/" , $_SERVER['REQUEST_URI']);
@@ -19,6 +20,7 @@
 				$dbh -> setAttribute( PDO::ATTR_TIMEOUT, 5 );
 				$dbh -> exec('SET NAMES utf8'); // METHOD #3
 				$dbh -> exec('SET CHARACTER SET utf8');
+				
 			break;
 			/*case 'mysqli':
 				$port = (int)$port;
@@ -36,23 +38,6 @@
 	function cnx_site_local( $type_cnx = NULL ){
 		$server_name = explode ( "/" , $_SERVER['REQUEST_URI']);
 		$server_name = $server_name[1];
-		
-		if (($_SERVER["HTTP_HOST"] == "localhost:8888") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
-		{
-			$host = 'localhost';
-			$user = 'root';
-			$pass = 'root';
-			$base = 'khauv';
-			$port = 8889;
-		}
-		if (($_SERVER["HTTP_HOST"] == "local.discoverit.dev") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
-		{
-			$host = 'localhost';
-			$user = 'root';
-			$pass = '';
-			$base = 'eemi_discoverit';
-			$port = 80;
-		}
 		if (($_SERVER["HTTP_HOST"] == "localhost") or ($_SERVER["HTTP_HOST"] == "127.0.0.1"))
 		{
 			$host = 'localhost';
@@ -61,36 +46,28 @@
 			$base = 'khauv';
 			$port = 80;
 		}
-		if (($_SERVER["HTTP_HOST"] == "discoverit.fr") or ($_SERVER["HTTP_HOST"] == "www.discoverit.fr"))
-		{
-			$host = 'gaetanboe.mysql.db';
-			$user = 'gaetanboe';
-			$pass = 'Discoverit1';
-			$base = 'gaetanboe';
-			$port = 3306;
-		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "khauv") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "khauv") )
 		{
 			$host = 'localhost';
 			$user = 'khauv';
-			$pass = '161212';
-			$base = 'khauv';
+			$pass = '';
+			$base = '';
 			$port = 80;
 		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "dupont") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "dupont") )
 		{
 			$host = 'localhost';
-			$user = 'dupont';
-			$pass = '143953';
-			$base = 'dupont';
+			$user = 'khauv';
+			$pass = '';
+			$base = '';
 			$port = 80;
 		}
-		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($server_name == "alexandr") )
+		else if (($_SERVER["HTTP_HOST"] == "ns366377.ovh.net") && ($nom_serveur == "alexandr") )
 		{
 			$host = 'localhost';
 			$user = 'alexandr';
-			$pass = '601915';
-			$base = 'alexandr';
+			$pass = '';
+			$base = '';
 			$port = 80;
 		}
 		return _cnx( $user, $pass, $base, $host, $port, $type_cnx );

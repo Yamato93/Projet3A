@@ -9,7 +9,7 @@
 
 		session_name($name);
 		session_start();
-		$_SESSION["session_connect"] = true;
+		$_SESSION["connect"] = true;
 		//On récupère l'adresse IP du clientn en prévoyant le cas du proxy
 		//$ip = !empty($_SERVER['HHTP_X_FOR']) ? $_sSERVER
 		

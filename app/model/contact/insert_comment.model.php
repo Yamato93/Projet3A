@@ -15,7 +15,6 @@ function insert_comments($connect, $nom, $mail, $comment)
 		$curseur ->bindValue(':mc_comment', $comment, PDO::PARAM_STR);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();
-		return $retour;
 	}
 			
 	catch ( Exception $e ) 
