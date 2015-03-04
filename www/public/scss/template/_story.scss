@@ -1,0 +1,183 @@
+.story-container{
+    min-height: 100%;
+    background-color: lighten($bluegreen, 40%);
+
+    .grid{
+        min-height: 100%;
+        position: relative;
+
+        >div:first-child{
+            @media #{$medium}{
+                width: 100%;
+            }
+        }
+
+        .cover-journal{
+            padding: 8em 0;
+            background: no-repeat center;
+            background-size: cover;
+            position: relative;
+
+            >div{
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 20%;
+            }
+
+            @media #{$small}{
+                padding: 5em 0;
+            }
+        }
+
+        .journal-container{
+            padding: 2em;
+            text-align: center;
+            box-sizing:border-box;
+
+            h1{
+                color:$darkbluegreen;
+                font-weight: bold;
+                margin: 0;
+                @media #{$small}{
+                    font-size:1em;
+                }
+            }
+
+            h2{
+                color: $darkbluegreen;
+                font-size: 1em;
+                margin-bottom: 2em;
+            }
+
+            .column-third{
+                text-align: right;
+            }
+
+            .form-div{
+                margin-top: 2em;
+                textarea{
+                    min-height: 30em;
+
+                    @media #{$small}{
+                        min-height: 15em;
+                    }
+                }
+            }
+
+            input[type="submit"]{
+                font-size: 1em;
+                @include button(#ffffff, $golden);
+                box-shadow: 0px 5px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0.5);
+                -webkit-box-shadow: 0px 5px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0.5);
+                -moz-box-shadow: 0px 5px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0.5);
+
+                &:active{
+                    top:5px;
+                    box-shadow: 0px 0px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0);
+                    -webkit-box-shadow: 0px 0px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0);
+                    -moz-box-shadow: 0px 0px 0px darken($golden, 20%),0px 0px 15px 1px rgba(0,0,0,0);
+                }
+
+                @media #{$medium}{
+                    font-size: 0.7em;
+                }
+
+                @media #{$small}{
+                    font-size: 0.5em;
+                }
+            }
+
+            @media #{$medium}{
+                width: 100%;
+                padding: 1em;
+            }
+        }
+
+        .gallery{
+            background-color: $darkbluegreen;
+            padding: 1em;
+
+            @media #{$medium}{
+                width: 100%;
+            }
+
+            h2{
+                border: solid 2px #ffffff;
+                text-align: center;
+                color: #ffffff;
+                text-transform: uppercase;
+                padding: 0.5em;
+            }
+
+            ul{
+                padding: 0;
+                margin: 0;
+                li{
+                    box-sizing:border-box;
+                    list-style-type: none;
+                    display: inline-block;
+                    position: relative;
+                    border: solid 5px $darkbluegreen;
+                    background: url(../img/preview.jpg) no-repeat center;
+                    background-size: cover;
+                    padding-bottom: 50%;
+                    height: 0;
+
+                    input[type="file"]{
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 10;
+                    }
+
+                    span.removeFile{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        left: 0;
+                        padding: 0.5em;
+                        box-sizing:border-box;
+                        background: lighten(red,20%);
+                        cursor: pointer;
+                        color: #000000;
+                        z-index: 11;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+
+                    &::after{
+                        content: " + ";
+                        color: $golden;
+                        background-color: rgba(144, 177, 187, 0.7);
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        @include trans(all, 500ms);
+                        z-index: 9;
+                        text-align: center;
+                        font-size: 10em;
+                        line-height: 1.5;
+                        opacity: 0;
+                    }
+
+                    &:hover{
+                        &::after{
+                            opacity:1;
+                        }
+                    }
+                }
+                &::after{
+                    @include clearfix();
+                }
+            }
+        }
+    }
+}

@@ -129,6 +129,7 @@
 				</div>
 			<?php
 			}
+			phpinfo();
 			?>
 		</div>
 	</body>

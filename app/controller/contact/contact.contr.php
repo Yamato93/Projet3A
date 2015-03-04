@@ -49,7 +49,6 @@ if(!empty($_POST))
 		else{
 			sessionize('danger', 'Un problème est survennu !');
 		}
-
 		header('location:index.php?module=contact&action=contact');
 		exit;
 	}

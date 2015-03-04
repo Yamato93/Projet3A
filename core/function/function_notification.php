@@ -8,21 +8,17 @@
 	// $CONTENT -> CONTENU
 	function sessionize($level, $content)
 	{
-		$_SESSION['notif'][] = array('level' => $level, 'content'=> $content);
+		$_SESSION['notif'] = array('level' => $level, 'content'=> $content);
 	}
-	function display($msg)
+	function display_notification()
 	{
-		echo '<div class="row">
-					<div class="alert alert-'.$msg['level'].'">
-						<p> '.$msg['content'].' </p>
-					</div>
+		if (isset($_SESSION['notif'])) {
+			echo '<div class="alert alert-'.$_SESSION['notif']['level'].'">
+					<p> '.$_SESSION['notif']['content'].' </p>
 				</div>';
-		unset($_SESSION['notif']);
-		
+			unset($_SESSION['notif']);
+		}
 	}
 	
-		// $_SESSION['notif'] = array('level' => 'danger', 'content' => 'Incorrect. Verrifier vos identifiants');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Bienvenue');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Commentaire supprimé');
-		// $_SESSION['notif'] = array('level' => 'success', 'content' => 'Déconnecté');
+	
 ?>

@@ -1,0 +1,50 @@
+/**
+ * @Grid
+**/
+.grid {
+	padding: 0;
+	font-family: "iconfnt";
+	
+	> * {
+		font-family: $default-font;
+	}
+	
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		clear: both; 
+	}
+	
+	[class*="column-"] {
+		display: inline-block;
+		vertical-align: top;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.column-half {
+		width: 50%;   
+	}
+	
+	.column-third {
+		width: 33.3333%;
+	}
+	
+	.column-twothirds {
+		width: 66.6666%;
+	}
+	
+	.column-fourth {
+		width: 25%; 
+	}
+	
+	.column-sixth {
+		width: 16.6666%; 
+	}
+}
+
+.grid-vertical [class*="column-"] {
+     vertical-align: middle;  
+}
