@@ -59,8 +59,13 @@
                     <h2>Gallery</h2>
                     <ul class="grid">
                         <?php 
+	                        
                             for ($i = 1; $i <= 8; $i++)
                             {
+	                            if(isset($_GET['info']))
+							{
+								$url_ajax = "index.php?module=books&action=unset_steps_img&info=".$_GET['info']."&img_id=".$i;	
+							}
                                 if(!isset($infostory['step_img'.$i]))
                                 {
                                     $url = 'public/img/preview.jpg';
@@ -70,7 +75,7 @@
                                     $url = $infostory['step_img'.$i];
                                 }
                             ?>
-                            <li class="column-half" style="background-image:url(<?php echo $url; ?>);">
+                            <li class="column-half" style="background-image:url(<?php echo $url; ?>);" data-url="<?php echo $url_ajax; ?>">
                                 <input type="file" name="story-img<?php echo $i; ?>" class="addFile"/>
                             </li>
                         <?php
