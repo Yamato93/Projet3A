@@ -32,12 +32,13 @@ if(isset($_SESSION['User']))
 				if(isset($_SESSION['Updatebookstory']))
 				{
 					$nbUpdatebookstory = $_SESSION['Updatebookstory'];
+					$countfilesession =  count(array_keys($nbUpdatebookstory));
 				}
 				else
 				{
 					$nbUpdatebookstory = 0;
+					$countfilesession = 0;
 				}
-				$countfilesession =  count(array_keys($nbUpdatebookstory));
 
 				for ($y = 1; $y <= $countfilesession; $y++) 
 				{

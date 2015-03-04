@@ -65,7 +65,7 @@
 	                                    <div class="grid">
 	                                        <a href="index.php?module=books&action=storyedit&info=<?php echo $y; ?>" class="edit column-half">Edit</a>
 	                                        <!-- DELETE URL OF A STORY HERE -->
-	                                        <a href="#" class="delete column-half">Delete</a>
+	                                        <a href="index.php?module=books&action=unset_steps_session&info=<?php echo $y; ?>" class="delete column-half">Delete</a>
 	                                    </div>
 	                                </li>
 	                            <?php
